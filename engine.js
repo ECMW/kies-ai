@@ -291,6 +291,9 @@ function recommend(state, registry) {
     governance: [],
     privacy: [],
     limitations: [],
+    hardFilters: [],
+    eliminated: [],
+    ranked: [],
     humanReview: reviewRegime(state.answers),
     tieBreak: null,
     preferLight: false
@@ -305,7 +308,18 @@ function recommend(state, registry) {
     if (!rule.when(state)) continue;
     if (rule.kind === "filter") {
       const before = candidates.length;
+      const removed = candidates.filter((m) => !rule.test(m));
       candidates = candidates.filter((m) => rule.test(m));
+      if (removed.length) {
+        out.hardFilters.push({
+          id: rule.id,
+          explanation: rule.note,
+          before,
+          after: candidates.length,
+          removed: removed.map((m) => m.name)
+        });
+        removed.forEach((m) => out.eliminated.push({ model: m.name, rule: rule.id, reason: rule.note }));
+      }
       out.trace.push({ id: rule.id, text: rule.note + ` (${before} → ${candidates.length} modellen)` });
     } else {
       rule.apply(out);
@@ -314,7 +328,22 @@ function recommend(state, registry) {
   }
 
   /* Vermogen zelf als filter: model moet het vermogen minimaal kunnen */
+  const capabilityRemoved = candidates.filter((m) => (m.capabilities[cap.id] || 0) < 1);
   candidates = candidates.filter((m) => (m.capabilities[cap.id] || 0) >= 1);
+  if (capabilityRemoved.length) {
+    out.hardFilters.push({
+      id: "LAAG-2",
+      explanation: `Het model moet het gevraagde vermogen "${cap.label}" aantoonbaar ondersteunen.`,
+      before: candidates.length + capabilityRemoved.length,
+      after: candidates.length,
+      removed: capabilityRemoved.map((m) => m.name)
+    });
+    capabilityRemoved.forEach((m) => out.eliminated.push({
+      model: m.name,
+      rule: "LAAG-2",
+      reason: `Ondersteunt het gevraagde vermogen "${cap.label}" niet voldoende.`
+    }));
+  }
   out.trace.push({ id: "LAAG-2", text: `Vermogensfilter: ${candidates.length} van ${startCount} geregistreerde modellen kunnen "${cap.label}".` });
 
   if (candidates.length === 0) {
@@ -331,6 +360,15 @@ function recommend(state, registry) {
 
   out.recommended = scored[0];
   out.alternatives = scored.slice(1, 4);
+  out.ranked = scored;
+  out.rankingCriteria = [
+    "Vermogensfit: hoe goed het model de gekozen taak ondersteunt.",
+    "Benodigde eigenschappen, zoals redeneren, brongebruik, beeld of lange documenten.",
+    "Kosten, duurzaamheid en openheid wegen mee; ze kunnen een harde eis nooit compenseren.",
+    out.tieBreak === "exit"
+      ? "Exit-kosten wegen extra zwaar, omdat het om structureel gebruik gaat."
+      : "Exit-kosten wegen licht mee om toekomstige afhankelijkheid te beperken."
+  ];
 
   /* Betrouwbaarheid: afstand tussen nr. 1 en nr. 2 */
   const gap = scored.length > 1 ? scored[0].score - scored[1].score : 99;

@@ -39,30 +39,32 @@
 <!-- ==================== PAGINA 1: A4-BESLISBOOM ==================== -->
 <div class="page">
   <p class="eyebrow">kies·ai · beslisboom · A4</p>
-  <h1>Eerst het vermogen, dan het model</h1>
+  <h1>Eerst vermogen. Dan context. Pas daarna model.</h1>
   <div class="rule"></div>
 
-  <div class="box q"><strong>1 · Wat moet er gebeuren?</strong> Benoem het vermogen: samenvatten, analyseren, feedback geven, transcriberen, code schrijven… <em>Nog geen modelnamen.</em></div>
+  <div class="box q"><strong>1 · Welk vermogen is nodig?</strong> Benoem wat er moet gebeuren: samenvatten, analyseren, feedback geven, transcriberen, code schrijven… <em>Nog geen modelnamen.</em></div>
   <div class="arrow">▼</div>
-  <div class="box q"><strong>2 · Welke gegevens voer je in?</strong></div>
+  <div class="box q"><strong>2 · Welke context bepaalt de bestuurlijke ruimte?</strong> Classificeer gegevens, impact, bronvereisten en schaal. Twijfel? Kies de strengere optie of vraag advies.</div>
+  <div class="arrow">▼</div>
+  <div class="box q"><strong>3 · Welke gegevens voer je in?</strong></div>
   <div class="branch">
     <div class="box ok">Geen of openbaar → alle geregistreerde modellen mogelijk</div>
     <div class="box stop">Persoonsgegevens → alleen EU-cloud of on-prem, mét verwerkersovereenkomst. Bijzondere categorieën → uitsluitend on-prem + DPIA. Nooit consumentenversies.</div>
   </div>
   <div class="arrow">▼</div>
-  <div class="box q"><strong>3 · Waarvoor wordt de uitkomst gebruikt?</strong></div>
+  <div class="box q"><strong>4 · Waarvoor wordt de uitkomst gebruikt?</strong></div>
   <div class="branch">
     <div class="box ok">Verkenning of concept → steekproefcontrole volstaat. Kies het eenvoudigste model dat het kan (zuinig = verdedigbaar).</div>
     <div class="box stop">Besluit óver personen (student/medewerker) → hoog risico onder de EU AI Act: <strong>mens beslist</strong>, model adviseert. Auditbaar model verplicht. DPIA/FRIA en registratie.</div>
   </div>
   <div class="arrow">▼</div>
-  <div class="box q"><strong>4 · Moet elke bewering herleidbaar zijn naar een bron?</strong> Ja → alleen modellen met broncitaties (kennisbank-assistent/RAG).</div>
+  <div class="box q"><strong>5 · Moet elke bewering herleidbaar zijn naar een bron?</strong> Ja → alleen modellen met herleidbare bronverwijzingen.</div>
   <div class="arrow">▼</div>
-  <div class="box q"><strong>5 · Eenmalig of structureel?</strong> Structureel → inkoop erbij: exit-strategie, dataportabiliteit, aanbestedingstoets. Lage exit-kosten wegen zwaarder.</div>
+  <div class="box q"><strong>6 · Eenmalig of structureel?</strong> Structureel → inkoop, exit-strategie en dataportabiliteit. Leveranciersafhankelijkheid weegt zwaarder.</div>
   <div class="arrow">▼</div>
-  <div class="box ok"><strong>6 · Nu pas: kies het model</strong> — uit het instellingsregister, gerangschikt op vermogensfit. Twijfel? De digitale assistent legt elk advies uit met een redeneerspoor.</div>
+  <div class="box ok"><strong>7 · Nu pas: onderbouw de modelkeuze</strong> — governance filtert eerst; alleen passende opties worden daarna gerangschikt. Een score kan een harde eis nooit compenseren.</div>
 
-  <p class="foot">kies-ai v1.0 · het modelregister is van de instelling · vermogens zijn stabiel, modellen wisselen · beheer: informatiemanagement</p>
+  <p class="foot">kies·ai v1.1 · governance vóór score · het modelregister is van de instelling · beheer: informatiemanagement</p>
 </div>
 
 <!-- ==================== PAGINA 2: QUICK REFERENCE CARD ==================== -->
@@ -84,7 +86,7 @@
     <tr><td>Beeld maken voor publicatie</td><td>Visuals genereren</td><td>Auteursrecht: menselijke redactie, geen herkenbare personen/merken</td></tr>
   </table>
 
-  <h2>De drie vaste vragen</h2>
+  <h2>De drie vaste stappen</h2>
   <table>
     <tr><th>Vraag</th><th>Waarom</th></tr>
     <tr><td>Welke <strong>gegevens</strong> voer ik in?</td><td>AVG: bepaalt toegestane verwerkingslocatie en contractvorm</td></tr>
@@ -97,12 +99,13 @@
 <!-- ==================== PAGINA 3: POSTER ==================== -->
 <div class="page poster">
   <p class="eyebrow">kies·ai</p>
-  <h1>Vraag niet<br>"welk model?"<br><span style="color:#2F5FE3">Vraag "welk vermogen?"</span></h1>
+  <h1>Vraag niet eerst<br>"welk model?"<br><span style="color:#2F5FE3">Begin bij het vermogen.</span></h1>
   <p class="big">Modellen komen en gaan. Wat jij nodig hebt, blijft.</p>
   <ol class="steps">
     <li><strong>Benoem het vermogen.</strong> Samenvatten? Analyseren? Feedback? Transcriberen?</li>
     <li><strong>Benoem de omstandigheden.</strong> Welke gegevens gaan erin — en wat hangt er van de uitkomst af?</li>
-    <li><strong>Kies dán pas het model.</strong> Uit het register van de instelling, nooit de consumentenversie voor werk.</li>
+    <li><strong>Maak de context expliciet.</strong> Gegevens, impact, bronnen, schaal en menselijke toets.</li>
+    <li><strong>Kies dán pas het model.</strong> Governance vóór score; uit het register van de instelling.</li>
   </ol>
   <p class="big" style="color:#9A6A00">Besluit over een student of medewerker?<br>De mens beslist. Altijd.</p>
   <p class="foot" style="border:none">kies-ai · de AI-modelkeuze-assistent van jouw instelling · vraag informatiemanagement naar de link</p>
@@ -115,7 +118,7 @@
   <div class="rule"></div>
   <div class="cols">
     <p><strong>Het probleem.</strong> Medewerkers en docenten kiezen AI-modellen ad hoc, op merkbekendheid. Daarmee liggen de facto architectuur-, privacy- en inkoopbesluiten bij individuele gebruikers — onzichtbaar en onherleidbaar.</p>
-    <p><strong>De oplossing.</strong> kies-ai scheidt twee vragen die nu door elkaar lopen. <em>Laag 1:</em> welk vermogen is nodig (samenvatten, analyseren, feedback…)? Vermogens zijn stabiel over jaren. <em>Laag 2:</em> welk geregistreerd model levert dat vermogen onder deze omstandigheden? Modellen wisselen; alleen het register verandert mee.</p>
+    <p><strong>De oplossing.</strong> kies·ai ordent drie stappen die nu door elkaar lopen. Eerst: welk vermogen is nodig? Daarna: welke context, risico's en publieke waarden begrenzen de keuze? Pas dan: welk geregistreerd model past binnen die bestuurlijke ruimte?</p>
     <p><strong>Governance is het mechanisme, geen bijlage.</strong> AVG, AI Act, auteursrecht, inkoop en publieke waarden werken als harde filters vóór de aanbeveling: persoonsgegevens komen nooit op een VS-cloudmodel uit; besluiten over personen krijgen altijd het regime "mens beslist"; herleidbaarheid als eis dwingt broncitaties af. Dit is getest met 100 scenario's en ingebouwde asserties: nul schendingen.</p>
     <p><strong>Uitlegbaar.</strong> Elk advies toont een redeneerspoor met regelnummers (R-AVG-1, R-AIACT-1…): auditbaar voor FG, auditor en accreditatiepanel.</p>
     <p><strong>Soeverein.</strong> Het modelregister is een bestuurlijk asset van de instelling, in eigen beheer. De aanbevelingslogica is leveranciersneutraal; exit-kosten en voetafdruk wegen mee in elke rangschikking. Verdwijnen alle huidige modellen, dan is alleen het register aan vervanging toe.</p>

@@ -4,7 +4,7 @@ De vraag *“welk AI-model moeten we gebruiken?”* komt te vroeg.
 
 Een modelkeuze bepaalt waar gegevens terechtkomen, welke leverancier macht krijgt, wat nog controleerbaar is en hoeveel menselijke correctiecapaciteit behouden blijft. Als medewerkers die keuze ieder voor zich maken, decentraliseert de organisatie haar architectuur- en governancebesluiten — meestal zonder dat zo te noemen.
 
-**kies·ai** is een open-source conceptdemonstrator die de volgorde omdraait:
+**kies·ai** is een open-source conceptdemonstrator die de volgorde omdraait en bij iedere stap uitlegt wat de bestuurlijke betekenis is:
 
 1. **Eerst vermogen** — wat moet de organisatie, professional of student kunnen?
 2. **Daarna context** — welke gegevens, publieke waarden, risico’s en institutionele voorwaarden spelen mee?
@@ -25,16 +25,23 @@ De demonstrator maakt zichtbaar:
 - welke menselijke toets bij de toepassing hoort;
 - welke risico’s, beperkingen en afhankelijkheden overblijven;
 - welk redeneerspoor tot het advies heeft geleid.
+- welke modellen door harde filters zijn afgevallen en waarom;
+- welke criteria alleen de rangschikking van passende opties beïnvloeden;
+- wanneer privacy, security, inkoop of informatiemanagement moet worden betrokken.
+
+Bij iedere contextvraag staat wat de keuze verandert. Begrippen zoals bronherleidbaarheid, exit-kosten en vendor lock-in worden in gewone taal uitgelegd. Het resultaat is nadrukkelijk een **onderbouwde keuze**, geen automatisch antwoord.
 
 Dit maakt het project bruikbaar als gesprekstuk voor onder meer SURF, Npuls, CIO’s, enterprise-architecten, informatiemanagers, bestuurders en professionals in het hoger onderwijs.
 
 ## Direct proberen
 
-Open de [live demonstrator](https://ecmw.github.io/kies-ai/demo/) en kies een eigen situatie of een van drie voorbeeldcasussen:
+Open de [live demonstrator](https://ecmw.github.io/kies-ai/demo/) en kies een eigen situatie of een van vijf voorbeeldcasussen:
 
 - zoeken in interne beleidsbronnen met verplichte herleidbaarheid;
 - een studentdossier analyseren bij een besluit over een persoon;
 - een onderzoeksinterview met bijzondere persoonsgegevens transcriberen.
+- een eenvoudige brainstorm zonder gevoelige gegevens;
+- structurele workflowautomatisering met aandacht voor exit en dataportabiliteit.
 
 Alles draait lokaal in de browser. Er is geen account, installatie of gegevensoverdracht nodig.
 
@@ -46,7 +53,7 @@ Alles draait lokaal in de browser. Er is geen account, installatie of gegevensov
 
 **Niet:** een technisch benchmarkplatform, volledige modelcatalogus, juridisch advies, aanbestedingsadvies of automatische besluitvormer.
 
-De opgenomen modellen en regels zijn voorbeelden. Een instelling moet het register, beleid en mandaat zelf beheren en valideren.
+De opgenomen modellen en regels zijn voorbeelden. Een instelling moet het register, beleid en mandaat zelf beheren en valideren. De uitkomst is bovendien afhankelijk van juiste zelfclassificatie: bij twijfel over persoonsgegevens of besluiten over personen geldt de strengere route of specialistisch advies.
 
 ## Het modelregister is van de instelling
 
@@ -64,6 +71,8 @@ Deze scheiding ondersteunt:
 Regels filteren eerst ongeschikte opties. Daarna worden de overblijvende modellen gerangschikt. Elk geactiveerd criterium verschijnt met een regel-ID in het redeneerspoor. De demonstrator behandelt onder meer AVG, AI Act, herleidbaarheid, menselijke toets, exit-kosten en duurzaamheid.
 
 Een redeneerspoor is nog geen rechtmatigheidsoordeel. Het is een controleerbaar beginpunt voor architectuur, privacy, inkoop en bestuur.
+
+![Onderbouwde keuze met harde filters, rangschikking en escalatieroutes](screenshots/demo-result-v1.1.png)
 
 ## Voor organisaties die willen voortbouwen
 

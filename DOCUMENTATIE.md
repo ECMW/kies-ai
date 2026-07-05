@@ -1,16 +1,17 @@
-# kies-ai v1.0 — documentatie
+# kies·ai v1.1 — documentatie
 
-AI-modelkeuze-assistent voor het hoger onderwijs. Capability-first, leveranciersneutraal, governance-bewust, uitlegbaar.
+Conceptdemonstrator voor bestuurbare AI-modelselectie in publieke organisaties. Eerst vermogen, dan context, pas daarna model.
 
 ---
 
 ## 1. Snel starten (gebruikershandleiding)
 
-1. Open `index.html` in een browser. Geen installatie, geen server, geen internetverbinding nodig (de lettertypen degraderen netjes zonder verbinding). Er verlaten **geen gegevens** de pagina.
-2. Kies optioneel je werkveld (alleen voor suggesties), daarna het **vermogen**: wat moet er gebeuren?
-3. Beantwoord de vragen die verschijnen — de assistent stelt alleen vragen die voor jouw geval de uitkomst kunnen veranderen (meestal 2 tot 4).
-4. Lees het advies: model, alternatieven, betrouwbaarheid, menselijke toets, governance, privacy, risico's, beperkingen én het volledige redeneerspoor.
-5. Druk het advies af als onderbouwing bij je aanvraag of DPIA (knop "Advies afdrukken").
+1. Open `demo/index.html`. De introductie legt uit waarom modelnamen niet het vertrekpunt zijn.
+2. Kies optioneel je werkveld en daarna het **vermogen**: wat moet er gebeuren?
+3. Beschrijf de **context**. Bij elke vraag zie je waarom die relevant is, welke governance-implicatie je antwoord heeft en wat er met de selectie gebeurt.
+4. Lees de **onderbouwde keuze**: aanbevolen model, alternatieven, risico’s, menselijke toets, harde filters, rangschikking en escalatieroutes.
+5. Controleer je zelfclassificatie met de verantwoordelijke rol. Twijfel over persoonsgegevens of besluiten over personen betekent: strenger classificeren of escaleren.
+6. Druk het advies af als startpunt voor gesprek en dossier. Het is geen juridisch oordeel of automatisch besluit.
 
 Voor beheerders: `print.html` bevat de A4-beslisboom, snelkaart, poster en bestuurlijke samenvatting; afdrukken via de browser (Ctrl/Cmd+P).
 
@@ -22,7 +23,7 @@ Voor beheerders: `print.html` bevat de A4-beslisboom, snelkaart, poster en bestu
   Vermogenstaxonomie (Laag 1, stabiel)          engine.js
         │  23 vermogens · 6 groepen · 16 domeinen
         ▼
-  Beslissingscriteria (adaptieve vragen)        engine.js
+  Contextcriteria (adaptieve vragen)            engine.js
         │  gegevensklasse · inzet · bronnen-eis · beeld · schaal
         ▼
   Vermogens- & governance-eisen                 engine.js
@@ -32,14 +33,18 @@ Voor beheerders: `print.html` bevat de A4-beslisboom, snelkaart, poster en bestu
         │  vermogensscores · privacyprofiel · hosting · exit-kosten
         │  voetafdruk · uitlegbaarheid · grounding · kosten
         ▼
-  Aanbeveling                                   engine.js → app.js
-     model · alternatieven · betrouwbaarheid · redeneerspoor
-     menselijke toets · governance · privacy · beperkingen
+  Onderbouwde keuze                             engine.js → app.js
+     harde filters · afgevallen modellen · rangschikking
+     alternatieven · menselijke toets · escalatie · beperkingen
 ```
 
 **Harde scheiding.** `engine.js` bevat geen enkele modelnaam. `registry.js` bevat geen enkele beslisregel. `app.js` bevat geen besliskennis. Dit is de future-proof-garantie (zie §5).
 
 **Volgorde is betekenis.** Governance-regels zijn *filters vóór de score*: een model dat de AVG-toets niet haalt, kan dat niet compenseren met kwaliteit. Pas binnen de toegestane verzameling wordt gerangschikt — op vermogensfit, gecorrigeerd voor voetafdruk (duurzaamheid) en exit-kosten (lock-in-preventie, zwaarder bij structureel gebruik).
+
+**Zelfclassificatie is een kritische beperking.** De engine kan alleen redeneren met de context die de gebruiker invult. De interface adviseert daarom om bij twijfel de strengere gegevens- of impactcategorie te kiezen en privacy, security, inkoop of informatiemanagement te betrekken.
+
+**Begrippen in gewone taal.** AVG, AI Act, bronherleidbaarheid, DPIA, FRIA, exit-kosten en vendor lock-in krijgen contextuele uitleg. Technische regelcodes blijven beschikbaar, maar staan niet langer centraal.
 
 **Toezichtsregimes.** Elke aanbeveling krijgt een regime: *mens beslist* (besluiten over personen — AI Act), *mens in de lus* (interne besluiten en publicaties) of *steekproef* (verkenning).
 

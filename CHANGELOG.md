@@ -2,6 +2,22 @@
 
 Alle betekenisvolle wijzigingen aan kies·ai worden in dit bestand bijgehouden. Het project volgt [Semantic Versioning](https://semver.org/).
 
+## [Unreleased] — voorgesteld als v1.1.0
+
+### Toegevoegd
+
+- didactische onboarding en uitleg bij iedere contextvraag;
+- waarschuwingen bij twijfel over persoonsgegevens en besluiten over personen;
+- begrijpelijk redeneerspoor met harde filters, afgevallen modellen en rangschikkingscriteria;
+- escalatieroutes en verklarende microcopy voor governancebegrippen;
+- vijf direct testbare gebruikersscenario’s.
+
+### Gewijzigd
+
+- het resultaatscherm presenteert een onderbouwde keuze in plaats van een absoluut advies;
+- documentatie en printmaterialen volgen consequent vermogen → context → model;
+- technische regelcodes zijn verplaatst naar een optioneel detailniveau.
+
 ## [1.0.0] — 2026-07-05
 
 ### Toegevoegd
@@ -21,4 +37,3 @@ Alle betekenisvolle wijzigingen aan kies·ai worden in dit bestand bijgehouden. 
 - de AI Act- en privacytoets is richtinggevend, niet juridisch uitputtend;
 - ketens van meerdere modellen of diensten worden nog niet samengesteld;
 - er is nog geen gedeeld, federatief sectorregister of formele auditlaag.
-

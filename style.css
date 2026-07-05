@@ -1,0 +1,178 @@
+/* ============================================================
+   kies-ai v1.0 — visuele identiteit
+   Richting: Nederlands publiek instrument. Rustig, precies,
+   bestuurlijk betrouwbaar. Geen startup-gradients.
+   Palet:  inkt #16243D · papier #F7F8F6 · actie #2F5FE3
+           toezicht-amber #9A6A00 · akkoord-groen #2E7D4F
+   Type:   Fraunces (display) · Public Sans (romp) · Plex Mono (spoor)
+   Signatuur: de vergrendelde Laag 2 in de linkerkolom — de
+   architectuur (vermogen vóór model) ís de interface.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Public+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+  --ink: #16243D;
+  --ink-60: #4A5670;
+  --paper: #F7F8F6;
+  --card: #FFFFFF;
+  --line: #D8DCD9;
+  --action: #2F5FE3;
+  --action-deep: #1E43A8;
+  --amber: #9A6A00;
+  --amber-bg: #FBF3E0;
+  --green: #2E7D4F;
+  --red-bg: #FBEBE9;
+  --red: #9C2B1F;
+  --radius: 6px;
+  --display: "Fraunces", Georgia, serif;
+  --body: "Public Sans", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.wrap { max-width: 1060px; margin: 0 auto; padding: 0 20px; }
+
+/* ---------- Masthead ---------- */
+.masthead { border-bottom: 3px solid var(--ink); background: var(--card); }
+.masthead-inner { display: flex; align-items: baseline; gap: 16px; padding: 14px 20px; }
+.wordmark { font-family: var(--display); font-weight: 650; font-size: 1.5rem; letter-spacing: -0.01em; }
+.wordmark { color: var(--ink); text-decoration: none; }
+.wordmark-dot { color: var(--action); }
+.masthead-sub { color: var(--ink-60); font-size: 0.85rem; }
+
+/* ---------- Layout ---------- */
+.layout { display: grid; grid-template-columns: 260px 1fr; gap: 40px; padding-top: 36px; padding-bottom: 60px; min-height: 70vh; }
+@media (max-width: 800px) { .layout { grid-template-columns: 1fr; gap: 20px; } }
+
+/* ---------- Spine (signatuur) ---------- */
+.spine { display: flex; flex-direction: column; }
+.spine-step {
+  border-left: 3px solid var(--line);
+  padding: 10px 0 18px 16px;
+  color: var(--ink-60);
+  transition: border-color .3s, color .3s;
+}
+.spine-step strong { display: block; color: inherit; font-size: 0.95rem; }
+.spine-step p { margin: 4px 0 0; font-size: 0.83rem; }
+.spine-num { font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.spine-step.is-active { border-left-color: var(--action); color: var(--ink); }
+.spine-step.is-done { border-left-color: var(--green); color: var(--ink); }
+.spine-step.is-locked { opacity: 0.55; }
+.spine-note { font-size: 0.8rem; color: var(--ink-60); border-top: 1px solid var(--line); padding-top: 12px; margin-top: 6px; }
+.chip { display: inline-block; background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 1px 8px; font-size: 0.72rem; margin: 2px 2px 0 0; }
+
+/* ---------- Typografie ---------- */
+h1, h2 { font-family: var(--display); font-weight: 650; letter-spacing: -0.015em; line-height: 1.15; }
+h1 { font-size: 2.3rem; margin: 0 0 14px; }
+h2 { font-size: 1.6rem; margin: 0 0 12px; }
+h3 { font-size: 1rem; margin: 0 0 8px; }
+.lede { font-size: 1.08rem; max-width: 56ch; color: var(--ink-60); }
+.lede em, h1 em, h2 em { font-style: italic; color: var(--ink); }
+.lede-s { color: var(--ink-60); margin-top: -4px; }
+.eyebrow { font-family: var(--mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-60); margin: 0 0 4px; }
+.meta { font-size: 0.8rem; color: var(--ink-60); margin-top: 28px; }
+.examples { margin-top: 42px; border-top: 1px solid var(--line); padding-top: 24px; }
+.examples h2 { font-size: 1.25rem; }
+.example-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.example { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 15px; text-align: left; }
+.example:hover { border-color: var(--action); }
+.example strong, .example span { display: block; }
+.example span { color: var(--ink-60); font-size: .8rem; margin-top: 5px; }
+.hint { font-weight: 400; color: var(--ink-60); font-size: 0.82rem; }
+.why { font-size: 0.85rem; color: var(--ink-60); border-left: 3px solid var(--line); padding-left: 10px; max-width: 52ch; }
+.optional { font-size: 0.85rem; font-family: var(--body); font-weight: 400; color: var(--ink-60); }
+
+/* ---------- Knoppen & kaarten ---------- */
+button { font-family: var(--body); font-size: 0.95rem; cursor: pointer; }
+button:focus-visible { outline: 3px solid var(--action); outline-offset: 2px; }
+
+.btn-primary {
+  background: var(--action); color: #fff; border: none; border-radius: var(--radius);
+  padding: 12px 22px; font-weight: 600; margin-top: 18px;
+}
+.btn-primary:hover { background: var(--action-deep); }
+.btn-secondary {
+  background: var(--card); color: var(--ink); border: 1.5px solid var(--ink);
+  border-radius: var(--radius); padding: 12px 22px; font-weight: 600; margin-top: 18px;
+}
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 10px; margin-top: 18px; }
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 14px; text-align: left; transition: border-color .15s;
+}
+.card:hover { border-color: var(--action); }
+.card-skip { background: transparent; border-style: dashed; color: var(--ink-60); }
+
+.cap-group { margin-top: 22px; }
+.cap {
+  display: block; width: 100%; text-align: left;
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 11px 14px; margin-top: 6px; transition: border-color .15s;
+}
+.cap:hover { border-color: var(--action); }
+.cap.is-suggested { border-left: 4px solid var(--action); }
+.tag { float: right; font-size: 0.7rem; color: var(--action); font-family: var(--mono); }
+
+.stack { display: flex; flex-direction: column; gap: 8px; margin-top: 18px; max-width: 560px; }
+.option {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 13px 16px; text-align: left; transition: border-color .15s;
+}
+.option:hover { border-color: var(--action); }
+
+/* ---------- Resultaat ---------- */
+.result-head { border-bottom: 3px solid var(--ink); padding-bottom: 14px; margin-bottom: 18px; }
+.conf { font-size: 0.9rem; margin: 6px 0 0; }
+.conf-hoog strong { color: var(--green); }
+.conf-middel strong { color: var(--amber); }
+.conf-laag strong { color: var(--red); }
+
+.block { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; margin-top: 12px; }
+.block ul, .block ol { margin: 6px 0 0; padding-left: 20px; }
+.block li { margin-top: 4px; }
+.block-review { border-left: 4px solid var(--green); }
+.block-gov { border-left: 4px solid var(--amber); background: var(--amber-bg); }
+.block-risk { border-left: 4px solid var(--red); background: var(--red-bg); }
+.block-trace { background: var(--ink); color: #E7EBF2; border: none; }
+.block-trace h3 { color: #fff; }
+.block-trace .hint { color: #9FB0CC; }
+.trace { font-family: var(--mono); font-size: 0.8rem; line-height: 1.6; }
+.trace code { color: #8FB4FF; margin-right: 6px; }
+
+.warn { background: var(--amber-bg); border-left: 4px solid var(--amber); padding: 12px 14px; border-radius: var(--radius); margin: 14px 0; }
+.actions { display: flex; gap: 10px; }
+
+.foot { border-top: 1px solid var(--line); padding-top: 14px; padding-bottom: 30px; font-size: 0.78rem; color: var(--ink-60); }
+
+/* ---------- Afdrukken van het advies ---------- */
+@media print {
+  .masthead, #spine, .actions, .foot { display: none; }
+  body { background: #fff; }
+  .layout { display: block; }
+  .block { break-inside: avoid; }
+  .block-trace { background: #fff; color: #000; border: 1px solid #000; }
+  .block-trace h3 { color: #000; }
+  .trace code { color: #000; }
+}
+@media (max-width: 680px) {
+  .masthead-inner { align-items: flex-start; flex-direction: column; gap: 2px; }
+  .layout { padding-top: 24px; }
+  h1 { font-size: 2rem; }
+  .example-grid { grid-template-columns: 1fr; }
+  .actions { align-items: stretch; flex-direction: column; }
+  .actions button { width: 100%; }
+}

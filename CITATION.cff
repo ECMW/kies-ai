@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: "kies·ai"
+message: "Citeer deze conceptdemonstrator wanneer je het governance- of selectieontwerp hergebruikt."
+type: software
+authors:
+  - given-names: Eva
+version: 1.0.0
+date-released: 2026-07-05
+license: MIT
+abstract: "Een open-source conceptdemonstrator voor capability-first, governancegedreven AI-modelselectie in het hoger onderwijs."

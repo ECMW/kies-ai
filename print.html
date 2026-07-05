@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>kies-ai — afdrukbare hulpmiddelen</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Public+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  @page { size: A4; margin: 16mm; }
+  * { box-sizing: border-box; }
+  body { font-family: "Public Sans", system-ui, sans-serif; color: #16243D; margin: 0; font-size: 10.5pt; line-height: 1.45; }
+  .page { page-break-after: always; padding: 24px; max-width: 780px; margin: 0 auto; }
+  h1 { font-family: "Fraunces", Georgia, serif; font-weight: 650; font-size: 21pt; margin: 0 0 4px; letter-spacing: -0.015em; }
+  h2 { font-family: "Fraunces", Georgia, serif; font-size: 13pt; margin: 16px 0 6px; }
+  .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 7.5pt; text-transform: uppercase; letter-spacing: .1em; color: #4A5670; }
+  .rule { border-top: 3px solid #16243D; margin: 8px 0 14px; }
+  .box { border: 1.2pt solid #16243D; border-radius: 4px; padding: 7px 10px; margin: 5px 0; }
+  .box.q { background: #EEF2FB; border-color: #2F5FE3; }
+  .box.stop { background: #FBEBE9; border-color: #9C2B1F; }
+  .box.ok { background: #EAF4EE; border-color: #2E7D4F; }
+  .arrow { text-align: center; color: #4A5670; font-size: 9pt; margin: 1px 0; }
+  .branch { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 9pt; margin-top: 8px; }
+  th, td { border: 0.8pt solid #16243D; padding: 4px 6px; text-align: left; vertical-align: top; }
+  th { background: #16243D; color: #fff; font-weight: 600; }
+  .poster { text-align: center; display: flex; flex-direction: column; justify-content: center; min-height: 240mm; }
+  .poster h1 { font-size: 34pt; line-height: 1.1; }
+  .poster .big { font-family: "Fraunces", Georgia, serif; font-size: 15pt; margin: 18px 0; }
+  .poster .steps { text-align: left; max-width: 480px; margin: 20px auto; font-size: 12pt; }
+  .poster .steps li { margin: 10px 0; }
+  .foot { font-size: 7.5pt; color: #4A5670; margin-top: 18px; border-top: 0.8pt solid #D8DCD9; padding-top: 6px; }
+  .cols { columns: 2; column-gap: 20px; }
+  ul { margin: 4px 0; padding-left: 16px; }
+  li { margin: 2px 0; }
+  code { font-family: "IBM Plex Mono", monospace; font-size: 8.5pt; }
+</style>
+</head>
+<body>
+
+<!-- ==================== PAGINA 1: A4-BESLISBOOM ==================== -->
+<div class="page">
+  <p class="eyebrow">kies·ai · beslisboom · A4</p>
+  <h1>Eerst het vermogen, dan het model</h1>
+  <div class="rule"></div>
+
+  <div class="box q"><strong>1 · Wat moet er gebeuren?</strong> Benoem het vermogen: samenvatten, analyseren, feedback geven, transcriberen, code schrijven… <em>Nog geen modelnamen.</em></div>
+  <div class="arrow">▼</div>
+  <div class="box q"><strong>2 · Welke gegevens voer je in?</strong></div>
+  <div class="branch">
+    <div class="box ok">Geen of openbaar → alle geregistreerde modellen mogelijk</div>
+    <div class="box stop">Persoonsgegevens → alleen EU-cloud of on-prem, mét verwerkersovereenkomst. Bijzondere categorieën → uitsluitend on-prem + DPIA. Nooit consumentenversies.</div>
+  </div>
+  <div class="arrow">▼</div>
+  <div class="box q"><strong>3 · Waarvoor wordt de uitkomst gebruikt?</strong></div>
+  <div class="branch">
+    <div class="box ok">Verkenning of concept → steekproefcontrole volstaat. Kies het eenvoudigste model dat het kan (zuinig = verdedigbaar).</div>
+    <div class="box stop">Besluit óver personen (student/medewerker) → hoog risico onder de EU AI Act: <strong>mens beslist</strong>, model adviseert. Auditbaar model verplicht. DPIA/FRIA en registratie.</div>
+  </div>
+  <div class="arrow">▼</div>
+  <div class="box q"><strong>4 · Moet elke bewering herleidbaar zijn naar een bron?</strong> Ja → alleen modellen met broncitaties (kennisbank-assistent/RAG).</div>
+  <div class="arrow">▼</div>
+  <div class="box q"><strong>5 · Eenmalig of structureel?</strong> Structureel → inkoop erbij: exit-strategie, dataportabiliteit, aanbestedingstoets. Lage exit-kosten wegen zwaarder.</div>
+  <div class="arrow">▼</div>
+  <div class="box ok"><strong>6 · Nu pas: kies het model</strong> — uit het instellingsregister, gerangschikt op vermogensfit. Twijfel? De digitale assistent legt elk advies uit met een redeneerspoor.</div>
+
+  <p class="foot">kies-ai v1.0 · het modelregister is van de instelling · vermogens zijn stabiel, modellen wisselen · beheer: informatiemanagement</p>
+</div>
+
+<!-- ==================== PAGINA 2: QUICK REFERENCE CARD ==================== -->
+<div class="page">
+  <p class="eyebrow">kies·ai · quick reference · bureaukaart</p>
+  <h1>Snelkaart: van taak naar model</h1>
+  <div class="rule"></div>
+  <table>
+    <tr><th style="width:30%">Als je wilt…</th><th style="width:28%">…is het vermogen</th><th>…en let je op</th></tr>
+    <tr><td>Ideeën verkennen, sparren</td><td>Brainstormen / redeneren</td><td>Laagste inzet: eenvoudig model volstaat; controleer feiten zelf</td></tr>
+    <tr><td>Stukken korter maken</td><td>Samenvatten</td><td>Lange documenten → model met lange context; vertrouwelijk → EU/on-prem</td></tr>
+    <tr><td>Iets vinden in eigen beleid</td><td>Kennis zoeken (eigen bronnen)</td><td>Eis broncitaties → kennisbank-assistent (RAG)</td></tr>
+    <tr><td>Actualiteit checken</td><td>Feiten zoeken (web)</td><td>Model mét webtoegang; bronnen altijd nalopen</td></tr>
+    <tr><td>Literatuur verkennen</td><td>Literatuur-review</td><td>Herleidbaarheid = eis → alleen modellen met citaties</td></tr>
+    <tr><td>Studentwerk van feedback voorzien</td><td>Formatieve feedback</td><td>Namen = persoonsgegevens; beoordeling = AI Act hoog risico: mens beslist</td></tr>
+    <tr><td>Interviews uitwerken</td><td>Transcriberen</td><td>Stemmen zijn persoonsgegevens → on-prem transcriptie</td></tr>
+    <tr><td>Code of analyse schrijven</td><td>Code / data-analyse</td><td>Geen productiedata in prompts; review blijft mensenwerk</td></tr>
+    <tr><td>Documentstromen verwerken</td><td>Extractie & classificatie</td><td>Structureel → inkoop, audit-log, exit-strategie</td></tr>
+    <tr><td>Beeld maken voor publicatie</td><td>Visuals genereren</td><td>Auteursrecht: menselijke redactie, geen herkenbare personen/merken</td></tr>
+  </table>
+
+  <h2>De drie vaste vragen</h2>
+  <table>
+    <tr><th>Vraag</th><th>Waarom</th></tr>
+    <tr><td>Welke <strong>gegevens</strong> voer ik in?</td><td>AVG: bepaalt toegestane verwerkingslocatie en contractvorm</td></tr>
+    <tr><td>Waarvoor wordt de <strong>uitkomst</strong> gebruikt?</td><td>AI Act &amp; toezicht: van steekproef tot "mens beslist"</td></tr>
+    <tr><td><strong>Eenmalig of structureel?</strong></td><td>Inkoop &amp; lock-in: structureel gebruik vraagt exit-strategie</td></tr>
+  </table>
+  <p class="foot">Twijfel? Open de kies-ai-assistent (index.html) — die stelt alleen de vragen die er voor jouw geval toe doen.</p>
+</div>
+
+<!-- ==================== PAGINA 3: POSTER ==================== -->
+<div class="page poster">
+  <p class="eyebrow">kies·ai</p>
+  <h1>Vraag niet<br>"welk model?"<br><span style="color:#2F5FE3">Vraag "welk vermogen?"</span></h1>
+  <p class="big">Modellen komen en gaan. Wat jij nodig hebt, blijft.</p>
+  <ol class="steps">
+    <li><strong>Benoem het vermogen.</strong> Samenvatten? Analyseren? Feedback? Transcriberen?</li>
+    <li><strong>Benoem de omstandigheden.</strong> Welke gegevens gaan erin — en wat hangt er van de uitkomst af?</li>
+    <li><strong>Kies dán pas het model.</strong> Uit het register van de instelling, nooit de consumentenversie voor werk.</li>
+  </ol>
+  <p class="big" style="color:#9A6A00">Besluit over een student of medewerker?<br>De mens beslist. Altijd.</p>
+  <p class="foot" style="border:none">kies-ai · de AI-modelkeuze-assistent van jouw instelling · vraag informatiemanagement naar de link</p>
+</div>
+
+<!-- ==================== PAGINA 4: EXECUTIVE SUMMARY ==================== -->
+<div class="page">
+  <p class="eyebrow">kies·ai · bestuurlijke samenvatting · 1 pagina</p>
+  <h1>AI-modelselectie als bestuurbaar proces</h1>
+  <div class="rule"></div>
+  <div class="cols">
+    <p><strong>Het probleem.</strong> Medewerkers en docenten kiezen AI-modellen ad hoc, op merkbekendheid. Daarmee liggen de facto architectuur-, privacy- en inkoopbesluiten bij individuele gebruikers — onzichtbaar en onherleidbaar.</p>
+    <p><strong>De oplossing.</strong> kies-ai scheidt twee vragen die nu door elkaar lopen. <em>Laag 1:</em> welk vermogen is nodig (samenvatten, analyseren, feedback…)? Vermogens zijn stabiel over jaren. <em>Laag 2:</em> welk geregistreerd model levert dat vermogen onder deze omstandigheden? Modellen wisselen; alleen het register verandert mee.</p>
+    <p><strong>Governance is het mechanisme, geen bijlage.</strong> AVG, AI Act, auteursrecht, inkoop en publieke waarden werken als harde filters vóór de aanbeveling: persoonsgegevens komen nooit op een VS-cloudmodel uit; besluiten over personen krijgen altijd het regime "mens beslist"; herleidbaarheid als eis dwingt broncitaties af. Dit is getest met 100 scenario's en ingebouwde asserties: nul schendingen.</p>
+    <p><strong>Uitlegbaar.</strong> Elk advies toont een redeneerspoor met regelnummers (R-AVG-1, R-AIACT-1…): auditbaar voor FG, auditor en accreditatiepanel.</p>
+    <p><strong>Soeverein.</strong> Het modelregister is een bestuurlijk asset van de instelling, in eigen beheer. De aanbevelingslogica is leveranciersneutraal; exit-kosten en voetafdruk wegen mee in elke rangschikking. Verdwijnen alle huidige modellen, dan is alleen het register aan vervanging toe.</p>
+    <p><strong>Wat het bestuur nu kan doen.</strong> (1) Beleg het registerbeheer bij informatiemanagement. (2) Stel de governance-drempels vast als beleid. (3) Stel de assistent instellingsbreed beschikbaar — hij draait lokaal, zonder installatie, en verzendt geen gegevens.</p>
+  </div>
+  <p class="foot">kies-ai v1.0 · capability-first · leveranciersneutraal · toekomstvast · contact: informatiemanagement</p>
+</div>
+
+</body>
+</html>

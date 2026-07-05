@@ -14,7 +14,7 @@ Upload `assets/social-preview.jpg` via **Settings → General → Social preview
 
 ## Pages
 
-Kies in **Settings → Pages → Build and deployment** voor **GitHub Actions**. De workflow in `.github/workflows/pages.yml` publiceert daarna elke wijziging op `main`.
+Kies in **Settings → Pages → Build and deployment** voor **Deploy from a branch**, branch `main`, map `/ (root)`. GitHub Pages publiceert de statische site dan direct. De workflow in `.github/workflows/quality.yml` toetst afzonderlijk de 100 governancescenario’s.
 
 ## Release
 

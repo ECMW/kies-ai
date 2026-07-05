@@ -10,7 +10,7 @@ Een modelkeuze bepaalt waar gegevens terechtkomen, welke leverancier macht krijg
 2. **Daarna context** — welke gegevens, publieke waarden, risico’s en institutionele voorwaarden spelen mee?
 3. **Pas daarna model** — welke toegelaten optie past binnen die bestuurlijke ruimte?
 
-[Open de demonstrator](./demo/) · [Lees de verdiepende documentatie](./DOCUMENTATIE.md)
+[Open de live demonstrator](https://ecmw.github.io/kies-ai/demo/) · [Bekijk de projectsite](https://ecmw.github.io/kies-ai/) · [Lees de verdiepende documentatie](./DOCUMENTATIE.md)
 
 ![De kies·ai-landingspagina: We stellen de verkeerde vraag](screenshots/landing-desktop.png)
 
@@ -30,7 +30,7 @@ Dit maakt het project bruikbaar als gesprekstuk voor onder meer SURF, Npuls, CIO
 
 ## Direct proberen
 
-Open de [demonstrator](./demo/) en kies een eigen situatie of een van drie voorbeeldcasussen:
+Open de [live demonstrator](https://ecmw.github.io/kies-ai/demo/) en kies een eigen situatie of een van drie voorbeeldcasussen:
 
 - zoeken in interne beleidsbronnen met verplichte herleidbaarheid;
 - een studentdossier analyseren bij een besluit over een persoon;
@@ -113,4 +113,3 @@ Versie 1.0 is de eerste publieke conceptrelease. Bekende beperkingen en het voor
 ## Licentie en verantwoording
 
 Code en documentatie vallen onder de [MIT-licentie](./LICENSE). Gebruik van de demonstrator ontslaat een organisatie niet van eigen juridische, ethische, veiligheids- of governancebeoordeling.
-

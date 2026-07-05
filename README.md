@@ -10,6 +10,8 @@ Een modelkeuze bepaalt waar gegevens terechtkomen, welke leverancier macht krijg
 2. **Daarna context** — welke gegevens, publieke waarden, risico’s en institutionele voorwaarden spelen mee?
 3. **Pas daarna model** — welke toegelaten optie past binnen die bestuurlijke ruimte?
 
+De kerninnovatie is het **instellingsregister**: de organisatie beheert zelf welke modellen zijn toegelaten en onder welke voorwaarden. De engine kent geen modelnamen. Daardoor kan het aanbod veranderen zonder het bestuurlijke selectieproces opnieuw te ontwerpen.
+
 [Open de live demonstrator](https://ecmw.github.io/kies-ai/demo/) · [Bekijk de projectsite](https://ecmw.github.io/kies-ai/) · [Lees de verdiepende documentatie](./DOCUMENTATIE.md)
 
 ![De kies·ai-landingspagina: We stellen de verkeerde vraag](screenshots/landing-desktop.png)

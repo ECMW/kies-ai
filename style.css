@@ -91,6 +91,8 @@ h3 { font-size: 1rem; margin: 0 0 8px; }
 .text-button { background: none; border: 0; color: var(--action); display: block; margin-top: 15px; padding: 4px 0; text-decoration: underline; text-underline-offset: 4px; }
 .learning-band { background: var(--amber-bg); border-left: 4px solid var(--amber); margin: 28px 0 4px; max-width: 650px; padding: 18px 20px; }
 .learning-band p { margin: 5px 0 0; }
+.register-band { border-bottom: 1px solid var(--line); border-top: 1px solid var(--line); margin: 18px 0 4px; max-width: 650px; padding: 16px 0; }
+.register-band p { color: var(--ink-60); margin: 5px 0 0; }
 .reflection { border-left: 3px solid var(--action); color: var(--ink); font-family: var(--display); font-size: 1.08rem; margin: 24px 0; padding: 10px 16px; }
 .example-list { border-top: 1px solid var(--line); margin: 24px 0; }
 .example-list .example { align-items: center; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; display: grid; gap: 8px; grid-template-columns: 1.15fr 1.5fr auto; padding: 18px 4px; width: 100%; }
@@ -108,6 +110,12 @@ h3 { font-size: 1rem; margin: 0 0 8px; }
 .human-review { background: var(--amber-bg); border: 1px solid #e7ca87; padding: 18px; }
 .human-review p { margin: 7px 0 0; }
 .result-reflection { margin: 18px 0 28px; }
+.governance-brief { border: 1px solid var(--line); margin-bottom: 24px; padding: 18px; }
+.governance-brief h2 { font-size: 1.35rem; }
+.governance-brief dl { margin: 0; }
+.governance-brief dl > div { border-top: 1px solid var(--line); display: grid; gap: 18px; grid-template-columns: 220px 1fr; padding: 11px 0; }
+.governance-brief dt { font-weight: 700; }
+.governance-brief dd { color: var(--ink-60); margin: 0; }
 .result-grid { display: grid; gap: 12px; grid-template-columns: repeat(3, 1fr); }
 .result-grid section { border-top: 3px solid var(--ink); padding: 16px 4px; }
 .result-grid section.risk-summary { border-top-color: var(--red); }
@@ -136,6 +144,14 @@ summary { color: var(--action); cursor: pointer; font-size: .82rem; font-weight:
 .technical-trace { border-top: 1px solid var(--line); margin-top: 18px; padding-top: 15px; }
 .technical-trace ol { font-family: var(--mono); font-size: .76rem; }
 .technical-trace code { color: var(--action); }
+.favorite-model { margin-top: 22px; }
+.model-explanations { border: 1px solid var(--line); margin-top: 10px; padding: 18px; }
+.model-explanations h2 { font-size: 1.3rem; }
+.model-explanations > p { color: var(--ink-60); }
+.model-explanations ul { list-style: none; margin: 0; padding: 0; }
+.model-explanations li { border-top: 1px solid var(--line); padding: 11px 0; }
+.model-explanations li p { color: var(--ink-60); margin: 3px 0 0; }
+.status-out { color: var(--red); font-weight: 700; }
 .escalation { margin-top: 28px; }
 .escalation-grid { display: grid; gap: 10px; grid-template-columns: repeat(4, 1fr); }
 .escalation-grid > div { border: 1px solid var(--line); padding: 14px; }
@@ -240,6 +256,7 @@ button:focus-visible { outline: 3px solid var(--action); outline-offset: 2px; }
   .actions { align-items: stretch; flex-direction: column; }
   .actions button { width: 100%; }
   .question-explanation, .result-head, .result-grid, .reasoning-columns, .escalation-grid { grid-template-columns: 1fr; }
+  .governance-brief dl > div { grid-template-columns: 1fr; gap: 3px; }
   .example-list .example { align-items: start; grid-template-columns: 1fr; }
   .reasoning { padding: 14px; }
   .term [role="tooltip"] { left: auto; right: 0; }

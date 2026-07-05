@@ -908,4 +908,4 @@ Register: Voorbeeldinstelling (pas aan), versie 2026.07 (9 modellen). Elk scenar
 ---
 ## Assertieresultaat
 
-**Alle 100 scenario's doorstaan alle asserties.** Persoonsgegevens komen nooit op VS-cloud terecht, besluiten over personen krijgen altijd 'mens beslist' met AI Act-advies, en bron-eisen leiden altijd naar modellen met herleidbare citaties.
+**Alle 100 ontworpen testscenario's doorlopen de beslislogica zoals bedoeld.** Binnen deze scenario's worden de drie vooraf gedefinieerde eigenschappen consequent toegepast. Dit bewijst niet dat de governance volledig of in iedere praktijkcontext juist is.

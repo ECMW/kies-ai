@@ -1,29 +1,32 @@
 # LinkedIn-bericht
 
-**We stellen de verkeerde vraag over AI-modellen.**
+**We stellen vaak de verkeerde vraag.**
 
-“Welk model moeten we gebruiken?”
+“Welk AI-model moeten we kiezen?”
 
-Die vraag klinkt praktisch. Maar wie een model kiest, kiest óók:
+Volgens mij is dat niet de eerste vraag.
 
-- waar gegevens terechtkomen;
-- welke leverancier macht krijgt;
-- wat nog controleerbaar is;
-- en hoeveel menselijke correctiecapaciteit behouden blijft.
+De eerste vraag is:
 
-Daarom heb ik **kies·ai** ontwikkeld: een open-source conceptdemonstrator voor bestuurbare AI-modelselectie in publieke organisaties.
+**Welk vermogen hebben we nodig?**
 
-De volgorde is bewust anders:
+Pas daarna volgen vragen over privacy, bronherleidbaarheid, AI Act, leveranciersafhankelijkheid en menselijke correctiecapaciteit. En pas helemaal aan het eind komt een model in beeld.
+
+Om dat idee te verkennen heb ik **kies·ai** ontwikkeld: een werkende open-source conceptdemonstrator.
+
+Niet om het “beste model” te kiezen.
+
+Maar om te onderzoeken hoe AI-modelselectie bestuurbaar kan worden ingericht:
 
 **1. Eerst het vermogen** — wat moet er gebeuren?  
 **2. Dan de context** — welke gegevens, publieke waarden, risico’s en eisen gelden?  
 **3. Pas daarna het model** — welke toegelaten optie past binnen die ruimte?
 
-Governance staat dus niet als vinklijst achteraan. Privacy, herleidbaarheid, menselijk toezicht, exit-kosten en duurzaamheid filteren vóór de rangschikking.
+Governance staat niet als vinklijst achteraan. De instelling beheert haar eigen modelregister; de beslislogica kent geen leveranciersnamen. Privacy, herleidbaarheid en menselijk toezicht begrenzen eerst de keuze. Alleen passende opties worden daarna gerangschikt.
 
 Een sterk model is immers niet automatisch een passend model.
 
-Ik ben benieuwd waar dit ontwerp volgens informatiemanagers, architecten, privacyprofessionals en bestuurders nog schuurt. Juist die tegenspraak maakt het beter.
+Ik ben benieuwd hoe anderen hiernaar kijken. Waar schuurt dit ontwerp volgens informatiemanagers, architecten, privacyprofessionals, inkopers en bestuurders?
 
 Probeer de demonstrator: https://ecmw.github.io/kies-ai/demo/
 

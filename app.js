@@ -62,7 +62,7 @@
   };
 
   function reset() {
-    Object.assign(state, { started: true, domain: null, capability: null, answers: {} });
+    Object.assign(state, { started: true, domain: null, capability: null, answers: {}, showModels: false });
     render();
   }
 
@@ -103,11 +103,15 @@
   function screenIntro() {
     return `
       <div class="onboarding">
-        <h1>Begin niet bij het model.</h1>
-        <p class="lede">Een modelnaam zegt nog niet of een toepassing bestuurlijk past. Daarom stellen we eerst vast <strong>wat je nodig hebt</strong>, daarna <strong>welke context en risico’s gelden</strong>. Pas dan vergelijken we de modellen die binnen die ruimte passen.</p>
+        <h1>Richt een bestuurbaar selectieproces in.</h1>
+        <p class="lede"><strong>kies·ai kiest niet het “beste” AI-model.</strong> De demonstrator helpt een organisatie eerst het benodigde vermogen en de bestuurlijke context expliciet te maken. Pas daarna worden modellen vergeleken die binnen die ruimte passen.</p>
         <section class="learning-band" aria-label="Ontwerpprincipe">
           <strong>Waarom deze volgorde?</strong>
           <p>Een modelkeuze bepaalt ook waar gegevens terechtkomen, hoe afhankelijk je wordt van een leverancier en hoeveel menselijke controle behouden blijft. Dat maakt modelselectie een governancevraagstuk.</p>
+        </section>
+        <section class="register-band">
+          <strong>Het modelregister is van de instelling.</strong>
+          <p>De instelling bepaalt welke modellen zijn toegelaten en onder welke voorwaarden. De beslislogica kent geen modelnamen. Daardoor kan het aanbod veranderen zonder het governanceproces opnieuw te ontwerpen.</p>
         </section>
         ${regErrors.length ? `<div class="warn" role="alert"><strong>Het modelregister kan niet betrouwbaar worden gebruikt.</strong><br>${safe(regErrors[0])} Neem contact op met de registerbeheerder.</div>` : ""}
         <button class="btn-primary btn-large" data-action="start">Ik begrijp het — begin bij het vermogen <span aria-hidden="true">→</span></button>
@@ -201,6 +205,30 @@
       </section>`;
   }
 
+  function modelExplanation(out) {
+    const eliminated = new Map();
+    out.eliminated.forEach((item) => {
+      if (!eliminated.has(item.model)) eliminated.set(item.model, []);
+      eliminated.get(item.model).push(item.reason);
+    });
+    const rows = R.models.map((model) => {
+      if (model.id === out.recommended.model.id) {
+        return `<li><strong>${safe(model.name)}</strong><p>Dit model staat bovenaan binnen de ingevulde voorwaarden.</p></li>`;
+      }
+      const reasons = eliminated.get(model.name);
+      if (reasons) {
+        return `<li><strong>${safe(model.name)}</strong><p><span class="status-out">Afgevallen door een harde filter.</span> ${explainTerms(reasons[0])}</p></li>`;
+      }
+      const rank = out.ranked.findIndex((item) => item.model.id === model.id);
+      return `<li><strong>${safe(model.name)}</strong><p>Door de harde filters gekomen, maar lager gerangschikt${rank >= 0 ? ` op plaats ${rank + 1}` : ""}. Dit is geen verbod: het blijft een alternatief als de open bestuurlijke afweging anders uitvalt.</p></li>`;
+    }).join("");
+    return `
+      <section class="favorite-model">
+        <button class="btn-secondary" data-action="toggle-models" aria-expanded="${state.showModels ? "true" : "false"}">Waarom viel mijn favoriete model af?</button>
+        ${state.showModels ? `<div class="model-explanations"><h2>Zo is ieder geregistreerd model behandeld</h2><p>Zoek hier bijvoorbeeld ChatGPT. Een model kan hard zijn uitgesloten, of wel passen maar lager zijn gerangschikt.</p><ul>${rows}</ul></div>` : ""}
+      </section>`;
+  }
+
   function screenNoResult(out) {
     return `
       <p class="step-label">Stap 3 · bestuurlijke uitkomst</p>
@@ -221,6 +249,15 @@
         <aside class="human-review"><strong>Menselijke toets</strong><p>${explainTerms(E.REVIEW_LABELS[out.humanReview])}</p></aside>
       </div>
       <p class="reflection result-reflection">${state.answers.stakes === "personen" ? "Bij besluiten over personen adviseert AI; de mens beslist." : "Een onderbouwde keuze blijft afhankelijk van juiste context en professioneel oordeel."}</p>
+      <section class="governance-brief">
+        <h2>Bestuurlijke samenvatting</h2>
+        <dl>
+          <div><dt>Waarom deze keuze?</dt><dd>${safe(top.model.strengths[0] || "Past bij het gekozen vermogen en de ingevulde voorwaarden.")}</dd></div>
+          <div><dt>Welke alternatieven vielen af?</dt><dd>${out.eliminated.length ? `${out.eliminated.length} uitsluiting(en) zijn terug te voeren op harde filters.` : "Geen model viel af door een extra governancefilter; de vermogensfit bepaalde de selectie."}</dd></div>
+          <div><dt>Welke regels waren doorslaggevend?</dt><dd>${out.hardFilters.length ? out.hardFilters.map((f) => safe(f.explanation.split(":")[0])).join(", ") : "Alleen het vereiste vermogen werkte als harde grens."}</dd></div>
+          <div><dt>Welke afweging blijft open?</dt><dd>${out.confidence === "laag" ? "Meerdere opties liggen dicht bij elkaar. De organisatie moet prioriteiten en bestaande afspraken expliciet afwegen." : "Bevestig of de context juist is geclassificeerd en of lokale contracten en beleidskaders dit gebruik toestaan."}</dd></div>
+        </dl>
+      </section>
       <div class="result-grid">
         <section><h2>Waarom passend</h2><ul>${top.model.strengths.map((s) => `<li>${safe(s)}</li>`).join("")}</ul></section>
         <section class="risk-summary"><h2>Belangrijkste risico’s</h2><ul>${[...out.risks, ...out.limitations].slice(0, 5).map((r) => `<li>${explainTerms(r)}</li>`).join("")}</ul></section>
@@ -228,6 +265,7 @@
       </div>
       ${out.governance.length || out.privacy.length ? `<section class="governance-summary"><h2>Voorwaarden voor verantwoord gebruik</h2><ul>${[...out.governance, ...out.privacy].map((g) => `<li>${explainTerms(g)}</li>`).join("")}</ul></section>` : ""}
       ${reasoningBlock(out)}
+      ${modelExplanation(out)}
       ${escalationBlock(out)}
       <section class="never-relax"><h2>Wat je nooit zelf mag versoepelen</h2><p>Wettelijke eisen, gegevenslocatie, rechten van betrokkenen, menselijk toezicht, beveiligingsvoorwaarden en verplichte logging. Als geen model past, is “geen AI inzetten” een geldige bestuurlijke uitkomst.</p></section>
       <section class="self-classification"><strong>Kritische beperking</strong><p>Dit advies is alleen zo betrouwbaar als de context die je zelf hebt ingevuld. Controleer de classificatie met de verantwoordelijke rol voordat je de toepassing in gebruik neemt.</p></section>
@@ -259,11 +297,12 @@
     if (action === "intro") state.showExamples = false;
     if (action === "example") {
       const ex = EXAMPLES[el.dataset.id];
-      Object.assign(state, { started: true, showExamples: false, domain: ex.domain, capability: ex.capability, answers: { ...ex.answers } });
+      Object.assign(state, { started: true, showExamples: false, showModels: false, domain: ex.domain, capability: ex.capability, answers: { ...ex.answers } });
     }
     if (action === "domain") state.domain = el.dataset.id;
     if (action === "capability") state.capability = el.dataset.id;
     if (action === "answer") state.answers[el.dataset.q] = el.dataset.id;
+    if (action === "toggle-models") state.showModels = !state.showModels;
     if (action === "reset") return reset();
     if (action === "print") return window.print();
     render();

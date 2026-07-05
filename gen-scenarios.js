@@ -120,8 +120,8 @@ scenarios.forEach(([domain, desc, input], idx) => {
 });
 
 lines.push(`\n---\n## Assertieresultaat\n`);
-lines.push(failures.length ? `**${failures.length} SCHENDINGEN:**\n` + failures.join("\n") : "**Alle 100 scenario's doorstaan alle asserties.** Persoonsgegevens komen nooit op VS-cloud terecht, besluiten over personen krijgen altijd 'mens beslist' met AI Act-advies, en bron-eisen leiden altijd naar modellen met herleidbare citaties.");
+lines.push(failures.length ? `**${failures.length} AFWIJKINGEN VAN DE ONTWORPEN LOGICA:**\n` + failures.join("\n") : "**Alle 100 ontworpen testscenario's doorlopen de beslislogica zoals bedoeld.** Binnen deze scenario's worden de drie vooraf gedefinieerde eigenschappen consequent toegepast. Dit bewijst niet dat de governance volledig of in iedere praktijkcontext juist is.");
 
 require("fs").writeFileSync(__dirname + "/scenarios.md", lines.join("\n"));
-console.log(`Klaar: ${scenarios.length} scenario's, ${failures.length} assertie-schendingen.`);
+console.log(`Klaar: ${scenarios.length} ontworpen scenario's, ${failures.length} afwijkingen van de bedoelde beslislogica.`);
 if (failures.length) { console.log(failures.join("\n")); process.exit(1); }

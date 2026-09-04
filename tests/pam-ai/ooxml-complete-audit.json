@@ -1,0 +1,4740 @@
+{
+  "sheets": [
+    {
+      "name": "00_Start",
+      "state": "visible",
+      "part": "xl/worksheets/sheet1.xml",
+      "dimension": null,
+      "storedCells": 240,
+      "populatedCells": 82,
+      "formulas": 0,
+      "formulaFamilies": 0,
+      "dependencies": [],
+      "specialRefs": [],
+      "validations": [],
+      "protection": [],
+      "hiddenRows": [],
+      "hiddenCols": [],
+      "formulaExtractionIdentical": true,
+      "rawPopulatedMissingInExtraction": [],
+      "formulaFamiliesDetail": [],
+      "formulaAttributes": [],
+      "mergedCells": [
+        "A1:H1",
+        "A2:H2",
+        "A4:H5",
+        "A7:H7",
+        "A15:H15",
+        "A17:H17",
+        "A23:B23",
+        "C23:H23",
+        "A25:H25",
+        "A29:H30"
+      ],
+      "hyperlinks": []
+    },
+    {
+      "name": "01_Intake",
+      "state": "visible",
+      "part": "xl/worksheets/sheet2.xml",
+      "dimension": null,
+      "storedCells": 368,
+      "populatedCells": 71,
+      "formulas": 9,
+      "formulaFamilies": 9,
+      "dependencies": [],
+      "specialRefs": [],
+      "validations": [
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "B16"
+          },
+          "formula1": "\"Verkenning,Gecontroleerde pilot,Gedeeltelijke proportionaliteitsafweging,Volledige proportionaliteitsafweging\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "B19"
+          },
+          "formula1": "\"Laag,Middel,Hoog,Kritiek\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "B20"
+          },
+          "formula1": "\"Ja,Gedeeltelijk,Nee\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "B21"
+          },
+          "formula1": "\"Nee,Beperkt,Ja\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "B22"
+          },
+          "formula1": "\"Nee,Mogelijk,Ja\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "B23"
+          },
+          "formula1": "\"Beperkt,Middel,Groot\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "B24"
+          },
+          "formula1": "\"Nee,Beperkt,Ja\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "B25"
+          },
+          "formula1": "\"Nee,Mogelijk,Ja\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "B27"
+          },
+          "formula1": "\"R1,R2,R3,R4\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "B40"
+          },
+          "formula1": "\"Ja,Nee\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "B41"
+          },
+          "formula1": "\"Ja,Nee\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "B42"
+          },
+          "formula1": "\"Ja,Nee\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "B43"
+          },
+          "formula1": "\"Ja,Nee\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "B44"
+          },
+          "formula1": "\"Ja,Nee\"",
+          "formula2": null
+        }
+      ],
+      "protection": [],
+      "hiddenRows": [],
+      "hiddenCols": [],
+      "formulaExtractionIdentical": true,
+      "rawPopulatedMissingInExtraction": [],
+      "formulaFamiliesDetail": [
+        {
+          "cells": [
+            "E6"
+          ],
+          "formula": "IF(C[-3]R[21]<>\"\",C[-3]R[21],C[-3]R[20])"
+        },
+        {
+          "cells": [
+            "E7"
+          ],
+          "formula": "IF(C[0]R[-1]=\"R1\",\"Begrensd leren en beslissen over een pilot\",IF(C[0]R[-1]=\"R2\",\"Volledige proportionele keuze voor standaardinzet\",IF(C[0]R[-1]=\"R3\",\"Zwaarder besluit met multidisciplinaire toets\",IF(C[0]R[-1]=\"R4\",\"Kritiek/formeel besluit met aanvullende beoordelingen\",\"Vul de routevragen in\"))))"
+        },
+        {
+          "cells": [
+            "E8"
+          ],
+          "formula": "IF(C[0]R[-2]=\"R1\",\"Alleen pilot/verkenning\",IF(OR(C[0]R[-2]=\"R2\",C[0]R[-2]=\"R3\",C[0]R[-2]=\"R4\"),\"Ja, mits alle toepasselijke eisen gereed zijn\",\"\"))"
+        },
+        {
+          "cells": [
+            "E9"
+          ],
+          "formula": "IF(OR(C[0]R[-3]=\"R3\",C[0]R[-3]=\"R4\"),\"Vereist\",IF(C[0]R[-3]=\"R2\",\"Aanbevolen\",\"Niet vereist\"))"
+        },
+        {
+          "cells": [
+            "E10"
+          ],
+          "formula": "IF(C[0]R[-4]=\"R4\",\"Ja, buiten PAM-AI waar nodig\",IF(C[0]R[-4]=\"R3\",\"Mogelijk, afhankelijk van context\",\"Niet standaard\"))"
+        },
+        {
+          "cells": [
+            "B26"
+          ],
+          "formula": "IF(COUNTBLANK(C[0]R[-7]:C[0]R[-1])>0,\"VUL ROUTEVRAGEN IN\",IF(OR(C[0]R[-7]=\"Kritiek\",C[0]R[-4]=\"Ja\"),\"R4\",IF(OR(C[0]R[-7]=\"Hoog\",C[0]R[-6]=\"Nee\",C[0]R[-5]=\"Ja\",C[0]R[-3]=\"Groot\",C[0]R[-2]=\"Ja\",C[0]R[-1]=\"Ja\"),\"R3\",IF(OR(C[0]R[-7]=\"Middel\",C[0]R[-6]=\"Gedeeltelijk\",C[0]R[-5]=\"Beperkt\",C[0]R[-4]=\"Mogelijk\",C[0]R[-3]=\"Middel\",C[0]R[-2]=\"Beperkt\",C[0]R[-1]=\"Mogelijk\"),\"R2\",\"R1\"))))"
+        },
+        {
+          "cells": [
+            "B35"
+          ],
+          "formula": "ROUNDUP((C[0]R[-2]^2*C[0]R[-4])/(1-C[0]R[-4]),0)"
+        },
+        {
+          "cells": [
+            "B36"
+          ],
+          "formula": "ROUNDUP((C[0]R[-3]^2*(1-C[0]R[-4]))/C[0]R[-4],0)"
+        },
+        {
+          "cells": [
+            "B37"
+          ],
+          "formula": "MAX(C[0]R[-3],C[0]R[-2],C[0]R[-1])"
+        }
+      ],
+      "formulaAttributes": [],
+      "mergedCells": [
+        "A1:H1",
+        "A2:H2",
+        "A4:B4",
+        "A18:B18",
+        "A30:B30",
+        "A39:B39",
+        "D4:H4",
+        "E11:H11",
+        "D13:H18"
+      ],
+      "hyperlinks": []
+    },
+    {
+      "name": "02_Kandidaten",
+      "state": "visible",
+      "part": "xl/worksheets/sheet3.xml",
+      "dimension": null,
+      "storedCells": 160,
+      "populatedCells": 21,
+      "formulas": 0,
+      "formulaFamilies": 0,
+      "dependencies": [],
+      "specialRefs": [],
+      "validations": [
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "B5:B12"
+          },
+          "formula1": "\"Niet-AI-baseline,AI-model,Hybride,Regelgebaseerd / klassieke ML,Anders\"",
+          "formula2": null
+        }
+      ],
+      "protection": [],
+      "hiddenRows": [],
+      "hiddenCols": [],
+      "formulaExtractionIdentical": true,
+      "rawPopulatedMissingInExtraction": [],
+      "formulaFamiliesDetail": [],
+      "formulaAttributes": [],
+      "mergedCells": [
+        "A1:J1",
+        "A2:J2",
+        "A14:J16"
+      ],
+      "hyperlinks": []
+    },
+    {
+      "name": "03_Poort1",
+      "state": "visible",
+      "part": "xl/worksheets/sheet4.xml",
+      "dimension": null,
+      "storedCells": 208,
+      "populatedCells": 40,
+      "formulas": 16,
+      "formulaFamilies": 2,
+      "dependencies": [
+        "02_Kandidaten"
+      ],
+      "specialRefs": [],
+      "validations": [
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "C5:J12"
+          },
+          "formula1": "\"PASS,CONDITIONAL,FAIL,UNKNOWN,N/A\"",
+          "formula2": null
+        }
+      ],
+      "protection": [],
+      "hiddenRows": [],
+      "hiddenCols": [],
+      "formulaExtractionIdentical": true,
+      "rawPopulatedMissingInExtraction": [],
+      "formulaFamiliesDetail": [
+        {
+          "cells": [
+            "B5",
+            "B6",
+            "B7",
+            "B8",
+            "B9",
+            "B10",
+            "B11",
+            "B12"
+          ],
+          "formula": "IFERROR(INDEX('02_Kandidaten'!CCR5:CCR12,MATCH(C[-1]R[0],'02_Kandidaten'!CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "M5",
+            "M6",
+            "M7",
+            "M8",
+            "M9",
+            "M10",
+            "M11",
+            "M12"
+          ],
+          "formula": "IF(C[-11]R[0]=\"\",\"\",IF(COUNTBLANK(C[-10]R[0]:C[-3]R[0])>0,\"INCOMPLETE\",IF(COUNTIF(C[-10]R[0]:C[-3]R[0],\"FAIL\")>0,\"FAIL\",IF(C[-2]R[0]=\"\",\"INCOMPLETE EVIDENCE\",IF(AND(COUNTIF(C[-10]R[0]:C[-3]R[0],\"CONDITIONAL\")>0,C[-1]R[0]=\"\"),\"CONDITION MISSING\",IF(AND(COUNTIF(C[-10]R[0]:C[-3]R[0],\"N/A\")>0,C[-1]R[0]=\"\"),\"RATIONALE MISSING\",IF(COUNTIF(C[-10]R[0]:C[-3]R[0],\"UNKNOWN\")>0,\"INCOMPLETE EVIDENCE\",IF(COUNTIF(C[-10]R[0]:C[-3]R[0],\"CONDITIONAL\")>0,\"CONDITIONAL\",\"PASS\"))))))))"
+        }
+      ],
+      "formulaAttributes": [],
+      "mergedCells": [
+        "A1:M1",
+        "A2:M2",
+        "A14:M16"
+      ],
+      "hyperlinks": []
+    },
+    {
+      "name": "04_Testontwerp",
+      "state": "visible",
+      "part": "xl/worksheets/sheet5.xml",
+      "dimension": null,
+      "storedCells": 234,
+      "populatedCells": 41,
+      "formulas": 0,
+      "formulaFamilies": 0,
+      "dependencies": [],
+      "specialRefs": [],
+      "validations": [
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "B10"
+          },
+          "formula1": "\"Ja,Nee,Gedeeltelijk,N.v.t.\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "E15:E20"
+          },
+          "formula1": "\"Ja,Nee\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "E25:E34"
+          },
+          "formula1": "\"Ja,Nee\"",
+          "formula2": null
+        }
+      ],
+      "protection": [],
+      "hiddenRows": [],
+      "hiddenCols": [],
+      "formulaExtractionIdentical": true,
+      "rawPopulatedMissingInExtraction": [],
+      "formulaFamiliesDetail": [],
+      "formulaAttributes": [],
+      "mergedCells": [
+        "A1:F1",
+        "A2:F2",
+        "A4:F4",
+        "B6:F6",
+        "B7:F7",
+        "B8:F8",
+        "B9:F9",
+        "B10:F10",
+        "A12:F12",
+        "A22:F22",
+        "A36:F39"
+      ],
+      "hyperlinks": []
+    },
+    {
+      "name": "05_Testcases",
+      "state": "visible",
+      "part": "xl/worksheets/sheet6.xml",
+      "dimension": null,
+      "storedCells": 550,
+      "populatedCells": 45,
+      "formulas": 20,
+      "formulaFamilies": 1,
+      "dependencies": [],
+      "specialRefs": [],
+      "validations": [
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "B6:B25"
+          },
+          "formula1": "\"C01,C02,C03,C04,C05,C06,C07,C08\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "D6:D25"
+          },
+          "formula1": "\"S01,S02,S03,S04,S05,S06,S07,S08,S09,S10\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "E6:F25"
+          },
+          "formula1": "\"0,1\"",
+          "formula2": null
+        }
+      ],
+      "protection": [],
+      "hiddenRows": [],
+      "hiddenCols": [],
+      "formulaExtractionIdentical": true,
+      "rawPopulatedMissingInExtraction": [],
+      "formulaFamiliesDetail": [
+        {
+          "cells": [
+            "V6",
+            "V7",
+            "V8",
+            "V9",
+            "V10",
+            "V11",
+            "V12",
+            "V13",
+            "V14",
+            "V15",
+            "V16",
+            "V17",
+            "V18",
+            "V19",
+            "V20",
+            "V21",
+            "V22",
+            "V23",
+            "V24",
+            "V25"
+          ],
+          "formula": "IF(C[-20]R[0]=\"\",\"\",IF(OR(C[-19]R[0]=\"\",C[-17]R[0]=\"\",C[-16]R[0]=\"\"),\"INCOMPLETE\",IF(COUNTIFS(CBR6:CBR2005,C[-20]R[0],CCR6:CCR2005,C[-19]R[0])>1,\"DUPLICATE\",\"OK\")))"
+        }
+      ],
+      "formulaAttributes": [],
+      "mergedCells": [
+        "A1:V1",
+        "A2:V2",
+        "A3:V3"
+      ],
+      "hyperlinks": []
+    },
+    {
+      "name": "06_Analyse",
+      "state": "visible",
+      "part": "xl/worksheets/sheet7.xml",
+      "dimension": null,
+      "storedCells": 527,
+      "populatedCells": 267,
+      "formulas": 216,
+      "formulaFamilies": 27,
+      "dependencies": [
+        "01_Intake",
+        "02_Kandidaten",
+        "03_Poort1",
+        "05_Testcases",
+        "07_Bewijs"
+      ],
+      "specialRefs": [],
+      "validations": [
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "N5:O12"
+          },
+          "formula1": "\"Ja,Nee,N.v.t.\"",
+          "formula2": null
+        }
+      ],
+      "protection": [],
+      "hiddenRows": [],
+      "hiddenCols": [],
+      "formulaExtractionIdentical": true,
+      "rawPopulatedMissingInExtraction": [],
+      "formulaFamiliesDetail": [
+        {
+          "cells": [
+            "B5",
+            "B6",
+            "B7",
+            "B8",
+            "B9",
+            "B10",
+            "B11",
+            "B12"
+          ],
+          "formula": "IFERROR(INDEX('02_Kandidaten'!CCR5:CCR12,MATCH(C[-1]R[0],'02_Kandidaten'!CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "C5",
+            "C6",
+            "C7",
+            "C8",
+            "C9",
+            "C10",
+            "C11",
+            "C12"
+          ],
+          "formula": "IFERROR(INDEX('03_Poort1'!CMR5:CMR12,MATCH(C[-2]R[0],'03_Poort1'!CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "D5",
+            "D6",
+            "D7",
+            "D8",
+            "D9",
+            "D10",
+            "D11",
+            "D12"
+          ],
+          "formula": "IF(C[-2]R[0]=\"\",\"\",COUNTIF('05_Testcases'!CBR6:CBR2005,C[-3]R[0]))"
+        },
+        {
+          "cells": [
+            "E5",
+            "E6",
+            "E7",
+            "E8",
+            "E9",
+            "E10",
+            "E11",
+            "E12"
+          ],
+          "formula": "IF(C[-3]R[0]=\"\",\"\",COUNTIFS('05_Testcases'!CBR6:CBR2005,C[-4]R[0],'05_Testcases'!CER6:CER2005,\"<>\",'05_Testcases'!CFR6:CFR2005,\"<>\"))"
+        },
+        {
+          "cells": [
+            "F5",
+            "F6",
+            "F7",
+            "F8",
+            "F9",
+            "F10",
+            "F11",
+            "F12"
+          ],
+          "formula": "IF(C[-4]R[0]=\"\",\"\",C[-2]R[0]-C[-1]R[0])"
+        },
+        {
+          "cells": [
+            "G5",
+            "G6",
+            "G7",
+            "G8",
+            "G9",
+            "G10",
+            "G11",
+            "G12"
+          ],
+          "formula": "IF(C[-5]R[0]=\"\",\"\",SUMIFS('05_Testcases'!CER6:CER2005,'05_Testcases'!CBR6:CBR2005,C[-6]R[0]))"
+        },
+        {
+          "cells": [
+            "H5",
+            "H6",
+            "H7",
+            "H8",
+            "H9",
+            "H10",
+            "H11",
+            "H12"
+          ],
+          "formula": "IF(OR(C[-6]R[0]=\"\",C[-3]R[0]=0),\"\",C[-1]R[0]/C[-3]R[0])"
+        },
+        {
+          "cells": [
+            "I5",
+            "I6",
+            "I7",
+            "I8",
+            "I9",
+            "I10",
+            "I11",
+            "I12"
+          ],
+          "formula": "IF(OR(C[-7]R[0]=\"\",C[-4]R[0]=0),\"\",(C[-1]R[0]+'01_Intake'!CBR33^2/(2*C[-4]R[0])-'01_Intake'!CBR33*SQRT((C[-1]R[0]*(1-C[-1]R[0])+'01_Intake'!CBR33^2/(4*C[-4]R[0]))/C[-4]R[0]))/(1+'01_Intake'!CBR33^2/C[-4]R[0]))"
+        },
+        {
+          "cells": [
+            "J5",
+            "J6",
+            "J7",
+            "J8",
+            "J9",
+            "J10",
+            "J11",
+            "J12"
+          ],
+          "formula": "IF(C[-8]R[0]=\"\",\"\",SUMIFS('05_Testcases'!CFR6:CFR2005,'05_Testcases'!CBR6:CBR2005,C[-9]R[0]))"
+        },
+        {
+          "cells": [
+            "K5",
+            "K6",
+            "K7",
+            "K8",
+            "K9",
+            "K10",
+            "K11",
+            "K12"
+          ],
+          "formula": "IF(OR(C[-9]R[0]=\"\",C[-6]R[0]=0),\"\",C[-1]R[0]/C[-6]R[0])"
+        },
+        {
+          "cells": [
+            "L5",
+            "L6",
+            "L7",
+            "L8",
+            "L9",
+            "L10",
+            "L11",
+            "L12"
+          ],
+          "formula": "IF(OR(C[-10]R[0]=\"\",C[-7]R[0]=0),\"\",(C[-1]R[0]+'01_Intake'!CBR33^2/(2*C[-7]R[0])+'01_Intake'!CBR33*SQRT((C[-1]R[0]*(1-C[-1]R[0])+'01_Intake'!CBR33^2/(4*C[-7]R[0]))/C[-7]R[0]))/(1+'01_Intake'!CBR33^2/C[-7]R[0]))"
+        },
+        {
+          "cells": [
+            "M5",
+            "M6",
+            "M7",
+            "M8",
+            "M9",
+            "M10",
+            "M11",
+            "M12"
+          ],
+          "formula": "IF(C[-11]R[0]=\"\",\"\",'01_Intake'!CBR37)"
+        },
+        {
+          "cells": [
+            "P5",
+            "P6",
+            "P7",
+            "P8",
+            "P9",
+            "P10",
+            "P11",
+            "P12"
+          ],
+          "formula": "IF(C[-14]R[0]=\"\",\"\",IF(AND(C[-13]R[0]<>\"PASS\",C[-13]R[0]<>\"CONDITIONAL\"),\"NOT ELIGIBLE\",IF(C[-10]R[0]>0,\"INCOMPLETE DATA\",IF(C[-11]R[0]=0,\"NO TEST DATA\",IF(OR(C[-8]R[0]<'01_Intake'!CBR31,C[-5]R[0]>'01_Intake'!CBR32),\"FAIL\",IF(OR(C[-11]R[0]<C[-3]R[0],C[-7]R[0]<'01_Intake'!CBR31,C[-4]R[0]>'01_Intake'!CBR32),\"MORE EVIDENCE\",IF(C[-2]R[0]<>\"Ja\",\"COVERAGE HOLD\",IF(C[-1]R[0]<>\"Ja\",\"RUBRIC HOLD\",\"PASS\"))))))))"
+        },
+        {
+          "cells": [
+            "Q5",
+            "Q6",
+            "Q7",
+            "Q8",
+            "Q9",
+            "Q10",
+            "Q11",
+            "Q12"
+          ],
+          "formula": "IF(C[-1]R[0]=\"\",\"\",IF(C[-1]R[0]=\"PASS\",\"Drempels en onzekerheidsgrenzen gehaald.\",IF(C[-1]R[0]=\"FAIL\",\"Waargenomen succes of critical-error-rate overschrijdt de norm.\",IF(C[-1]R[0]=\"MORE EVIDENCE\",\"Puntschatting kan passend zijn, maar omvang/zekerheid is nog onvoldoende.\",IF(C[-1]R[0]=\"INCOMPLETE DATA\",\"Vul finale uitkomst en critical-error-veld per taak in.\",IF(C[-1]R[0]=\"NO TEST DATA\",\"Voer vergelijkbare testcases uit.\",IF(C[-1]R[0]=\"COVERAGE HOLD\",\"Bevestig representatieve dekking.\",IF(C[-1]R[0]=\"RUBRIC HOLD\",\"Bevestig de betrouwbaarheid van de beoordeling.\",\"Los Poort 1 eerst op.\"))))))))"
+        },
+        {
+          "cells": [
+            "B18",
+            "B19",
+            "B20",
+            "B21",
+            "B22",
+            "B23",
+            "B24",
+            "B25"
+          ],
+          "formula": "IFERROR(INDEX(CBR5:CBR12,MATCH(C[-1]R[0],CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "C18",
+            "C19",
+            "C20",
+            "C21",
+            "C22",
+            "C23",
+            "C24",
+            "C25"
+          ],
+          "formula": "IF(OR(C[-1]R[0]=\"\",INDEX(CGR5:CGR12,MATCH(C[-2]R[0],CAR5:CAR12,0))=0),\"\",SUMIFS('05_Testcases'!CMR6:CMR2005,'05_Testcases'!CBR6:CBR2005,C[-2]R[0])/INDEX(CGR5:CGR12,MATCH(C[-2]R[0],CAR5:CAR12,0)))"
+        },
+        {
+          "cells": [
+            "D18",
+            "D19",
+            "D20",
+            "D21",
+            "D22",
+            "D23",
+            "D24",
+            "D25"
+          ],
+          "formula": "IF(OR(C[-2]R[0]=\"\",INDEX(CGR5:CGR12,MATCH(C[-3]R[0],CAR5:CAR12,0))=0),\"\",(SUMIFS('05_Testcases'!CJR6:CJR2005,'05_Testcases'!CBR6:CBR2005,C[-3]R[0])+SUMIFS('05_Testcases'!CKR6:CKR2005,'05_Testcases'!CBR6:CBR2005,C[-3]R[0]))/INDEX(CGR5:CGR12,MATCH(C[-3]R[0],CAR5:CAR12,0)))"
+        },
+        {
+          "cells": [
+            "E18",
+            "E19",
+            "E20",
+            "E21",
+            "E22",
+            "E23",
+            "E24",
+            "E25"
+          ],
+          "formula": "IF(OR(C[-3]R[0]=\"\",INDEX(CGR5:CGR12,MATCH(C[-4]R[0],CAR5:CAR12,0))=0),\"\",SUMIFS('05_Testcases'!CLR6:CLR2005,'05_Testcases'!CBR6:CBR2005,C[-4]R[0])/INDEX(CGR5:CGR12,MATCH(C[-4]R[0],CAR5:CAR12,0)))"
+        },
+        {
+          "cells": [
+            "F18",
+            "F19",
+            "F20",
+            "F21",
+            "F22",
+            "F23",
+            "F24",
+            "F25"
+          ],
+          "formula": "IF(OR(C[-4]R[0]=\"\",INDEX(CGR5:CGR12,MATCH(C[-5]R[0],CAR5:CAR12,0))=0),\"\",SUMIFS('05_Testcases'!CIR6:CIR2005,'05_Testcases'!CBR6:CBR2005,C[-5]R[0])/INDEX(CGR5:CGR12,MATCH(C[-5]R[0],CAR5:CAR12,0)))"
+        },
+        {
+          "cells": [
+            "G18",
+            "G19",
+            "G20",
+            "G21",
+            "G22",
+            "G23",
+            "G24",
+            "G25"
+          ],
+          "formula": "IFERROR(INDEX('07_Bewijs'!CFR5:CFR12,MATCH(C[-6]R[0],'07_Bewijs'!CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "H18",
+            "H19",
+            "H20",
+            "H21",
+            "H22",
+            "H23",
+            "H24",
+            "H25"
+          ],
+          "formula": "IFERROR(INDEX('07_Bewijs'!CHR5:CHR12,MATCH(C[-7]R[0],'07_Bewijs'!CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "I18",
+            "I19",
+            "I20",
+            "I21",
+            "I22",
+            "I23",
+            "I24",
+            "I25"
+          ],
+          "formula": "IFERROR(INDEX('07_Bewijs'!CJR5:CJR12,MATCH(C[-8]R[0],'07_Bewijs'!CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "J18",
+            "J19",
+            "J20",
+            "J21",
+            "J22",
+            "J23",
+            "J24",
+            "J25"
+          ],
+          "formula": "IF(C[-8]R[0]=\"\",\"\",IF('01_Intake'!CBR40<>\"Ja\",\"N/A\",IF(COUNTIF('05_Testcases'!CBR6:CBR2005,C[-9]R[0])=0,\"NO DATA\",IF(COUNTIFS('05_Testcases'!CBR6:CBR2005,C[-9]R[0],'05_Testcases'!CMR6:CMR2005,\"<>\")<COUNTIF('05_Testcases'!CBR6:CBR2005,C[-9]R[0]),\"INCOMPLETE\",\"COMPLETE\"))))"
+        },
+        {
+          "cells": [
+            "K18",
+            "K19",
+            "K20",
+            "K21",
+            "K22",
+            "K23",
+            "K24",
+            "K25"
+          ],
+          "formula": "IF(C[-9]R[0]=\"\",\"\",IF('01_Intake'!CBR41<>\"Ja\",\"N/A\",IF(COUNTIF('05_Testcases'!CBR6:CBR2005,C[-10]R[0])=0,\"NO DATA\",IF(OR(COUNTIFS('05_Testcases'!CBR6:CBR2005,C[-10]R[0],'05_Testcases'!CJR6:CJR2005,\"<>\")<COUNTIF('05_Testcases'!CBR6:CBR2005,C[-10]R[0]),COUNTIFS('05_Testcases'!CBR6:CBR2005,C[-10]R[0],'05_Testcases'!CKR6:CKR2005,\"<>\")<COUNTIF('05_Testcases'!CBR6:CBR2005,C[-10]R[0])),\"INCOMPLETE\",\"COMPLETE\"))))"
+        },
+        {
+          "cells": [
+            "L18",
+            "L19",
+            "L20",
+            "L21",
+            "L22",
+            "L23",
+            "L24",
+            "L25"
+          ],
+          "formula": "IF(C[-10]R[0]=\"\",\"\",IF('01_Intake'!CBR42<>\"Ja\",\"N/A\",IF(COUNTIF('05_Testcases'!CBR6:CBR2005,C[-11]R[0])=0,\"NO DATA\",IF(COUNTIFS('05_Testcases'!CBR6:CBR2005,C[-11]R[0],'05_Testcases'!CLR6:CLR2005,\"<>\")<COUNTIF('05_Testcases'!CBR6:CBR2005,C[-11]R[0]),\"INCOMPLETE\",\"COMPLETE\"))))"
+        },
+        {
+          "cells": [
+            "M18",
+            "M19",
+            "M20",
+            "M21",
+            "M22",
+            "M23",
+            "M24",
+            "M25"
+          ],
+          "formula": "IFERROR(INDEX('07_Bewijs'!CQR5:CQR12,MATCH(C[-12]R[0],'07_Bewijs'!CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "N18",
+            "N19",
+            "N20",
+            "N21",
+            "N22",
+            "N23",
+            "N24",
+            "N25"
+          ],
+          "formula": "IF(C[-12]R[0]=\"\",\"\",IF(OR(AND('01_Intake'!CBR40=\"Ja\",C[-4]R[0]<>\"COMPLETE\"),AND('01_Intake'!CBR41=\"Ja\",C[-3]R[0]<>\"COMPLETE\"),AND('01_Intake'!CBR42=\"Ja\",C[-2]R[0]<>\"COMPLETE\"),AND('01_Intake'!CBR43=\"Ja\",C[-1]R[0]<>\"COMPLETE\")),\"INSUFFICIENT EVIDENCE\",\"SUFFICIENT FOR REVIEW\"))"
+        }
+      ],
+      "formulaAttributes": [],
+      "mergedCells": [
+        "A1:Q1",
+        "A2:Q2",
+        "A15:N15",
+        "A28:Q31"
+      ],
+      "hyperlinks": []
+    },
+    {
+      "name": "07_Bewijs",
+      "state": "visible",
+      "part": "xl/worksheets/sheet8.xml",
+      "dimension": null,
+      "storedCells": 629,
+      "populatedCells": 117,
+      "formulas": 80,
+      "formulaFamilies": 10,
+      "dependencies": [
+        "01_Intake",
+        "02_Kandidaten",
+        "05_Testcases"
+      ],
+      "specialRefs": [],
+      "validations": [
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "M5:M12"
+          },
+          "formula1": "\"A,B,C,U\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "N5:N12"
+          },
+          "formula1": "\"Ja,Nee\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "O5:O12"
+          },
+          "formula1": "\"Ja,Nee,N.v.t.\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "F18:F37"
+          },
+          "formula1": "\"A,B,C,U\"",
+          "formula2": null
+        }
+      ],
+      "protection": [],
+      "hiddenRows": [],
+      "hiddenCols": [],
+      "formulaExtractionIdentical": true,
+      "rawPopulatedMissingInExtraction": [],
+      "formulaFamiliesDetail": [
+        {
+          "cells": [
+            "B5",
+            "B6",
+            "B7",
+            "B8",
+            "B9",
+            "B10",
+            "B11",
+            "B12"
+          ],
+          "formula": "IFERROR(INDEX('02_Kandidaten'!CCR5:CCR12,MATCH(C[-1]R[0],'02_Kandidaten'!CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "C5",
+            "C6",
+            "C7",
+            "C8",
+            "C9",
+            "C10",
+            "C11",
+            "C12"
+          ],
+          "formula": "IF(C[-1]R[0]=\"\",\"\",COUNTIF('05_Testcases'!CBR6:CBR2005,C[-2]R[0]))"
+        },
+        {
+          "cells": [
+            "D5",
+            "D6",
+            "D7",
+            "D8",
+            "D9",
+            "D10",
+            "D11",
+            "D12"
+          ],
+          "formula": "IF(C[-2]R[0]=\"\",\"\",SUMIFS('05_Testcases'!CER6:CER2005,'05_Testcases'!CBR6:CBR2005,C[-3]R[0]))"
+        },
+        {
+          "cells": [
+            "E5",
+            "E6",
+            "E7",
+            "E8",
+            "E9",
+            "E10",
+            "E11",
+            "E12"
+          ],
+          "formula": "IF(C[-3]R[0]=\"\",\"\",SUMIFS('05_Testcases'!CQR6:CQR2005,'05_Testcases'!CBR6:CBR2005,C[-4]R[0]))"
+        },
+        {
+          "cells": [
+            "F5",
+            "F6",
+            "F7",
+            "F8",
+            "F9",
+            "F10",
+            "F11",
+            "F12"
+          ],
+          "formula": "IF(OR(C[-4]R[0]=\"\",C[-2]R[0]=0),\"\",C[-1]R[0]/C[-2]R[0])"
+        },
+        {
+          "cells": [
+            "G5",
+            "G6",
+            "G7",
+            "G8",
+            "G9",
+            "G10",
+            "G11",
+            "G12"
+          ],
+          "formula": "IF(C[-5]R[0]=\"\",\"\",SUMIFS('05_Testcases'!CRR6:CRR2005,'05_Testcases'!CBR6:CBR2005,C[-6]R[0]))"
+        },
+        {
+          "cells": [
+            "H5",
+            "H6",
+            "H7",
+            "H8",
+            "H9",
+            "H10",
+            "H11",
+            "H12"
+          ],
+          "formula": "IF(OR(C[-6]R[0]=\"\",C[-4]R[0]=0),\"\",C[-1]R[0]/C[-4]R[0])"
+        },
+        {
+          "cells": [
+            "I5",
+            "I6",
+            "I7",
+            "I8",
+            "I9",
+            "I10",
+            "I11",
+            "I12"
+          ],
+          "formula": "IF(C[-7]R[0]=\"\",\"\",SUMIFS('05_Testcases'!CSR6:CSR2005,'05_Testcases'!CBR6:CBR2005,C[-8]R[0]))"
+        },
+        {
+          "cells": [
+            "J5",
+            "J6",
+            "J7",
+            "J8",
+            "J9",
+            "J10",
+            "J11",
+            "J12"
+          ],
+          "formula": "IF(OR(C[-8]R[0]=\"\",C[-6]R[0]=0),\"\",C[-1]R[0]/C[-6]R[0])"
+        },
+        {
+          "cells": [
+            "Q5",
+            "Q6",
+            "Q7",
+            "Q8",
+            "Q9",
+            "Q10",
+            "Q11",
+            "Q12"
+          ],
+          "formula": "IF(C[-15]R[0]=\"\",\"\",IF('01_Intake'!CBR43<>\"Ja\",\"N/A\",IF(C[-14]R[0]=0,\"NO DATA\",IF(OR(COUNTIFS('05_Testcases'!CBR6:CBR2005,C[-16]R[0],'05_Testcases'!CQR6:CQR2005,\"<>\")<C[-14]R[0],COUNTIFS('05_Testcases'!CBR6:CBR2005,C[-16]R[0],'05_Testcases'!CRR6:CRR2005,\"<>\")<C[-14]R[0],COUNTIFS('05_Testcases'!CBR6:CBR2005,C[-16]R[0],'05_Testcases'!CSR6:CSR2005,\"<>\")<C[-14]R[0]),\"INCOMPLETE DATA\",IF(OR(C[-6]R[0]=\"\",C[-5]R[0]=\"\",C[-4]R[0]=\"\",C[-3]R[0]=\"\",C[-2]R[0]=\"\",C[-1]R[0]=\"\"),\"INCOMPLETE EVIDENCE\",IF(C[-3]R[0]<>\"Ja\",\"NOT COMPARABLE\",\"COMPLETE\"))))))"
+        }
+      ],
+      "formulaAttributes": [],
+      "mergedCells": [
+        "A1:Q1",
+        "A2:Q2",
+        "A15:H15",
+        "J15:Q20"
+      ],
+      "hyperlinks": []
+    },
+    {
+      "name": "08_Vergelijking",
+      "state": "visible",
+      "part": "xl/worksheets/sheet9.xml",
+      "dimension": null,
+      "storedCells": 551,
+      "populatedCells": 206,
+      "formulas": 139,
+      "formulaFamilies": 33,
+      "dependencies": [
+        "06_Analyse"
+      ],
+      "specialRefs": [],
+      "validations": [
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "P5:P12"
+          },
+          "formula1": "\"FRONTIER,DOMINATED,UNDETERMINED,NOT ELIGIBLE\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "Q5:Q12"
+          },
+          "formula1": "\"PROPORTIONATE,NOT PROPORTIONATE,CONDITIONAL,UNDETERMINED,MULTIPLE PROPORTIONAL OPTIONS\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "S5:S12"
+          },
+          "formula1": "\"Ja,Nee\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "B17:B18"
+          },
+          "formula1": "\"C01,C02,C03,C04,C05,C06,C07,C08\"",
+          "formula2": null
+        }
+      ],
+      "protection": [],
+      "hiddenRows": [],
+      "hiddenCols": [],
+      "formulaExtractionIdentical": true,
+      "rawPopulatedMissingInExtraction": [],
+      "formulaFamiliesDetail": [
+        {
+          "cells": [
+            "B5",
+            "B6",
+            "B7",
+            "B8",
+            "B9",
+            "B10",
+            "B11",
+            "B12"
+          ],
+          "formula": "IFERROR(INDEX('06_Analyse'!CBR5:CBR12,MATCH(C[-1]R[0],'06_Analyse'!CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "C5",
+            "C6",
+            "C7",
+            "C8",
+            "C9",
+            "C10",
+            "C11",
+            "C12"
+          ],
+          "formula": "IFERROR(INDEX('06_Analyse'!CCR5:CCR12,MATCH(C[-2]R[0],'06_Analyse'!CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "D5",
+            "D6",
+            "D7",
+            "D8",
+            "D9",
+            "D10",
+            "D11",
+            "D12"
+          ],
+          "formula": "IFERROR(INDEX('06_Analyse'!CPR5:CPR12,MATCH(C[-3]R[0],'06_Analyse'!CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "E5",
+            "E6",
+            "E7",
+            "E8",
+            "E9",
+            "E10",
+            "E11",
+            "E12"
+          ],
+          "formula": "IFERROR(INDEX('06_Analyse'!CIR5:CIR12,MATCH(C[-4]R[0],'06_Analyse'!CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "F5",
+            "F6",
+            "F7",
+            "F8",
+            "F9",
+            "F10",
+            "F11",
+            "F12"
+          ],
+          "formula": "IFERROR(INDEX('06_Analyse'!CLR5:CLR12,MATCH(C[-5]R[0],'06_Analyse'!CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "G5",
+            "G6",
+            "G7",
+            "G8",
+            "G9",
+            "G10",
+            "G11",
+            "G12"
+          ],
+          "formula": "IFERROR(INDEX('06_Analyse'!CCR18:CCR25,MATCH(C[-6]R[0],'06_Analyse'!CAR18:CAR25,0)),\"\")"
+        },
+        {
+          "cells": [
+            "H5",
+            "H6",
+            "H7",
+            "H8",
+            "H9",
+            "H10",
+            "H11",
+            "H12"
+          ],
+          "formula": "IFERROR(INDEX('06_Analyse'!CDR18:CDR25,MATCH(C[-7]R[0],'06_Analyse'!CAR18:CAR25,0)),\"\")"
+        },
+        {
+          "cells": [
+            "I5",
+            "I6",
+            "I7",
+            "I8",
+            "I9",
+            "I10",
+            "I11",
+            "I12"
+          ],
+          "formula": "IFERROR(INDEX('06_Analyse'!CER18:CER25,MATCH(C[-8]R[0],'06_Analyse'!CAR18:CAR25,0)),\"\")"
+        },
+        {
+          "cells": [
+            "J5",
+            "J6",
+            "J7",
+            "J8",
+            "J9",
+            "J10",
+            "J11",
+            "J12"
+          ],
+          "formula": "IFERROR(INDEX('06_Analyse'!CFR18:CFR25,MATCH(C[-9]R[0],'06_Analyse'!CAR18:CAR25,0)),\"\")"
+        },
+        {
+          "cells": [
+            "K5",
+            "K6",
+            "K7",
+            "K8",
+            "K9",
+            "K10",
+            "K11",
+            "K12"
+          ],
+          "formula": "IFERROR(INDEX('06_Analyse'!CGR18:CGR25,MATCH(C[-10]R[0],'06_Analyse'!CAR18:CAR25,0)),\"\")"
+        },
+        {
+          "cells": [
+            "L5",
+            "L6",
+            "L7",
+            "L8",
+            "L9",
+            "L10",
+            "L11",
+            "L12"
+          ],
+          "formula": "IFERROR(INDEX('06_Analyse'!CHR18:CHR25,MATCH(C[-11]R[0],'06_Analyse'!CAR18:CAR25,0)),\"\")"
+        },
+        {
+          "cells": [
+            "M5",
+            "M6",
+            "M7",
+            "M8",
+            "M9",
+            "M10",
+            "M11",
+            "M12"
+          ],
+          "formula": "IFERROR(INDEX('06_Analyse'!CIR18:CIR25,MATCH(C[-12]R[0],'06_Analyse'!CAR18:CAR25,0)),\"\")"
+        },
+        {
+          "cells": [
+            "N5",
+            "N6",
+            "N7",
+            "N8",
+            "N9",
+            "N10",
+            "N11",
+            "N12"
+          ],
+          "formula": "IFERROR(INDEX('06_Analyse'!CMR18:CMR25,MATCH(C[-13]R[0],'06_Analyse'!CAR18:CAR25,0)),\"\")"
+        },
+        {
+          "cells": [
+            "O5",
+            "O6",
+            "O7",
+            "O8",
+            "O9",
+            "O10",
+            "O11",
+            "O12"
+          ],
+          "formula": "IFERROR(INDEX('06_Analyse'!CNR18:CNR25,MATCH(C[-14]R[0],'06_Analyse'!CAR18:CAR25,0)),\"\")"
+        },
+        {
+          "cells": [
+            "B21"
+          ],
+          "formula": "IFERROR(INDEX(CER5:CER12,MATCH(CBR17,CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "C21"
+          ],
+          "formula": "IFERROR(INDEX(CER5:CER12,MATCH(CBR18,CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "D21",
+            "D22",
+            "D23",
+            "D24",
+            "D25",
+            "D26",
+            "D27",
+            "D28",
+            "D29"
+          ],
+          "formula": "IF(OR(C[-2]R[0]=\"\",C[-1]R[0]=\"\"),\"\",C[-2]R[0]-C[-1]R[0])"
+        },
+        {
+          "cells": [
+            "B22"
+          ],
+          "formula": "IFERROR(INDEX(CFR5:CFR12,MATCH(CBR17,CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "C22"
+          ],
+          "formula": "IFERROR(INDEX(CFR5:CFR12,MATCH(CBR18,CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "B23"
+          ],
+          "formula": "IFERROR(INDEX(CGR5:CGR12,MATCH(CBR17,CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "C23"
+          ],
+          "formula": "IFERROR(INDEX(CGR5:CGR12,MATCH(CBR18,CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "B24"
+          ],
+          "formula": "IFERROR(INDEX(CHR5:CHR12,MATCH(CBR17,CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "C24"
+          ],
+          "formula": "IFERROR(INDEX(CHR5:CHR12,MATCH(CBR18,CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "B25"
+          ],
+          "formula": "IFERROR(INDEX(CIR5:CIR12,MATCH(CBR17,CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "C25"
+          ],
+          "formula": "IFERROR(INDEX(CIR5:CIR12,MATCH(CBR18,CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "B26"
+          ],
+          "formula": "IFERROR(INDEX(CJR5:CJR12,MATCH(CBR17,CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "C26"
+          ],
+          "formula": "IFERROR(INDEX(CJR5:CJR12,MATCH(CBR18,CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "B27"
+          ],
+          "formula": "IFERROR(INDEX(CKR5:CKR12,MATCH(CBR17,CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "C27"
+          ],
+          "formula": "IFERROR(INDEX(CKR5:CKR12,MATCH(CBR18,CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "B28"
+          ],
+          "formula": "IFERROR(INDEX(CLR5:CLR12,MATCH(CBR17,CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "C28"
+          ],
+          "formula": "IFERROR(INDEX(CLR5:CLR12,MATCH(CBR18,CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "B29"
+          ],
+          "formula": "IFERROR(INDEX(CMR5:CMR12,MATCH(CBR17,CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "C29"
+          ],
+          "formula": "IFERROR(INDEX(CMR5:CMR12,MATCH(CBR18,CAR5:CAR12,0)),\"\")"
+        }
+      ],
+      "formulaAttributes": [],
+      "mergedCells": [
+        "A1:S1",
+        "A2:S2",
+        "A15:F15",
+        "G15:S15",
+        "G24:S27"
+      ],
+      "hyperlinks": []
+    },
+    {
+      "name": "09_Besluit",
+      "state": "visible",
+      "part": "xl/worksheets/sheet10.xml",
+      "dimension": null,
+      "storedCells": 384,
+      "populatedCells": 45,
+      "formulas": 16,
+      "formulaFamilies": 16,
+      "dependencies": [
+        "01_Intake",
+        "08_Vergelijking"
+      ],
+      "specialRefs": [],
+      "validations": [
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "B6"
+          },
+          "formula1": "\"C01,C02,C03,C04,C05,C06,C07,C08\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "B8"
+          },
+          "formula1": "\"Verkenning,Gecontroleerde pilot,Gedeeltelijke proportionaliteitsafweging,Volledige proportionaliteitsafweging\"",
+          "formula2": null
+        }
+      ],
+      "protection": [],
+      "hiddenRows": [],
+      "hiddenCols": [],
+      "formulaExtractionIdentical": true,
+      "rawPopulatedMissingInExtraction": [],
+      "formulaFamiliesDetail": [
+        {
+          "cells": [
+            "B7"
+          ],
+          "formula": "IFERROR(INDEX('08_Vergelijking'!CBR5:CBR12,MATCH(C[0]R[-1],'08_Vergelijking'!CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "B8"
+          ],
+          "formula": "IF('01_Intake'!CBR16=\"\",\"\",'01_Intake'!CBR16)"
+        },
+        {
+          "cells": [
+            "B9"
+          ],
+          "formula": "IF('01_Intake'!CBR27<>\"\",'01_Intake'!CBR27,'01_Intake'!CBR26)"
+        },
+        {
+          "cells": [
+            "B10"
+          ],
+          "formula": "IFERROR(INDEX('08_Vergelijking'!CCR5:CCR12,MATCH(C[0]R[-4],'08_Vergelijking'!CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "B11"
+          ],
+          "formula": "IFERROR(INDEX('08_Vergelijking'!CDR5:CDR12,MATCH(C[0]R[-5],'08_Vergelijking'!CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "B12"
+          ],
+          "formula": "IFERROR(INDEX('08_Vergelijking'!COR5:COR12,MATCH(C[0]R[-6],'08_Vergelijking'!CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "B13"
+          ],
+          "formula": "IFERROR(INDEX('08_Vergelijking'!CQR5:CQR12,MATCH(C[0]R[-7],'08_Vergelijking'!CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "B14"
+          ],
+          "formula": "IFERROR(INDEX('08_Vergelijking'!CSR5:CSR12,MATCH(C[0]R[-8],'08_Vergelijking'!CAR5:CAR12,0)),\"\")"
+        },
+        {
+          "cells": [
+            "B38"
+          ],
+          "formula": "IF('01_Intake'!CBR13=\"\",\"\",'01_Intake'!CBR13)"
+        },
+        {
+          "cells": [
+            "B39"
+          ],
+          "formula": "IF('01_Intake'!CBR15=\"\",\"\",'01_Intake'!CBR15)"
+        },
+        {
+          "cells": [
+            "E39"
+          ],
+          "formula": "IF('01_Intake'!CBR45=\"\",\"\",'01_Intake'!CBR45)"
+        },
+        {
+          "cells": [
+            "B40"
+          ],
+          "formula": "IF(OR(C[0]R[-1]=\"\",C[3]R[-1]=\"\"),\"\",C[0]R[-1]+C[3]R[-1])"
+        },
+        {
+          "cells": [
+            "B41"
+          ],
+          "formula": "IF('01_Intake'!CBR46=\"\",\"\",'01_Intake'!CBR46)"
+        },
+        {
+          "cells": [
+            "B44"
+          ],
+          "formula": "IF(AND(C[0]R[-26]<>\"\",C[0]R[-23]<>\"\",C[0]R[-20]<>\"\",C[0]R[-17]<>\"\",C[0]R[-11]<>\"\",C[0]R[-6]<>\"\",C[0]R[-5]<>\"\",C[0]R[-3]<>\"\",IF(OR(C[0]R[-35]=\"R3\",C[0]R[-35]=\"R4\"),C[3]R[-6]<>\"\",TRUE),IF(OR(C[0]R[-34]=\"CONDITIONAL\",AND(C[0]R[-33]<>\"PASS\",C[0]R[-33]<>\"\")),C[0]R[-14]<>\"\",TRUE)),\"COMPLETE\",\"INCOMPLETE\")"
+        },
+        {
+          "cells": [
+            "B46"
+          ],
+          "formula": "IF(C[0]R[-40]=\"\",\"DRAFT\",IF(OR(C[0]R[-36]=\"\",C[0]R[-35]=\"\"),\"DRAFT\",IF(OR(C[0]R[-36]=\"FAIL\",C[0]R[-36]=\"INCOMPLETE\",C[0]R[-36]=\"INCOMPLETE EVIDENCE\",C[0]R[-36]=\"CONDITION MISSING\",C[0]R[-36]=\"RATIONALE MISSING\",C[0]R[-35]=\"FAIL\",C[0]R[-35]=\"NOT ELIGIBLE\",C[0]R[-35]=\"INCOMPLETE DATA\",C[0]R[-35]=\"NO TEST DATA\"),\"HOLD\",IF(OR(C[0]R[-38]=\"Verkenning\",C[0]R[-38]=\"Gecontroleerde pilot\"),IF(C[0]R[-2]<>\"COMPLETE\",\"DRAFT\",IF(C[0]R[-35]=\"PASS\",\"PILOT-READY\",IF(C[0]R[-16]<>\"\",\"PILOT WITH CONDITIONS\",\"DRAFT\"))),IF(AND(C[0]R[-36]=\"PASS\",C[0]R[-35]=\"PASS\",C[0]R[-34]=\"SUFFICIENT FOR REVIEW\",OR(C[0]R[-33]=\"PROPORTIONATE\",C[0]R[-33]=\"MULTIPLE PROPORTIONAL OPTIONS\"),C[0]R[-32]=\"Ja\",C[0]R[-2]=\"COMPLETE\"),\"DECISION-READY\",\"HOLD\")))))"
+        },
+        {
+          "cells": [
+            "B47"
+          ],
+          "formula": "IF(C[0]R[-1]=\"DECISION-READY\",\"Alle toepasselijke gates, bewijsvereisten en governancevelden zijn gereed.\",IF(C[0]R[-1]=\"PILOT-READY\",\"Gereed voor de begrensde pilot/verkenning — niet voor bredere invoering.\",IF(C[0]R[-1]=\"PILOT WITH CONDITIONS\",\"Pilot alleen binnen de vastgelegde voorwaarden en met expliciete onzekerheden.\",IF(C[0]R[-1]=\"HOLD\",\"Niet besluiten voordat de blokkerende gate of bewijsvereiste is opgelost.\",\"Vul het besluitrecord en eventuele voorwaarden aan.\"))))"
+        }
+      ],
+      "formulaAttributes": [],
+      "mergedCells": [
+        "A1:H1",
+        "A2:H2",
+        "A4:H4",
+        "A16:H16",
+        "A18:A19",
+        "B18:H19",
+        "A21:A22",
+        "B21:H22",
+        "A24:A25",
+        "B24:H25",
+        "A27:A28",
+        "B27:H28",
+        "A30:A31",
+        "B30:H31",
+        "A33:A35",
+        "B33:H35",
+        "A37:H37",
+        "B41:H42",
+        "B47:H48"
+      ],
+      "hyperlinks": []
+    },
+    {
+      "name": "10_Validatie",
+      "state": "visible",
+      "part": "xl/worksheets/sheet11.xml",
+      "dimension": null,
+      "storedCells": 400,
+      "populatedCells": 133,
+      "formulas": 0,
+      "formulaFamilies": 0,
+      "dependencies": [],
+      "specialRefs": [],
+      "validations": [
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "F5:F19"
+          },
+          "formula1": "\"Ja,Nee,N.v.t.\"",
+          "formula2": null
+        },
+        {
+          "attributes": {
+            "type": "list",
+            "sqref": "E25:E29"
+          },
+          "formula1": "\"PASS,FAIL,NOG TESTEN\"",
+          "formula2": null
+        }
+      ],
+      "protection": [],
+      "hiddenRows": [],
+      "hiddenCols": [],
+      "formulaExtractionIdentical": true,
+      "rawPopulatedMissingInExtraction": [],
+      "formulaFamiliesDetail": [],
+      "formulaAttributes": [],
+      "mergedCells": [
+        "A1:H1",
+        "A2:H2",
+        "A22:H22",
+        "A32:H32",
+        "B34:H34",
+        "B35:H35",
+        "B36:H36",
+        "B37:H37",
+        "B38:H38",
+        "B39:H39",
+        "B40:H40",
+        "A43:H43",
+        "A45:H50"
+      ],
+      "hyperlinks": []
+    }
+  ],
+  "names": [],
+  "externalParts": [
+    "xl/comments1.xml",
+    "xl/threadedcomments/threadedcomment.xml",
+    "xl/comments2.xml",
+    "xl/threadedcomments/threadedcomment2.xml",
+    "xl/comments3.xml",
+    "xl/threadedcomments/threadedcomment3.xml",
+    "xl/comments4.xml",
+    "xl/threadedcomments/threadedcomment4.xml",
+    "xl/comments5.xml",
+    "xl/threadedcomments/threadedcomment5.xml",
+    "xl/comments6.xml",
+    "xl/threadedcomments/threadedcomment6.xml",
+    "xl/comments7.xml",
+    "xl/threadedcomments/threadedcomment7.xml"
+  ],
+  "formulaErrors": [],
+  "familyExceptions": [],
+  "workbookProperties": {},
+  "relationshipsExternal": [],
+  "tables": [
+    {
+      "part": "xl/tables/table1.xml",
+      "attributes": {
+        "id": "1",
+        "name": "KandidatenTable",
+        "displayName": "KandidatenTable",
+        "ref": "A4:J12",
+        "headerRowCount": "1",
+        "totalsRowCount": "0",
+        "totalsRowShown": "0"
+      },
+      "columns": [
+        {
+          "attributes": {
+            "id": "1",
+            "name": "Kandidaat-ID"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "2",
+            "name": "Type"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "3",
+            "name": "Korte naam"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "4",
+            "name": "Provider / model / component"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "5",
+            "name": "Versie"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "6",
+            "name": "Deployment / regio"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "7",
+            "name": "Instellingen, tools, RAG, agents"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "8",
+            "name": "Testdatum"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "9",
+            "name": "Fingerprint / build"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "10",
+            "name": "Notities"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        }
+      ]
+    },
+    {
+      "part": "xl/tables/table2.xml",
+      "attributes": {
+        "id": "2",
+        "name": "Poort1Table",
+        "displayName": "Poort1Table",
+        "ref": "A4:M12",
+        "headerRowCount": "1",
+        "totalsRowCount": "0",
+        "totalsRowShown": "0"
+      },
+      "columns": [
+        {
+          "attributes": {
+            "id": "1",
+            "name": "Kandidaat-ID"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "2",
+            "name": "Naam"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "3",
+            "name": "Wet / verboden / sector"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "4",
+            "name": "Privacy / data"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "5",
+            "name": "Security / vertrouwelijkheid"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "6",
+            "name": "Rechten / inclusie / toegankelijkheid"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "7",
+            "name": "Menselijke verantwoordelijkheid / transparantie"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "8",
+            "name": "Provider / IP / contract"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "9",
+            "name": "Logging / incident / corrigeerbaarheid"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "10",
+            "name": "Continuïteit / exit / goedgekeurde omgeving"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "11",
+            "name": "Bewijs-ID's / bronnen"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "12",
+            "name": "Voorwaarden of N.v.t.-motivering"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "13",
+            "name": "Poort 1"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        }
+      ]
+    },
+    {
+      "part": "xl/tables/table3.xml",
+      "attributes": {
+        "id": "3",
+        "name": "AcceptatieTable",
+        "displayName": "AcceptatieTable",
+        "ref": "A14:F20",
+        "headerRowCount": "1",
+        "totalsRowCount": "0",
+        "totalsRowShown": "0"
+      },
+      "columns": [
+        {
+          "attributes": {
+            "id": "1",
+            "name": "Criterium-ID"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "2",
+            "name": "Criterium"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "3",
+            "name": "Hoe beoordeeld?"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "4",
+            "name": "Minimum / regel"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "5",
+            "name": "Critical bij schending?"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "6",
+            "name": "Bewijs / toelichting"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        }
+      ]
+    },
+    {
+      "part": "xl/tables/table4.xml",
+      "attributes": {
+        "id": "4",
+        "name": "StrataTable",
+        "displayName": "StrataTable",
+        "ref": "A24:F34",
+        "headerRowCount": "1",
+        "totalsRowCount": "0",
+        "totalsRowShown": "0"
+      },
+      "columns": [
+        {
+          "attributes": {
+            "id": "1",
+            "name": "Stratum-ID"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "2",
+            "name": "Groep / situatie"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "3",
+            "name": "Waarom relevant?"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "4",
+            "name": "Doel-n per kandidaat"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "5",
+            "name": "Verplicht?"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "6",
+            "name": "Dekkingsnotitie"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        }
+      ]
+    },
+    {
+      "part": "xl/tables/table5.xml",
+      "attributes": {
+        "id": "5",
+        "name": "TestcasesTable",
+        "displayName": "TestcasesTable",
+        "ref": "A5:V25",
+        "headerRowCount": "1",
+        "totalsRowCount": "0",
+        "totalsRowShown": "0"
+      },
+      "columns": [
+        {
+          "attributes": {
+            "id": "1",
+            "name": "Run_ID"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "2",
+            "name": "Candidate_ID"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "3",
+            "name": "Test_Case_ID"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "4",
+            "name": "Stratum_ID"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "5",
+            "name": "Final_Accepted_1_0"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "6",
+            "name": "Any_Critical_Error_1_0"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "7",
+            "name": "Quality_score_optional"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "8",
+            "name": "Model_calls_total"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "9",
+            "name": "Retries_total"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "10",
+            "name": "Verify_min_total"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "11",
+            "name": "Correct_recover_min_total"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "12",
+            "name": "Latency_sec_total"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "13",
+            "name": "Direct_cost_EUR_total"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "14",
+            "name": "Input_tokens_total"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "15",
+            "name": "Output_tokens_total"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "16",
+            "name": "Reasoning_tokens_total"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "17",
+            "name": "Energy_kWh_total"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "18",
+            "name": "Carbon_gCO2e_total"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "19",
+            "name": "Water_L_total"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "20",
+            "name": "Evidence_ID"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "21",
+            "name": "Notes"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "22",
+            "name": "Rijcontrole"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        }
+      ]
+    },
+    {
+      "part": "xl/tables/table6.xml",
+      "attributes": {
+        "id": "8",
+        "name": "Poort2Table",
+        "displayName": "Poort2Table",
+        "ref": "A4:Q12",
+        "headerRowCount": "1",
+        "totalsRowCount": "0",
+        "totalsRowShown": "0"
+      },
+      "columns": [
+        {
+          "attributes": {
+            "id": "1",
+            "name": "Kandidaat-ID"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "2",
+            "name": "Naam"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "3",
+            "name": "Poort 1"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "4",
+            "name": "Rijen ingevoerd"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "5",
+            "name": "Complete taken"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "6",
+            "name": "Incomplete velden"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "7",
+            "name": "Geaccepteerd"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "8",
+            "name": "Succes"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "9",
+            "name": "Wilson LCB"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "10",
+            "name": "Critical errors"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "11",
+            "name": "Critical rate"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "12",
+            "name": "Wilson UCB"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "13",
+            "name": "Bewijsbodem n"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "14",
+            "name": "Dekking compleet?"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "15",
+            "name": "Rubric betrouwbaar?"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "16",
+            "name": "Poort 2"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "17",
+            "name": "Uitleg"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        }
+      ]
+    },
+    {
+      "part": "xl/tables/table7.xml",
+      "attributes": {
+        "id": "9",
+        "name": "LastenTable",
+        "displayName": "LastenTable",
+        "ref": "A17:N25",
+        "headerRowCount": "1",
+        "totalsRowCount": "0",
+        "totalsRowShown": "0"
+      },
+      "columns": [
+        {
+          "attributes": {
+            "id": "1",
+            "name": "Kandidaat-ID"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "2",
+            "name": "Naam"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "3",
+            "name": "EUR / geaccepteerd"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "4",
+            "name": "Mensmin / geaccepteerd"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "5",
+            "name": "Sec / geaccepteerd"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "6",
+            "name": "Retries / geaccepteerd"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "7",
+            "name": "kWh / geaccepteerd"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "8",
+            "name": "gCO2e / geaccepteerd"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "9",
+            "name": "Water L / geaccepteerd"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "10",
+            "name": "Kosten compleet"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "11",
+            "name": "Mens compleet"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "12",
+            "name": "Latentie compleet"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "13",
+            "name": "Milieubewijs"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "14",
+            "name": "Numeriek bewijs"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        }
+      ]
+    },
+    {
+      "part": "xl/tables/table8.xml",
+      "attributes": {
+        "id": "6",
+        "name": "MilieubewijsTable",
+        "displayName": "MilieubewijsTable",
+        "ref": "A4:Q12",
+        "headerRowCount": "1",
+        "totalsRowCount": "0",
+        "totalsRowShown": "0"
+      },
+      "columns": [
+        {
+          "attributes": {
+            "id": "1",
+            "name": "Kandidaat-ID"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "2",
+            "name": "Naam"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "3",
+            "name": "Taken"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "4",
+            "name": "Geaccepteerd"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "5",
+            "name": "Energie totaal kWh"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "6",
+            "name": "kWh / geaccepteerd"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "7",
+            "name": "CO2e totaal g"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "8",
+            "name": "gCO2e / geaccepteerd"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "9",
+            "name": "Water totaal L"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "10",
+            "name": "L / geaccepteerd"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "11",
+            "name": "Systeemgrens"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "12",
+            "name": "Methode"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "13",
+            "name": "Bewijsgraad"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "14",
+            "name": "Vergelijkbaar?"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "15",
+            "name": "Embodied inbegrepen?"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "16",
+            "name": "Bewijs-ID"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "17",
+            "name": "Milieubewijs"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        }
+      ]
+    },
+    {
+      "part": "xl/tables/table9.xml",
+      "attributes": {
+        "id": "7",
+        "name": "BewijsregisterTable",
+        "displayName": "BewijsregisterTable",
+        "ref": "A17:H37",
+        "headerRowCount": "1",
+        "totalsRowCount": "0",
+        "totalsRowShown": "0"
+      },
+      "columns": [
+        {
+          "attributes": {
+            "id": "1",
+            "name": "Bewijs-ID"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "2",
+            "name": "Type"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "3",
+            "name": "Bron / document"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "4",
+            "name": "Eigenaar"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "5",
+            "name": "Datum"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "6",
+            "name": "Graad"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "7",
+            "name": "Beperkingen"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "8",
+            "name": "Link / locatie"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        }
+      ]
+    },
+    {
+      "part": "xl/tables/table10.xml",
+      "attributes": {
+        "id": "10",
+        "name": "VergelijkingTable",
+        "displayName": "VergelijkingTable",
+        "ref": "A4:S12",
+        "headerRowCount": "1",
+        "totalsRowCount": "0",
+        "totalsRowShown": "0"
+      },
+      "columns": [
+        {
+          "attributes": {
+            "id": "1",
+            "name": "Kandidaat-ID"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "2",
+            "name": "Naam"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "3",
+            "name": "Poort 1"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "4",
+            "name": "Poort 2"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "5",
+            "name": "Succes LCB"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "6",
+            "name": "Critical UCB"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "7",
+            "name": "EUR / geaccepteerd"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "8",
+            "name": "Mensmin / geaccepteerd"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "9",
+            "name": "Sec / geaccepteerd"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "10",
+            "name": "Retries / geaccepteerd"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "11",
+            "name": "kWh / geaccepteerd"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "12",
+            "name": "gCO2e / geaccepteerd"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "13",
+            "name": "Water L / geaccepteerd"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "14",
+            "name": "Milieubewijs"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "15",
+            "name": "Numeriek bewijs"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "16",
+            "name": "Frontierstatus"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "17",
+            "name": "Proportionaliteit"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "18",
+            "name": "Kernmotivering"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "19",
+            "name": "Contextbewijs compleet?"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        }
+      ]
+    },
+    {
+      "part": "xl/tables/table11.xml",
+      "attributes": {
+        "id": "11",
+        "name": "ValidatieChecklistTable",
+        "displayName": "ValidatieChecklistTable",
+        "ref": "A4:H19",
+        "headerRowCount": "1",
+        "totalsRowCount": "0",
+        "totalsRowShown": "0"
+      },
+      "columns": [
+        {
+          "attributes": {
+            "id": "1",
+            "name": "Controle"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "2",
+            "name": "R1"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "3",
+            "name": "R2"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "4",
+            "name": "R3"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "5",
+            "name": "R4"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "6",
+            "name": "Gereed?"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "7",
+            "name": "Bewijs / notitie"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        },
+        {
+          "attributes": {
+            "id": "8",
+            "name": "Eigenaar"
+          },
+          "calculatedColumnFormula": null,
+          "totalsRowFormula": null
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "sheets": 11,
+    "formulas": 496,
+    "formulaFamilies": 98,
+    "validations": 35,
+    "definedNames": 0,
+    "tables": 11
+  },
+  "zipParts": [
+    "xl/workbook.xml",
+    "xl/styles.xml",
+    "xl/theme/theme1.xml",
+    "xl/sharedStrings.xml",
+    "xl/worksheets/sheet1.xml",
+    "xl/worksheets/sheet2.xml",
+    "xl/comments1.xml",
+    "xl/drawings/vmldrawing.vml",
+    "xl/threadedcomments/threadedcomment.xml",
+    "xl/worksheets/sheet3.xml",
+    "xl/tables/table1.xml",
+    "xl/worksheets/sheet4.xml",
+    "xl/comments2.xml",
+    "xl/drawings/vmldrawing2.vml",
+    "xl/threadedcomments/threadedcomment2.xml",
+    "xl/tables/table2.xml",
+    "xl/worksheets/sheet5.xml",
+    "xl/comments3.xml",
+    "xl/drawings/vmldrawing3.vml",
+    "xl/threadedcomments/threadedcomment3.xml",
+    "xl/tables/table3.xml",
+    "xl/tables/table4.xml",
+    "xl/worksheets/sheet6.xml",
+    "xl/comments4.xml",
+    "xl/drawings/vmldrawing4.vml",
+    "xl/threadedcomments/threadedcomment4.xml",
+    "xl/tables/table5.xml",
+    "xl/worksheets/sheet7.xml",
+    "xl/comments5.xml",
+    "xl/drawings/vmldrawing5.vml",
+    "xl/threadedcomments/threadedcomment5.xml",
+    "xl/tables/table6.xml",
+    "xl/tables/table7.xml",
+    "xl/worksheets/sheet8.xml",
+    "xl/tables/table8.xml",
+    "xl/tables/table9.xml",
+    "xl/worksheets/sheet9.xml",
+    "xl/comments6.xml",
+    "xl/drawings/vmldrawing6.vml",
+    "xl/threadedcomments/threadedcomment6.xml",
+    "xl/tables/table10.xml",
+    "xl/worksheets/sheet10.xml",
+    "xl/comments7.xml",
+    "xl/drawings/vmldrawing7.vml",
+    "xl/threadedcomments/threadedcomment7.xml",
+    "xl/worksheets/sheet11.xml",
+    "xl/tables/table11.xml",
+    "xl/persons/person.xml",
+    "_rels/.rels",
+    "xl/_rels/workbook.xml.rels",
+    "xl/worksheets/_rels/sheet10.xml.rels",
+    "xl/worksheets/_rels/sheet11.xml.rels",
+    "xl/worksheets/_rels/sheet2.xml.rels",
+    "xl/worksheets/_rels/sheet3.xml.rels",
+    "xl/worksheets/_rels/sheet4.xml.rels",
+    "xl/worksheets/_rels/sheet5.xml.rels",
+    "xl/worksheets/_rels/sheet6.xml.rels",
+    "xl/worksheets/_rels/sheet7.xml.rels",
+    "xl/worksheets/_rels/sheet8.xml.rels",
+    "xl/worksheets/_rels/sheet9.xml.rels",
+    "[Content_Types].xml"
+  ],
+  "copyConsistency": [
+    {
+      "sheet": "03_Poort1",
+      "column": "B",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "03_Poort1",
+      "column": "M",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "05_Testcases",
+      "column": "V",
+      "firstRow": 6,
+      "lastRow": 25,
+      "formulaCount": 20,
+      "expectedCount": 20,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "B",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "C",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "D",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "E",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "F",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "G",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "H",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "I",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "J",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "K",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "L",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "M",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "P",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "Q",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "B",
+      "firstRow": 18,
+      "lastRow": 25,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "C",
+      "firstRow": 18,
+      "lastRow": 25,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "D",
+      "firstRow": 18,
+      "lastRow": 25,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "E",
+      "firstRow": 18,
+      "lastRow": 25,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "F",
+      "firstRow": 18,
+      "lastRow": 25,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "G",
+      "firstRow": 18,
+      "lastRow": 25,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "H",
+      "firstRow": 18,
+      "lastRow": 25,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "I",
+      "firstRow": 18,
+      "lastRow": 25,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "J",
+      "firstRow": 18,
+      "lastRow": 25,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "K",
+      "firstRow": 18,
+      "lastRow": 25,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "L",
+      "firstRow": 18,
+      "lastRow": 25,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "M",
+      "firstRow": 18,
+      "lastRow": 25,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "06_Analyse",
+      "column": "N",
+      "firstRow": 18,
+      "lastRow": 25,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "07_Bewijs",
+      "column": "B",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "07_Bewijs",
+      "column": "C",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "07_Bewijs",
+      "column": "D",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "07_Bewijs",
+      "column": "E",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "07_Bewijs",
+      "column": "F",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "07_Bewijs",
+      "column": "G",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "07_Bewijs",
+      "column": "H",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "07_Bewijs",
+      "column": "I",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "07_Bewijs",
+      "column": "J",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "07_Bewijs",
+      "column": "Q",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "08_Vergelijking",
+      "column": "B",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "08_Vergelijking",
+      "column": "C",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "08_Vergelijking",
+      "column": "D",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "08_Vergelijking",
+      "column": "E",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "08_Vergelijking",
+      "column": "F",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "08_Vergelijking",
+      "column": "G",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "08_Vergelijking",
+      "column": "H",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "08_Vergelijking",
+      "column": "I",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "08_Vergelijking",
+      "column": "J",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "08_Vergelijking",
+      "column": "K",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "08_Vergelijking",
+      "column": "L",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "08_Vergelijking",
+      "column": "M",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "08_Vergelijking",
+      "column": "N",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    },
+    {
+      "sheet": "08_Vergelijking",
+      "column": "O",
+      "firstRow": 5,
+      "lastRow": 12,
+      "formulaCount": 8,
+      "expectedCount": 8,
+      "sameRelativeFormula": true
+    }
+  ],
+  "comments": [
+    {
+      "sheet": "01_Intake",
+      "part": "xl/comments1.xml",
+      "cell": "B37",
+      "text": "[Threaded comment]\n\nYour version of Excel allows you to read this threaded comment; however, any edits to it will get removed if the file is opened in a newer version of Excel. Learn more: https://go.microsoft.com/fwlink/?linkid=870924\n\nComment:\n    De effectieve bewijsbodem voorkomt schijnzekerheid. Met de standaard 2%-grens en nul critical errors is n=189 nodig voordat de Wilson-bovengrens de grens bereikt."
+    },
+    {
+      "sheet": "01_Intake",
+      "part": "xl/comments1.xml",
+      "cell": "B27",
+      "text": "[Threaded comment]\n\nYour version of Excel allows you to read this threaded comment; however, any edits to it will get removed if the file is opened in a newer version of Excel. Learn more: https://go.microsoft.com/fwlink/?linkid=870924\n\nComment:\n    Bevestig de aanbevolen route of motiveer expliciet waarom je afwijkt."
+    },
+    {
+      "sheet": "01_Intake",
+      "part": "xl/threadedcomments/threadedcomment.xml",
+      "cell": "B37",
+      "text": "De effectieve bewijsbodem voorkomt schijnzekerheid. Met de standaard 2%-grens en nul critical errors is n=189 nodig voordat de Wilson-bovengrens de grens bereikt."
+    },
+    {
+      "sheet": "01_Intake",
+      "part": "xl/threadedcomments/threadedcomment.xml",
+      "cell": "B27",
+      "text": "Bevestig de aanbevolen route of motiveer expliciet waarom je afwijkt."
+    },
+    {
+      "sheet": "03_Poort1",
+      "part": "xl/comments2.xml",
+      "cell": "M5",
+      "text": "[Threaded comment]\n\nYour version of Excel allows you to read this threaded comment; however, any edits to it will get removed if the file is opened in a newer version of Excel. Learn more: https://go.microsoft.com/fwlink/?linkid=870924\n\nComment:\n    Poort 1 is hard: een FAIL kan niet worden gecompenseerd door betere prestaties of lagere kosten."
+    },
+    {
+      "sheet": "03_Poort1",
+      "part": "xl/threadedcomments/threadedcomment2.xml",
+      "cell": "M5",
+      "text": "Poort 1 is hard: een FAIL kan niet worden gecompenseerd door betere prestaties of lagere kosten."
+    },
+    {
+      "sheet": "04_Testontwerp",
+      "part": "xl/comments3.xml",
+      "cell": "B8",
+      "text": "[Threaded comment]\n\nYour version of Excel allows you to read this threaded comment; however, any edits to it will get removed if the file is opened in a newer version of Excel. Learn more: https://go.microsoft.com/fwlink/?linkid=870924\n\nComment:\n    De functionele eenheid voorkomt dat een goedkope mislukte poging gunstiger lijkt dan een duurdere maar geaccepteerde taakuitkomst."
+    },
+    {
+      "sheet": "04_Testontwerp",
+      "part": "xl/threadedcomments/threadedcomment3.xml",
+      "cell": "B8",
+      "text": "De functionele eenheid voorkomt dat een goedkope mislukte poging gunstiger lijkt dan een duurdere maar geaccepteerde taakuitkomst."
+    },
+    {
+      "sheet": "05_Testcases",
+      "part": "xl/comments4.xml",
+      "cell": "E5",
+      "text": "[Threaded comment]\n\nYour version of Excel allows you to read this threaded comment; however, any edits to it will get removed if the file is opened in a newer version of Excel. Learn more: https://go.microsoft.com/fwlink/?linkid=870924\n\nComment:\n    Gebruik het finale geaccepteerde taakresultaat (1/0), niet elke poging als afzonderlijke testcase."
+    },
+    {
+      "sheet": "05_Testcases",
+      "part": "xl/comments4.xml",
+      "cell": "F5",
+      "text": "[Threaded comment]\n\nYour version of Excel allows you to read this threaded comment; however, any edits to it will get removed if the file is opened in a newer version of Excel. Learn more: https://go.microsoft.com/fwlink/?linkid=870924\n\nComment:\n    Als in enige poging een critical error optrad, noteer 1. Retries mogen critical errors niet verdunnen."
+    },
+    {
+      "sheet": "05_Testcases",
+      "part": "xl/threadedcomments/threadedcomment4.xml",
+      "cell": "E5",
+      "text": "Gebruik het finale geaccepteerde taakresultaat (1/0), niet elke poging als afzonderlijke testcase."
+    },
+    {
+      "sheet": "05_Testcases",
+      "part": "xl/threadedcomments/threadedcomment4.xml",
+      "cell": "F5",
+      "text": "Als in enige poging een critical error optrad, noteer 1. Retries mogen critical errors niet verdunnen."
+    },
+    {
+      "sheet": "06_Analyse",
+      "part": "xl/comments5.xml",
+      "cell": "P5",
+      "text": "[Threaded comment]\n\nYour version of Excel allows you to read this threaded comment; however, any edits to it will get removed if the file is opened in a newer version of Excel. Learn more: https://go.microsoft.com/fwlink/?linkid=870924\n\nComment:\n    Een kandidaat krijgt pas PASS als zowel de puntschattingen als de Wilson-grenzen en de ontwerpcontroles voldoen."
+    },
+    {
+      "sheet": "06_Analyse",
+      "part": "xl/threadedcomments/threadedcomment5.xml",
+      "cell": "P5",
+      "text": "Een kandidaat krijgt pas PASS als zowel de puntschattingen als de Wilson-grenzen en de ontwerpcontroles voldoen."
+    },
+    {
+      "sheet": "08_Vergelijking",
+      "part": "xl/comments6.xml",
+      "cell": "Q5",
+      "text": "[Threaded comment]\n\nYour version of Excel allows you to read this threaded comment; however, any edits to it will get removed if the file is opened in a newer version of Excel. Learn more: https://go.microsoft.com/fwlink/?linkid=870924\n\nComment:\n    PAM-AI gebruikt bewust geen gewogen totaalscore. De proportionaliteitsconclusie blijft een gemotiveerd, controleerbaar oordeel."
+    },
+    {
+      "sheet": "08_Vergelijking",
+      "part": "xl/threadedcomments/threadedcomment6.xml",
+      "cell": "Q5",
+      "text": "PAM-AI gebruikt bewust geen gewogen totaalscore. De proportionaliteitsconclusie blijft een gemotiveerd, controleerbaar oordeel."
+    },
+    {
+      "sheet": "09_Besluit",
+      "part": "xl/comments7.xml",
+      "cell": "B46",
+      "text": "[Threaded comment]\n\nYour version of Excel allows you to read this threaded comment; however, any edits to it will get removed if the file is opened in a newer version of Excel. Learn more: https://go.microsoft.com/fwlink/?linkid=870924\n\nComment:\n    De status bewaakt het verschil tussen een begrensde pilot en een volledig proportionaliteitsbesluit."
+    },
+    {
+      "sheet": "09_Besluit",
+      "part": "xl/threadedcomments/threadedcomment7.xml",
+      "cell": "B46",
+      "text": "De status bewaakt het verschil tussen een begrensde pilot en een volledig proportionaliteitsbesluit."
+    }
+  ],
+  "conditionalFormatting": [
+    {
+      "sheet": "01_Intake",
+      "range": "B26:B27",
+      "rules": [
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "0",
+            "priority": "1",
+            "operator": "containsText",
+            "text": "PASS"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "1",
+            "priority": "2",
+            "operator": "containsText",
+            "text": "READY"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "2",
+            "priority": "3",
+            "operator": "containsText",
+            "text": "MORE EVIDENCE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "3",
+            "priority": "4",
+            "operator": "containsText",
+            "text": "CONDIT"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "4",
+            "priority": "5",
+            "operator": "containsText",
+            "text": "HOLD"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "5",
+            "priority": "6",
+            "operator": "containsText",
+            "text": "INCOMPLETE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "6",
+            "priority": "7",
+            "operator": "containsText",
+            "text": "FAIL"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "7",
+            "priority": "8",
+            "operator": "containsText",
+            "text": "NOT ELIGIBLE"
+          },
+          "formulas": []
+        }
+      ]
+    },
+    {
+      "sheet": "03_Poort1",
+      "range": "C5:J12",
+      "rules": [
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "8",
+            "priority": "1",
+            "operator": "containsText",
+            "text": "PASS"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "9",
+            "priority": "2",
+            "operator": "containsText",
+            "text": "READY"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "10",
+            "priority": "3",
+            "operator": "containsText",
+            "text": "MORE EVIDENCE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "11",
+            "priority": "4",
+            "operator": "containsText",
+            "text": "CONDIT"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "12",
+            "priority": "5",
+            "operator": "containsText",
+            "text": "HOLD"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "13",
+            "priority": "6",
+            "operator": "containsText",
+            "text": "INCOMPLETE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "14",
+            "priority": "7",
+            "operator": "containsText",
+            "text": "FAIL"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "15",
+            "priority": "8",
+            "operator": "containsText",
+            "text": "NOT ELIGIBLE"
+          },
+          "formulas": []
+        }
+      ]
+    },
+    {
+      "sheet": "03_Poort1",
+      "range": "M5:M12",
+      "rules": [
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "16",
+            "priority": "9",
+            "operator": "containsText",
+            "text": "PASS"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "17",
+            "priority": "10",
+            "operator": "containsText",
+            "text": "READY"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "18",
+            "priority": "11",
+            "operator": "containsText",
+            "text": "MORE EVIDENCE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "19",
+            "priority": "12",
+            "operator": "containsText",
+            "text": "CONDIT"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "20",
+            "priority": "13",
+            "operator": "containsText",
+            "text": "HOLD"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "21",
+            "priority": "14",
+            "operator": "containsText",
+            "text": "INCOMPLETE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "22",
+            "priority": "15",
+            "operator": "containsText",
+            "text": "FAIL"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "23",
+            "priority": "16",
+            "operator": "containsText",
+            "text": "NOT ELIGIBLE"
+          },
+          "formulas": []
+        }
+      ]
+    },
+    {
+      "sheet": "05_Testcases",
+      "range": "V6:V25",
+      "rules": [
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "24",
+            "priority": "1",
+            "operator": "containsText",
+            "text": "PASS"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "25",
+            "priority": "2",
+            "operator": "containsText",
+            "text": "READY"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "26",
+            "priority": "3",
+            "operator": "containsText",
+            "text": "MORE EVIDENCE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "27",
+            "priority": "4",
+            "operator": "containsText",
+            "text": "CONDIT"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "28",
+            "priority": "5",
+            "operator": "containsText",
+            "text": "HOLD"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "29",
+            "priority": "6",
+            "operator": "containsText",
+            "text": "INCOMPLETE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "30",
+            "priority": "7",
+            "operator": "containsText",
+            "text": "FAIL"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "31",
+            "priority": "8",
+            "operator": "containsText",
+            "text": "NOT ELIGIBLE"
+          },
+          "formulas": []
+        }
+      ]
+    },
+    {
+      "sheet": "06_Analyse",
+      "range": "C5:C12",
+      "rules": [
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "40",
+            "priority": "1",
+            "operator": "containsText",
+            "text": "PASS"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "41",
+            "priority": "2",
+            "operator": "containsText",
+            "text": "READY"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "42",
+            "priority": "3",
+            "operator": "containsText",
+            "text": "MORE EVIDENCE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "43",
+            "priority": "4",
+            "operator": "containsText",
+            "text": "CONDIT"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "44",
+            "priority": "5",
+            "operator": "containsText",
+            "text": "HOLD"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "45",
+            "priority": "6",
+            "operator": "containsText",
+            "text": "INCOMPLETE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "46",
+            "priority": "7",
+            "operator": "containsText",
+            "text": "FAIL"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "47",
+            "priority": "8",
+            "operator": "containsText",
+            "text": "NOT ELIGIBLE"
+          },
+          "formulas": []
+        }
+      ]
+    },
+    {
+      "sheet": "06_Analyse",
+      "range": "P5:P12",
+      "rules": [
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "48",
+            "priority": "9",
+            "operator": "containsText",
+            "text": "PASS"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "49",
+            "priority": "10",
+            "operator": "containsText",
+            "text": "READY"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "50",
+            "priority": "11",
+            "operator": "containsText",
+            "text": "MORE EVIDENCE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "51",
+            "priority": "12",
+            "operator": "containsText",
+            "text": "CONDIT"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "52",
+            "priority": "13",
+            "operator": "containsText",
+            "text": "HOLD"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "53",
+            "priority": "14",
+            "operator": "containsText",
+            "text": "INCOMPLETE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "54",
+            "priority": "15",
+            "operator": "containsText",
+            "text": "FAIL"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "55",
+            "priority": "16",
+            "operator": "containsText",
+            "text": "NOT ELIGIBLE"
+          },
+          "formulas": []
+        }
+      ]
+    },
+    {
+      "sheet": "06_Analyse",
+      "range": "J18:N25",
+      "rules": [
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "56",
+            "priority": "17",
+            "operator": "containsText",
+            "text": "PASS"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "57",
+            "priority": "18",
+            "operator": "containsText",
+            "text": "READY"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "58",
+            "priority": "19",
+            "operator": "containsText",
+            "text": "MORE EVIDENCE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "59",
+            "priority": "20",
+            "operator": "containsText",
+            "text": "CONDIT"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "60",
+            "priority": "21",
+            "operator": "containsText",
+            "text": "HOLD"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "61",
+            "priority": "22",
+            "operator": "containsText",
+            "text": "INCOMPLETE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "62",
+            "priority": "23",
+            "operator": "containsText",
+            "text": "FAIL"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "63",
+            "priority": "24",
+            "operator": "containsText",
+            "text": "NOT ELIGIBLE"
+          },
+          "formulas": []
+        }
+      ]
+    },
+    {
+      "sheet": "07_Bewijs",
+      "range": "Q5:Q12",
+      "rules": [
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "32",
+            "priority": "1",
+            "operator": "containsText",
+            "text": "PASS"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "33",
+            "priority": "2",
+            "operator": "containsText",
+            "text": "READY"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "34",
+            "priority": "3",
+            "operator": "containsText",
+            "text": "MORE EVIDENCE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "35",
+            "priority": "4",
+            "operator": "containsText",
+            "text": "CONDIT"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "36",
+            "priority": "5",
+            "operator": "containsText",
+            "text": "HOLD"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "37",
+            "priority": "6",
+            "operator": "containsText",
+            "text": "INCOMPLETE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "38",
+            "priority": "7",
+            "operator": "containsText",
+            "text": "FAIL"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "39",
+            "priority": "8",
+            "operator": "containsText",
+            "text": "NOT ELIGIBLE"
+          },
+          "formulas": []
+        }
+      ]
+    },
+    {
+      "sheet": "08_Vergelijking",
+      "range": "C5:D12",
+      "rules": [
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "64",
+            "priority": "1",
+            "operator": "containsText",
+            "text": "PASS"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "65",
+            "priority": "2",
+            "operator": "containsText",
+            "text": "READY"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "66",
+            "priority": "3",
+            "operator": "containsText",
+            "text": "MORE EVIDENCE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "67",
+            "priority": "4",
+            "operator": "containsText",
+            "text": "CONDIT"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "68",
+            "priority": "5",
+            "operator": "containsText",
+            "text": "HOLD"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "69",
+            "priority": "6",
+            "operator": "containsText",
+            "text": "INCOMPLETE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "70",
+            "priority": "7",
+            "operator": "containsText",
+            "text": "FAIL"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "71",
+            "priority": "8",
+            "operator": "containsText",
+            "text": "NOT ELIGIBLE"
+          },
+          "formulas": []
+        }
+      ]
+    },
+    {
+      "sheet": "08_Vergelijking",
+      "range": "N5:Q12",
+      "rules": [
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "72",
+            "priority": "9",
+            "operator": "containsText",
+            "text": "PASS"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "73",
+            "priority": "10",
+            "operator": "containsText",
+            "text": "READY"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "74",
+            "priority": "11",
+            "operator": "containsText",
+            "text": "MORE EVIDENCE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "75",
+            "priority": "12",
+            "operator": "containsText",
+            "text": "CONDIT"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "76",
+            "priority": "13",
+            "operator": "containsText",
+            "text": "HOLD"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "77",
+            "priority": "14",
+            "operator": "containsText",
+            "text": "INCOMPLETE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "78",
+            "priority": "15",
+            "operator": "containsText",
+            "text": "FAIL"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "79",
+            "priority": "16",
+            "operator": "containsText",
+            "text": "NOT ELIGIBLE"
+          },
+          "formulas": []
+        }
+      ]
+    },
+    {
+      "sheet": "09_Besluit",
+      "range": "B10:B14",
+      "rules": [
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "80",
+            "priority": "1",
+            "operator": "containsText",
+            "text": "PASS"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "81",
+            "priority": "2",
+            "operator": "containsText",
+            "text": "READY"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "82",
+            "priority": "3",
+            "operator": "containsText",
+            "text": "MORE EVIDENCE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "83",
+            "priority": "4",
+            "operator": "containsText",
+            "text": "CONDIT"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "84",
+            "priority": "5",
+            "operator": "containsText",
+            "text": "HOLD"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "85",
+            "priority": "6",
+            "operator": "containsText",
+            "text": "INCOMPLETE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "86",
+            "priority": "7",
+            "operator": "containsText",
+            "text": "FAIL"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "87",
+            "priority": "8",
+            "operator": "containsText",
+            "text": "NOT ELIGIBLE"
+          },
+          "formulas": []
+        }
+      ]
+    },
+    {
+      "sheet": "09_Besluit",
+      "range": "B44:B46",
+      "rules": [
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "88",
+            "priority": "9",
+            "operator": "containsText",
+            "text": "PASS"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "89",
+            "priority": "10",
+            "operator": "containsText",
+            "text": "READY"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "90",
+            "priority": "11",
+            "operator": "containsText",
+            "text": "MORE EVIDENCE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "91",
+            "priority": "12",
+            "operator": "containsText",
+            "text": "CONDIT"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "92",
+            "priority": "13",
+            "operator": "containsText",
+            "text": "HOLD"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "93",
+            "priority": "14",
+            "operator": "containsText",
+            "text": "INCOMPLETE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "94",
+            "priority": "15",
+            "operator": "containsText",
+            "text": "FAIL"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "95",
+            "priority": "16",
+            "operator": "containsText",
+            "text": "NOT ELIGIBLE"
+          },
+          "formulas": []
+        }
+      ]
+    },
+    {
+      "sheet": "10_Validatie",
+      "range": "E25:E29",
+      "rules": [
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "96",
+            "priority": "1",
+            "operator": "containsText",
+            "text": "PASS"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "97",
+            "priority": "2",
+            "operator": "containsText",
+            "text": "READY"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "98",
+            "priority": "3",
+            "operator": "containsText",
+            "text": "MORE EVIDENCE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "99",
+            "priority": "4",
+            "operator": "containsText",
+            "text": "CONDIT"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "100",
+            "priority": "5",
+            "operator": "containsText",
+            "text": "HOLD"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "101",
+            "priority": "6",
+            "operator": "containsText",
+            "text": "INCOMPLETE"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "102",
+            "priority": "7",
+            "operator": "containsText",
+            "text": "FAIL"
+          },
+          "formulas": []
+        },
+        {
+          "attributes": {
+            "type": "containsText",
+            "dxfId": "103",
+            "priority": "8",
+            "operator": "containsText",
+            "text": "NOT ELIGIBLE"
+          },
+          "formulas": []
+        }
+      ]
+    }
+  ],
+  "reviewNotes": [
+    "All 11 sheets and all 35 list validations inspected; no defined names or external relationships. 496 cell formulas in 98 relative-reference formula families. 54 copy-down formula-column groups verified with no inconsistencies.",
+    "Nine unique threaded comments read (legacy comments duplicate their contents). Comments reinforce existing methodology; no hidden additional thresholds.",
+    "10_Validatie contains 15 route checklist controls and six external validation topics; checklist results are not consumed by final-status formulas.",
+    "04_Testontwerp definitions, strata and acceptance tables are not consumed by formulas; coverage and rubric reliability are manually asserted in 06_Analyse N/O.",
+    "07_Bewijs evidence register is not joined by formulas; evidence IDs are checked for presence but not resolved against registry.",
+    "01_Intake B44 autonomy-critical flag, B28 route-override rationale, and 08_Vergelijking P frontier status have no downstream formula check.",
+    "05_Testcases V row checks flag missing Test_Case_ID and duplicate candidate/case, but 06_Analyse does not read column V. Initial V formulas and input validations cover rows 6:25; analysis covers rows 6:2005.",
+    "All validations are list-only, with no numeric threshold/domain/count/cost bounds. N/A is offered for 06_Analyse N/O but PASS formulas require exact Ja.",
+    "07_Bewijs Q checks evidence grade M only for nonblank, so literal U would not by itself prevent COMPLETE if all other fields and numbers are present.",
+    "03_Poort1 M checks blank fields before FAIL; a blank domain can therefore display INCOMPLETE despite another explicit FAIL. Both block later eligibility, but exclusion reason is masked.",
+    "Previously directly recalculated source gaps: R1 broader scope can become DECISION-READY, missing environmental numbers can display numeric zero, partial cost aggregates can display despite insufficient evidence."
+  ]
+}

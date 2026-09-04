@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="PAM-AI: onderbouw een proportionele AI-keuze voor een concrete taak. Ontwikkeld door E.C.M. Willems."
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <title>PAM-AI — Proportionele AI-modelkeuze</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <script src="engine.js" defer></script>
+    <script src="examples.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Naar de beoordeling</a>
+    <header class="top">
+      <a class="brand" href="./" aria-label="PAM-AI start"
+        ><span class="mark">P</span
+        ><span>PAM-AI<small>Proportionele AI-modelkeuze</small></span></a
+      >
+      <div class="topright">
+        <span class="localdot">Gegevens blijven in deze browser</span
+        ><button id="help">Uitleg & bronnen</button>
+      </div>
+    </header>
+    <div id="app"></div>
+    <div id="notice" role="status" aria-live="polite"></div>
+    <dialog id="help-dialog">
+      <form method="dialog">
+        <button class="close" aria-label="Sluiten">×</button>
+      </form>
+      <p class="eyebrow">PAM-AI · E.C.M. Willems</p>
+      <h2>Van taak naar een verdedigbare keuze</h2>
+      <p>
+        Werk achtereenvolgens aan toelaatbaarheid, voldoende geschiktheid en
+        proportionaliteit. Een goedkope of snelle oplossing kan een eerdere
+        uitsluiting nooit compenseren.
+      </p>
+      <ol>
+        <li>Beschrijf taak, context en de huidige werkwijze.</li>
+        <li>
+          Beschrijf de werkelijke configuraties en beoordeel toelaatbaarheid.
+        </li>
+        <li>
+          Leg acceptatie vast vóór de test. Registreer één rij per kandidaat ×
+          testcase.
+        </li>
+        <li>
+          Vergelijk de opties die voldoen. Licht extra waarde én extra lasten
+          toe.
+        </li>
+        <li>Bewaar het besluit met voorwaarden, eigenaar en herbeoordeling.</li>
+      </ol>
+      <p>
+        <strong>Lokaal bewaren:</strong> automatisch in deze browser. Een
+        JSON-export is je eigen reservekopie en maakt hervatten op een ander
+        apparaat mogelijk. Browsergegevens wissen verwijdert lokale
+        beoordelingen. Bij een gedeeld apparaat zijn ze voor andere gebruikers
+        van dit browserprofiel zichtbaar.
+      </p>
+      <p>
+        De toepassing verstuurt invoer niet naar een server of AI-dienst.
+        Bewijsstukken zelf blijven op hun eigen locatie; leg hier verwijzingen
+        en samenvattingen vast.
+      </p>
+      <p>
+        Methodiek <strong>1.1</strong>, 4 september 2026 · toepassing
+        <strong>0.1.0</strong>. Research-grade validatiekandidaat; nog geen
+        empirisch gevalideerde standaard. PAM-AI vervangt geen juridische
+        beoordeling, DPIA, FRIA of securityonderzoek.
+      </p>
+      <p>
+        <a href="bronnen/PAM-AI_v1.1_Praktijkinstrument.xlsx" download
+          >Excelinstrument v1.1</a
+        >
+        ·
+        <a
+          href="bronnen/PAM-AI_v1.1_Methodiek_Praktijkhandleiding_Validatieprotocol.docx"
+          download
+          >Methodiek en handleiding v1.1</a
+        >
+        ·
+        <a href="../docs/PAM-AI-BRONVERTALING.md"
+          >Bronvertaling en beperkingen</a
+        >
+        ·
+        <a
+          href="https://github.com/ECMW/kies-ai/tree/main/pam-ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Broncode op GitHub</a
+        >
+      </p>
+    </dialog>
+    <input
+      id="import-file"
+      type="file"
+      accept=".json,application/json"
+      hidden
+    /><input id="csv-file" type="file" accept=".csv,text/csv" hidden />
+    <noscript
+      >Schakel JavaScript in om deze lokale toepassing te gebruiken. De bronnen
+      zijn beschikbaar in de map bronnen.</noscript
+    >
+  </body>
+</html>

@@ -1,3 +1,12 @@
+# PAM-AI is beschikbaar
+
+**PAM-AI — Proportionele AI-modelkeuze**, ontwikkeld door E.C.M. Willems, is de nieuwe brongetrouwe webtoepassing naast de bestaande kies·ai-demonstrator.
+
+[Open PAM-AI](https://ecmw.github.io/kies-ai/pam-ai/) · [Lokaal starten en gebruiken](pam-ai/README.md) · [Bronvertaling](docs/PAM-AI-BRONVERTALING.md) · [Controles](docs/PAM-AI-CONTROLES.md)
+
+Methodiek 1.1; toepassing 0.1.0. Lokale gegevensopslag, geen externe AI-diensten. Beide oorspronkelijke bronbestanden, broncode en tests zijn opgenomen.
+
+---
 # We stellen de verkeerde vraag.
 
 De vraag *“welk AI-model moeten we gebruiken?”* komt te vroeg.

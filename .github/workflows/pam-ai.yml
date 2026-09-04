@@ -1,0 +1,24 @@
+name: Controleer PAM-AI
+on:
+  push:
+    paths: ["pam-ai/**", "tests/pam-ai/**", "scripts/serve-pam.cjs", ".github/workflows/pam-ai.yml"]
+  pull_request:
+    paths: ["pam-ai/**", "tests/pam-ai/**", "scripts/serve-pam.cjs", ".github/workflows/pam-ai.yml"]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-and-rules:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Controleer JavaScript
+        run: |
+          node --check pam-ai/engine.js
+          node --check pam-ai/app.js
+          node --check pam-ai/examples.js
+      - name: Vergelijk met vastgelegde Excel-uitkomsten en randgevallen
+        run: node --test tests/pam-ai/engine.test.cjs

@@ -1,7 +1,7 @@
 /* PAM-AI web — methodiek v1.1, E.C.M. Willems. Offline rekenregels. */
 (function (root) {
   "use strict";
-  const VERSION = "0.1.0",
+  const VERSION = "0.2.0",
     METHOD = "1.1",
     SCHEMA = "pam-ai-assessment/1";
   const ROUTES = [

@@ -15,7 +15,14 @@ const { chromium } = require(process.env.PAM_PLAYWRIGHT || "playwright"),
     p.on("pageerror", (e) => errors.push(e.message));
     await p.goto("http://127.0.0.1:8765/pam-ai/");
     await p
+      .getByText("Eerst een ingevuld voorbeeld bekijken", { exact: true })
+      .click();
+    await p
       .getByRole("button", { name: "Fictieve volledige afweging", exact: true })
+      .click();
+    await p.getByText("Meer mogelijkheden", { exact: true }).click();
+    await p
+      .getByRole("button", { name: "Alle dossiergegevens", exact: true })
       .click();
     await p
       .getByRole("button", { name: "4 Test & bewijs", exact: true })

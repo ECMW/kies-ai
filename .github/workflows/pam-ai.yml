@@ -19,6 +19,7 @@ jobs:
         run: |
           node --check pam-ai/engine.js
           node --check pam-ai/app.js
+          node --check pam-ai/guide.js
           node --check pam-ai/examples.js
       - name: Vergelijk met vastgelegde Excel-uitkomsten en randgevallen
         run: node --test tests/pam-ai/engine.test.cjs

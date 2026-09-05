@@ -50,12 +50,15 @@ try {
 }
 function notice(msg) {
   $("#notice").textContent = msg;
+  const runError = $("#run-error");
+  if (runError) runError.textContent = msg;
   clearTimeout(timer);
   timer = setTimeout(() => ($("#notice").textContent = ""), 6000);
 }
 function save() {
   if (a) {
     a.updated = new Date().toISOString();
+    a.appVersion = E.VERSION;
     vault.current = a.id;
   }
   if (storageError) {
@@ -108,6 +111,12 @@ function badge(s) {
   );
 }
 function field(path, title, options = {}) {
+  if (
+    window.PAM_GUIDE?.active() &&
+    /(?:^@|\.)evidence$/.test(path) &&
+    !path.startsWith("design.")
+  )
+    return PAM_GUIDE.sourcePicker(path);
   const draft = path.startsWith("@"),
     key = draft ? path.slice(1) : path,
     v = pathGet(draft ? runDraft : a, key),
@@ -181,6 +190,13 @@ function field(path, title, options = {}) {
         ? ' placeholder="' + esc(options.placeholder) + '"'
         : "") +
       ">";
+  input = input.replace(
+    /^(<(?:input|textarea|select)\b)/,
+    '$1 aria-labelledby="' +
+      id +
+      '-label"' +
+      (options.hint ? ' aria-describedby="' + id + '-hint"' : ""),
+  );
   return (
     '<label class="field' +
     wide +
@@ -189,11 +205,15 @@ function field(path, title, options = {}) {
     id +
     '">' +
     (options.check ? input : "") +
-    "<span>" +
+    '<span id="' +
+    id +
+    '-label">' +
     esc(title) +
     "</span>" +
     (options.check ? "" : input) +
-    (options.hint ? "<small>" + esc(options.hint) + "</small>" : "") +
+    (options.hint
+      ? '<small id="' + id + '-hint">' + esc(options.hint) + "</small>"
+      : "") +
     "</label>"
   );
 }
@@ -306,10 +326,14 @@ function footer() {
   return (
     '<p class="footer">PAM-AI — Proportionele AI-modelkeuze · E.C.M. Willems · methodiek 1.1 · toepassing ' +
     E.VERSION +
-    "<br>Research-grade validatiekandidaat. Ondersteunt professioneel oordeel; vervangt geen juridische beoordeling, DPIA, FRIA of securityonderzoek.</p>"
+    "<br>Methodiek in ontwikkeling en validatie. Ondersteunt professioneel oordeel; vervangt geen juridische beoordeling, DPIA, FRIA of securityonderzoek.</p>"
   );
 }
 function render(focus = false) {
+  if (window.PAM_GUIDE?.active()) {
+    PAM_GUIDE.render(focus);
+    return;
+  }
   const openDetails = [...document.querySelectorAll("details[open]")].map(
     (d) => d.querySelector("summary")?.textContent,
   );
@@ -374,6 +398,7 @@ function render(focus = false) {
     '</span><span id="save-state">Lokaal bewaren actief</span></div><p class="eyebrow">Stap ' +
     (a.step + 1) +
     " van 6</p>" +
+    btn("g-guided", "Terug naar de begeleide route", "primary") +
     body +
     '<div class="actions between bottom no-print">' +
     btn(
@@ -715,6 +740,40 @@ function freshRun() {
     designStamp: "",
   };
 }
+function restoreRunDraft() {
+  if (runDraft) return;
+  runDraft = freshRun();
+  const c = a.candidates[ci],
+    pending = a.pendingRuns?.[c?.id];
+  if (!pending || !pending.value || typeof pending.value !== "object") return;
+  for (const k of Object.keys(runDraft)) {
+    const v = pending.value[k];
+    if (
+      typeof runDraft[k] === "string"
+        ? typeof v === "string"
+        : v === null || (typeof v === "number" && Number.isFinite(v))
+    )
+      runDraft[k] = v;
+  }
+  editRun = a.runs.findIndex(
+    (r) => r.id === runDraft.id && r.candidate === c.id,
+  );
+}
+function saveRunDraft() {
+  if (!a || !runDraft || !a.candidates[ci]) return;
+  if (
+    !a.pendingRuns ||
+    typeof a.pendingRuns !== "object" ||
+    Array.isArray(a.pendingRuns)
+  )
+    a.pendingRuns = {};
+  a.pendingRuns[a.candidates[ci].id] = { value: E.clone(runDraft) };
+  save();
+}
+function clearRunDraft() {
+  if (a?.pendingRuns && a.candidates[ci])
+    delete a.pendingRuns[a.candidates[ci].id];
+}
 function designEditor() {
   return (
     "<details " +
@@ -825,7 +884,7 @@ function designEditor() {
   );
 }
 function runEditor() {
-  if (!runDraft) runDraft = freshRun();
+  restoreRunDraft();
   const c = a.candidates[ci];
   return (
     '<details id="run-editor" ' +
@@ -1549,6 +1608,9 @@ function download(content, name, type = "application/json") {
 }
 function choose(newA) {
   a = newA;
+  window.PAM_GUIDE?.reset();
+  if (!a.intake.taskId)
+    a.intake.taskId = "PAM-" + E.today() + "-" + a.id.slice(-4).toUpperCase();
   ci = 0;
   runDraft = null;
   editRun = -1;
@@ -1561,6 +1623,7 @@ function newVersion() {
   const next = E.clone(a);
   next.id = E.uid();
   next.runs = [];
+  next.pendingRuns = {};
   next.history = [];
   next.decision = E.newAssessment().decision;
   next.step = 0;
@@ -1589,6 +1652,7 @@ document.addEventListener("input", (ev) => {
           ? null
           : Number(el.value)
         : el.value;
+  if (el.dataset.scale && v !== null) v /= Number(el.dataset.scale);
   if (path === "@accepted" || path === "@critical")
     v = el.value === "" ? null : Number(el.value);
   pathSet(
@@ -1597,6 +1661,7 @@ document.addEventListener("input", (ev) => {
     v,
   );
   if (!path.startsWith("@")) save();
+  else saveRunDraft();
 });
 document.addEventListener("change", (ev) => {
   const el = ev.target;
@@ -1787,6 +1852,8 @@ document.addEventListener("click", (ev) => {
       render();
       $("#run-editor").scrollIntoView({ behavior: "smooth" });
     } else if (action === "cancel-run") {
+      clearRunDraft();
+      save();
       editRun = -1;
       runDraft = null;
       render();
@@ -1809,6 +1876,7 @@ document.addEventListener("click", (ev) => {
     else if (action === "import") $("#import-file").click();
     else if (action === "version") newVersion();
     else if (action === "print") {
+      window.PAM_GUIDE?.beforePrint();
       save();
       a.step = 5;
       render();
@@ -1888,6 +1956,7 @@ document.addEventListener("submit", (ev) => {
       if (a.runs.length >= 2000) throw Error("Maximaal 2.000 testregels.");
       a.runs.push(r);
     } else a.runs[editRun] = r;
+    clearRunDraft();
     runDraft = null;
     editRun = -1;
     save();

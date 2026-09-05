@@ -22,7 +22,14 @@ const { chromium } = require(process.env.PAM_PLAYWRIGHT || "playwright"),
     page.on("request", (r) => requests.push(r.url()));
     await page.goto("http://127.0.0.1:8765/pam-ai/");
     await page
+      .getByText("Eerst een ingevuld voorbeeld bekijken", { exact: true })
+      .click();
+    await page
       .getByRole("button", { name: "Fictieve volledige afweging", exact: true })
+      .click();
+    await page.getByText("Meer mogelijkheden", { exact: true }).click();
+    await page
+      .getByRole("button", { name: "Alle dossiergegevens", exact: true })
       .click();
     await page.getByRole("button", { name: "6 Besluit", exact: true }).click();
     await page
@@ -46,13 +53,11 @@ const { chromium } = require(process.env.PAM_PLAYWRIGHT || "playwright"),
     await page
       .getByRole("button", { name: "← Alle beoordelingen", exact: true })
       .click();
-    await page
-      .locator("#import-file")
-      .setInputFiles({
-        name: "import.json",
-        mimeType: "application/json",
-        buffer: Buffer.from(exported),
-      });
+    await page.locator("#import-file").setInputFiles({
+      name: "import.json",
+      mimeType: "application/json",
+      buffer: Buffer.from(exported),
+    });
     await page
       .getByRole("heading", { name: "Begin bij de taak", exact: true })
       .waitFor();

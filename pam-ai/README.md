@@ -1,10 +1,36 @@
 # PAM-AI — Proportionele AI-modelkeuze
 
-**Ontwikkeld door E.C.M. Willems.** Methodiek v1.1 · webtoepassing v0.1.0.
+**Ontwikkeld door E.C.M. Willems.** Methodiek v1.1 · webtoepassing v0.2.0.
 
-Een lokale Nederlandstalige toepassing om een concrete AI-configuratie te vergelijken met andere technologie en de huidige niet-AI-werkwijze. Eerst toelaatbaarheid, dan voldoende geschiktheid, daarna proportionaliteit. Het resultaat is een controleerbaar besluitrecord, zonder totaalscore of automatische winnaar.
+PAM-AI helpt een concrete werkwijze met AI af te wegen tegen andere technologie en de huidige werkwijze zonder AI. Eerst vaststellen wat mag, daarna wat voldoende werkt, daarna of de waarde de lasten rechtvaardigt. De gebruiker legt een controleerbaar besluit vast; de tool wijst geen winnaar aan.
 
-[Open PAM-AI](https://ecmw.github.io/kies-ai/pam-ai/) · [Bronvertaling en beperkingen](../docs/PAM-AI-BRONVERTALING.md) · [Testverslag](../docs/PAM-AI-CONTROLES.md)
+[Open PAM-AI](https://ecmw.github.io/kies-ai/pam-ai/) · [Bronvertaling](../docs/PAM-AI-BRONVERTALING.md) · [Controles en beperkingen](../docs/PAM-AI-CONTROLES.md)
+
+## Beginnen
+
+1. Kies **Start een nieuwe afweging** en beschrijf één taak en het gewenste resultaat.
+2. Beantwoord de korte deelstappen. Wat je nog niet weet, mag openblijven.
+3. Voeg bij **Je opties** de huidige werkwijze toe en de andere oplossingen die je wilt onderzoeken.
+4. Beantwoord bij **Mag dit?** de acht vragen per optie. Kies bewijs op documentnaam of voeg een bron toe. Een bron kiezen betekent niet automatisch dat de toepassing is goedgekeurd.
+5. Leg bij **Werkt het?** eerst de kwaliteitseisen en testafspraken vast. De statistische startwaarden komen uit de bron en vragen een motivering voor jouw taak. Registreer daarna resultaten, afzonderlijk of via CSV.
+6. Vergelijk de geschikte opties bij **Is het de moeite waard?** Neem ook afhankelijkheden, menselijk ingrijpen en invoering mee.
+7. Bewaar bij **Je besluit** een keuze, meerdere opties, afzien van inzet of uitstel. Leg onderbouwing, grenzen, verantwoordelijkheid en herbeoordeling vast.
+
+De begeleide route toont alleen het actuele onderdeel. Berekeningen en toelichtingen staan achter uitklappers. Via **Meer mogelijkheden → Alle dossiergegevens** is dezelfde beoordeling ook als volledig dossier te bewerken. Op mobiel staat dit onder **Dossier en versies**.
+
+Een volledig ingevuld fictief voorbeeld staat op de startpagina achter **Eerst een ingevuld voorbeeld bekijken**. Het voorbeeld is geen aanbeveling of feitelijk bewijs van modelprestaties.
+
+## Bewaren en hervatten
+
+Invoer wordt automatisch in deze browser bewaard. Ook een nog niet ingediend testgeval wordt als concept bewaard; pas na **Testgeval bewaren** wordt het gecontroleerd en meegerekend.
+
+Met **Bestand bewaren** download je een JSON-reservekopie. Op de startpagina kun je dit bestand weer openen. Een import wordt als aparte beoordeling opgeslagen; uitkomsten worden opnieuw berekend. Bestaande v0.1.0-beoordelingen blijven bruikbaar.
+
+**Overzicht afdrukken / PDF** maakt het besluitoverzicht afdrukbaar. Een onvolledige afweging blijft een concept of aangehouden besluit. Vastleggen is geen automatische goedkeuring.
+
+Alle pogingen, controle en herstel tellen samen per testgeval, ook als de taak niet lukt. Een eerdere kritieke fout blijft meetellen. Onbekende metingen blijven leeg; nul is alleen een gemeten nul. Voor andere taaknormen of configuraties gebruik je een nieuwe beoordelingsversie.
+
+Browsergegevens wissen of een volle opslag kan gegevensverlies veroorzaken. Bewaar regelmatig een eigen bestand. Dossiers zijn zichtbaar voor anderen die hetzelfde browserprofiel gebruiken.
 
 ## Lokaal starten
 
@@ -14,49 +40,30 @@ Vanuit de hoofdmap, met Node.js:
 node scripts/serve-pam.cjs
 ~~~
 
-Open daarna http://127.0.0.1:8765/pam-ai/ in je browser. Er zijn geen npm-installatie, API-sleutels of externe diensten nodig. Stop de lokale server met Ctrl+C.
+Open daarna http://127.0.0.1:8765/pam-ai/. Geen installatie van productiepakketten, API-sleutels of externe diensten nodig. Stop de server met Ctrl+C. De toepassing kan ook op een statische HTTPS-webserver staan.
 
-De drie scripts en stylesheet in deze map kunnen ook op een eenvoudige statische webserver staan. Open bij voorkeur via localhost of HTTPS; direct openen met file:// heeft browserafhankelijke opslag.
+## Privacy en bronnen
 
-## Kort gebruiken
+De toepassing verstuurt invoer niet naar een server of AI-dienst. Er zijn geen externe scripts, lettertypes, analytics of AI-koppelingen. De Content Security Policy verbiedt uitgaande verbindingen vanuit de app. Bewijsstukken blijven op hun eigen locatie; PAM-AI bewaart beschrijvingen en verwijzingen.
 
-1. Maak een beoordeling aan. Beschrijf taak, gewenste uitkomst, baseline en context.
-2. Leg de route, drempels en besliskritieke dimensies vooraf vast.
-3. Voeg concrete alternatieven toe, inclusief de niet-AI-baseline.
-4. Vul het bewijsregister in en koppel bewijs-ID’s aan de acht domeinen.
-5. Leg het testontwerp vast. Voer testcases in of importeer CSV met de kolommen van werkblad 05_Testcases.
-6. Lees geschiktheid, onzekerheid en ontbrekende metingen. Vergelijk passende alternatieven op extra waarde, lasten en context.
-7. Leg het besluit, voorwaarden, stop/herstel en herbeoordeling vast. Je kunt ook NO-GO, meerdere opties of uitstel vastleggen.
-8. Exporteer JSON als reservekopie of om elders te hervatten. Gebruik Afdrukken voor een leesbaar besluitoverzicht/PDF.
+De twee aangeleverde bestanden staan ongewijzigd in [bronnen](./bronnen/). Oorspronkelijk auteurschap en rechten blijven behouden. Deze software verleent geen nieuwe licentie op de afzonderlijke methodiek.
 
-Iedere testcase bevat de totalen van alle pogingen. Een kritieke fout in een eerdere poging blijft een kritieke fout. Leeg betekent onbekend; gemeten nul is 0. Het formulier voorkomt dat retries of dubbele rijen als extra onafhankelijke cases tellen.
+PAM-AI v1.1 is een methodiek in validatie. De tool controleert samenhang en berekeningen, niet de inhoudelijke waarheid van bewijs. Hij vervangt geen juridische beoordeling, DPIA, FRIA of securityonderzoek. De toegankelijkheid voor gebruikers moet verder worden getoetst met echte praktijksituaties.
 
-Taaknorm en testontwerp worden vastgezet bij de eerste test. Maak een nieuwe beoordelingsversie voor gewijzigde criteria. Configuratiewijzigingen worden ten opzichte van de testregistratie gesignaleerd.
-
-## Bewaren en privacy
-
-Alles wordt in deze browser opgeslagen. Invoer wordt niet naar een server of AI-dienst verstuurd. Er zijn geen externe scripts, lettertypes, analytics of AI-koppelingen. De Content Security Policy verbiedt uitgaande connecties vanuit de app.
-
-JSON-export bevat je volledige beoordeling, inclusief testgegevens, bewijsverwijzingen en besluitversies. Behandel die bestanden passend bij hun inhoud. Een gedeeld browserprofiel geeft toegang tot dezelfde lokale dossiers. Browsergegevens wissen of een volle opslag kan gegevensverlies veroorzaken; bewaar exports.
-
-## Voorbeelden en bronnen
-
-Alle voorbeeldgegevens zijn expliciet fictief. Ze tonen bediening en berekeningen, geen feitelijke modelprestaties. De twee aangeleverde bronbestanden staan ongewijzigd in [bronnen](./bronnen/). Auteurschap en oorspronkelijke rechten blijven vermeld. Deze software verleent geen nieuwe licentie op de afzonderlijke bronmethodiek.
-
-## Tests
+## Tests en onderhoud
 
 ~~~sh
 node --test tests/pam-ai/engine.test.cjs
 ~~~
 
-De JSON met dertien rechtstreeks in Microsoft Excel herberekende fixtures en het reproduceerscript staan in tests/pam-ai. De UI-test gebruikt Playwright als afzonderlijk testhulpmiddel; de toepassing heeft die dependency niet nodig. Start eerst de lokale server, stel desgewenst PAM_PLAYWRIGHT in op je Playwright-module en PAM_BROWSER_CHANNEL op msedge, en voer tests/pam-ai/ui.test.cjs uit.
+De 32 reken- en dossiercontroles bevatten dertien rechtstreeks in Microsoft Excel herberekende referentiegevallen. Die referenties zijn opnieuw gebruikt voor v0.2.0; de rekenregels zijn ongewijzigd.
 
-## Onderhoud
+Browsercontroles staan in tests/pam-ai/guided-ui.test.cjs, ui.test.cjs en csv-ui.test.cjs. Ze gebruiken Playwright als ontwikkelhulpmiddel. Start de lokale server en stel zo nodig PAM_PLAYWRIGHT en PAM_BROWSER_CHANNEL=msedge in. De toepassing zelf heeft geen productie-dependencies.
 
-- engine.js: zuivere rekenregels, route, bewijs- en dossiercontroles.
-- app.js: formulier, lokale opslag, import/export en besluitoverzicht.
-- examples.js: uitsluitend fictieve demonstratiebeoordelingen.
-- style.css en index.html: vormgeving en structuur.
-- Geen framework, buildstap of productie-dependencies.
+- engine.js: bronregels, berekeningen en dossiercontroles.
+- guide.js / guide.css: begeleide vragen, documentkiezer en gewone taal.
+- app.js: gedeelde formulierfuncties, dossierweergave, lokale opslag, import/export en afdruk.
+- examples.js: uitsluitend fictieve voorbeelden.
+- index.html / style.css: basisstructuur en vormgeving.
 
-PAM-AI v1.1 is een research-grade validatiekandidaat. De toepassing vervangt geen juridische beoordeling, DPIA, FRIA, securityonderzoek of professioneel inhoudelijk oordeel.
+Geen framework of buildstap. De begeleide route gebruikt dezelfde velden en rekenmodule als de dossierweergave.

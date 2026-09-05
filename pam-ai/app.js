@@ -330,6 +330,10 @@ function footer() {
   );
 }
 function render(focus = false) {
+  if (window.PAM_SELECTOR?.active()) {
+    PAM_SELECTOR.render(focus);
+    return;
+  }
   if (window.PAM_GUIDE?.active()) {
     PAM_GUIDE.render(focus);
     return;
@@ -2114,3 +2118,5 @@ $("#csv-file").addEventListener("change", async (ev) => {
   }
 });
 render();
+
+window.renderPAMDossier = () => render(true);

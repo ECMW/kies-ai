@@ -28,7 +28,7 @@ const assert = require("node:assert/strict"),
         const v = JSON.parse(localStorage.getItem("pam-ai-v1"));
         return v.items.find((x) => x.id === v.current);
       });
-    await page.goto("http://127.0.0.1:8765/pam-ai/");
+    await page.goto("http://127.0.0.1:8765/pam-ai/?view=dossier");
     await page.screenshot({ path: ".local/pam-v02-start.png", fullPage: true });
     await button("Start een nieuwe afweging").click();
     assert.equal(
@@ -205,7 +205,7 @@ const assert = require("node:assert/strict"),
       await (await dl).path(),
       "utf8",
     );
-    assert.equal(JSON.parse(exported).appVersion, "0.2.0");
+    assert.equal(JSON.parse(exported).appVersion, "0.3.0");
     await button("← Alle afwegingen").first().click();
     await page
       .locator("#import-file")

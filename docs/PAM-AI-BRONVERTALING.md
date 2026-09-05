@@ -85,3 +85,18 @@ In de Excel-vergelijking krijgen fictieve fixtures aanvullende volledige dossier
 - Gebruiksduur, begrijpelijkheid en besliskwaliteit vragen nog de praktijk- en externe validatie uit 10_Validatie / DOCX. De technische tests leveren dat bewijs niet.
 
 Citeer: Willems, E.C.M. (2026), *PAM-AI v1.1 — Proportionele AI-modelkeuze*.
+
+
+## Verbetering bediening v0.2.0
+
+Aanleiding: de eerste interface was een te directe vertaling van Excel en vroeg te veel methodiekkennis. De begeleide route begint nu met twee taakvragen en biedt korte deelstappen. Gevolgen en toelaatbaarheid worden één vraag tegelijk behandeld. De bestaande methodiek blijft hetzelfde.
+
+- Gewone vraagteksten verwijzen naar dezelfde intakevelden, zeven routevragen en acht domeinen. De routecategorieën zijn niet veranderd.
+- Bewijs wordt op documentnaam gekoppeld. De bestaande bewijs-ID blijft intern behouden; kiezen van een document vult nooit automatisch een positief oordeel in. Onvolledige of onbekende bronnen worden herkenbaar gemarkeerd.
+- Succes- en foutgrenzen worden als percentages ingevoerd en exact gedeeld door 100 voor de bestaande rekenmodule. De z-waarde en bewijsbodem staan onder verdieping.
+- Iedere optievergelijking gebruikt dezelfde geschiktheidscontrole. De interface toont geen totaalscore, ranglijst of automatische keuze.
+- Testconcepten blijven bewaard bij navigatie en herladen. Ze tellen pas mee nadat de bestaande validatie bij ‘Testgeval bewaren’ is geslaagd.
+- Een volledig gemotiveerd NO-GO of uitgesteld besluit krijgt een duidelijke gebruikersnaam. De onderliggende HOLD-status en het verbod op automatische goedkeuring blijven behouden.
+- De volledige dossierweergave blijft beschikbaar. Oude beoordelingen en exports blijven bruikbaar.
+
+Geen nieuwe beslisregels of drempelwaarden. Engine-wijziging: alleen het toepassingsversienummer.

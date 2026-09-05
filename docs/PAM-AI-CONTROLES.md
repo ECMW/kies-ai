@@ -73,3 +73,24 @@ Testbestanden: [UI-test](../tests/pam-ai/ui.test.cjs), [CSV/registratietest](../
 De methodiek blijft een validatiekandidaat. De webtoepassing controleert aanwezigheid, samenhang, rekengeldigheid en verwijzingen; niet de inhoudelijke waarheid van bewijs of motiveringen. Geen automatische juridische classificatie of vervanging van DPIA/FRIA/securityonderzoek.
 
 De primaire praktijkcontrole is een echte afgebakende casus met taakeigenaar en reviewer. Meet conform het aangeleverde protocol afzonderlijk voorbereidingstijd, testwerk, onbegrepen velden, herstelwerk en ervaren besliswaarde. Gebruik de feedback om een volgende versie gericht te verbeteren. Er is nog geen empirisch bewijs dat deze webversie een bepaalde tijdsbesparing oplevert.
+
+
+## Controles van de begeleide route v0.2.0
+
+De browsercontrole begint nu ook bij een lege afweging, zonder vooraf ingevulde bewijsstukken:
+
+- Eerste scherm bevat twee inhoudelijke velden; statistische instellingen verschijnen pas bij de testvoorbereiding.
+- Zeven routevragen met dezelfde antwoorden als de bron; de huidige werkwijze kan uit de intake worden overgenomen.
+- Onbekend antwoord blijft onbekend na toevoegen van een document. Een negatieve beoordeling sluit testen van die optie uit.
+- Bronbeschrijving in twee korte stappen, kiezen op naam, automatische koppeling van de interne bewijsverwijzing.
+- 95% wordt als 0,95 opgeslagen en na herladen weer als 95% getoond.
+- Automatisch bewaren, navigeren, herladen, JSON-export/import en hervatten; ook op 390 pixels zonder horizontale pagina-overloop.
+- Een nog niet ingediend testgeval blijft als concept bewaard bij navigatie en herladen, telt nog niet mee en wordt na controle eenmaal toegevoegd.
+- Verplicht aantal AI-aanroepen staat zichtbaar bij de testvragen, ook voor handmatig werk met expliciet nul.
+- Wisselen van optie opent de eerste onbeantwoorde vraag; een compleet NO-GO wordt niet als onvolledig gepresenteerd.
+- Meerdere verdedigbare opties en een kleine pilot blijven verschillende, correct begrensde uitkomsten.
+- Afdruk naar A4, geen JavaScript-fouten en geen externe verzoeken vanuit de toepassing.
+
+Zie [begeleide browsercontrole](../tests/pam-ai/guided-ui.test.cjs). De bestaande dossier-, CSV- en 32 rekencontroles slagen eveneens. De Excel-referentiegevallen zijn hergebruikt; er was geen nieuwe Excel-herberekening nodig voor deze wijziging van de bediening.
+
+Dit zijn technische en functionele controles, geen empirische bruikbaarheidstest met eindgebruikers. De eerste gebruikersreactie maakte duidelijk dat de oorspronkelijke bediening onvoldoende begrijpelijk was. De nieuwe route is een gerichte verbetering; praktijkbegrip en besliswaarde moeten met echte gebruikers en casussen worden beoordeeld.

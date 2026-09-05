@@ -7,3 +7,5 @@ node_modules/
 
 .local/
 dist/
+
+.codex-remote-attachments/

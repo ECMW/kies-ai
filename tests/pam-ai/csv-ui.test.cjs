@@ -13,7 +13,7 @@ const { chromium } = require(process.env.PAM_PLAYWRIGHT || "playwright"),
     const p = await b.newPage({ acceptDownloads: true }),
       errors = [];
     p.on("pageerror", (e) => errors.push(e.message));
-    await p.goto("http://127.0.0.1:8765/pam-ai/");
+    await p.goto("http://127.0.0.1:8765/pam-ai/?view=dossier");
     await p
       .getByText("Eerst een ingevuld voorbeeld bekijken", { exact: true })
       .click();

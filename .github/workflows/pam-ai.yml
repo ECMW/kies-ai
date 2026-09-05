@@ -1,9 +1,21 @@
 name: Controleer PAM-AI
 on:
   push:
-    paths: ["pam-ai/**", "tests/pam-ai/**", "scripts/serve-pam.cjs", ".github/workflows/pam-ai.yml"]
+    paths:
+      [
+        "pam-ai/**",
+        "tests/pam-ai/**",
+        "scripts/serve-pam.cjs",
+        ".github/workflows/pam-ai.yml",
+      ]
   pull_request:
-    paths: ["pam-ai/**", "tests/pam-ai/**", "scripts/serve-pam.cjs", ".github/workflows/pam-ai.yml"]
+    paths:
+      [
+        "pam-ai/**",
+        "tests/pam-ai/**",
+        "scripts/serve-pam.cjs",
+        ".github/workflows/pam-ai.yml",
+      ]
   workflow_dispatch:
 permissions:
   contents: read
@@ -21,5 +33,8 @@ jobs:
           node --check pam-ai/app.js
           node --check pam-ai/guide.js
           node --check pam-ai/examples.js
+          node --check pam-ai/model-catalog.js
+          node --check pam-ai/selector-engine.js
+          node --check pam-ai/selector.js
       - name: Vergelijk met vastgelegde Excel-uitkomsten en randgevallen
-        run: node --test tests/pam-ai/engine.test.cjs
+        run: node --test tests/pam-ai/engine.test.cjs tests/pam-ai/selector.test.cjs

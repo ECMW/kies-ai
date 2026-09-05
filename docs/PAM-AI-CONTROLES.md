@@ -94,3 +94,12 @@ De browsercontrole begint nu ook bij een lege afweging, zonder vooraf ingevulde 
 Zie [begeleide browsercontrole](../tests/pam-ai/guided-ui.test.cjs). De bestaande dossier-, CSV- en 32 rekencontroles slagen eveneens. De Excel-referentiegevallen zijn hergebruikt; er was geen nieuwe Excel-herberekening nodig voor deze wijziging van de bediening.
 
 Dit zijn technische en functionele controles, geen empirische bruikbaarheidstest met eindgebruikers. De eerste gebruikersreactie maakte duidelijk dat de oorspronkelijke bediening onvoldoende begrijpelijk was. De nieuwe route is een gerichte verbetering; praktijkbegrip en besliswaarde moeten met echte gebruikers en casussen worden beoordeeld.
+
+
+## Controle 0.3.0 — 5 september 2026
+
+De 32 bestaande rekencontroles (waaronder 13 vastgelegde Excelreferenties) slagen. De Excelgevallen zijn niet opnieuw berekend voor deze presentatie- en adviesaanvulling; de bronformules zijn ongewijzigd. Daarnaast slagen 17 pure tests voor de selector: exacte catalogus, taakherkenning inclusief opname versus transcript, uitsluitingen, onbekende context, lokale eisen, acties, ontbrekende functies, configuratiewijziging, datumvalidatie, meerdere startpunten, geen kosten-/milieurangorde, beschrijvende lasten, archiefbehoud en importvalidatie.
+
+De nieuwe browsercontrole test de gebruikersroute, opnamevoorbeeld, tekstadvies, harde blokkade, invoerfouten in metingen, automatische opslag en herladen, import/export, meetarchieven, mobiel op 390 pixels, PDF, overdracht zonder formeel bewijs en afwezigheid van externe verzoeken. De drie bestaande browsercontroles voor begeleide dossiers, volledige dossiers en CSV-import zijn opnieuw uitgevoerd.
+
+Beperkingen: de adviesregels zijn kwalitatieve oriëntatieregels, niet empirisch gevalideerd. Lokale woordherkenning begrijpt niet iedere opdracht; de gebruiker kan de taaksoort wijzigen. Platformafspraken zijn prototype-instellingen in één browser en moeten voor productie centraal worden beheerd. De tool koppelt niet aan NebulaONE, voert geen taak uit en heeft geen automatische router. De blaadjes bieden geen geverifieerd milieubewijs. Prijzen, werkelijke API-identiteiten, taakbenchmarks en milieuonderzoek voor de gebruikte deployments ontbreken nog.

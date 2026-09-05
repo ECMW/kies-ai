@@ -100,3 +100,8 @@ Aanleiding: de eerste interface was een te directe vertaling van Excel en vroeg 
 - De volledige dossierweergave blijft beschikbaar. Oude beoordelingen en exports blijven bruikbaar.
 
 Geen nieuwe beslisregels of drempelwaarden. Engine-wijziging: alleen het toepassingsversienummer.
+
+
+## Aanvulling 0.3.0: modelselector voor NebulaONE
+
+De gebruiker heeft een afzonderlijke, voorlopige advieslaag toegestaan. Die koppelt een taak aan beschreven mogelijkheden van de acht aangeleverde platformmodellen. Deze regels staan niet in de bronnen; ze vervangen geen formele poort, route of statistische toets. De oorspronkelijke rekenmodule veranderde uitsluitend in toepassingsversie. Zie [volledige vertaling en bewijsgrenzen](PAM-AI-MODELSELECTOR.md) en [onderzoek naar de blaadjes](PAM-AI-BLAADJES.md).

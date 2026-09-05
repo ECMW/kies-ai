@@ -1,69 +1,68 @@
 # PAM-AI — Proportionele AI-modelkeuze
 
-**Ontwikkeld door E.C.M. Willems.** Methodiek v1.1 · webtoepassing v0.2.0.
+**Ontwikkeld door E.C.M. Willems.** Methodiek 1.1 · toepassing en adviesregels 0.3.0.
 
-PAM-AI helpt een concrete werkwijze met AI af te wegen tegen andere technologie en de huidige werkwijze zonder AI. Eerst vaststellen wat mag, daarna wat voldoende werkt, daarna of de waarde de lasten rechtvaardigt. De gebruiker legt een controleerbaar besluit vast; de tool wijst geen winnaar aan.
-
-[Open PAM-AI](https://ecmw.github.io/kies-ai/pam-ai/) · [Bronvertaling](../docs/PAM-AI-BRONVERTALING.md) · [Controles en beperkingen](../docs/PAM-AI-CONTROLES.md)
+PAM-AI helpt gebruikers vooraf een eerste modelselectie te maken voor hun taak, uit acht zichtbare modellen in NebulaONE. De oorspronkelijke onderbouwde beoordeling blijft beschikbaar voor toelaatbaarheid, voldoende geschiktheid en proportionaliteit.
 
 ## Beginnen
 
-1. Kies **Start een nieuwe afweging** en beschrijf één taak en het gewenste resultaat.
-2. Beantwoord de korte deelstappen. Wat je nog niet weet, mag openblijven.
-3. Voeg bij **Je opties** de huidige werkwijze toe en de andere oplossingen die je wilt onderzoeken.
-4. Beantwoord bij **Mag dit?** de acht vragen per optie. Kies bewijs op documentnaam of voeg een bron toe. Een bron kiezen betekent niet automatisch dat de toepassing is goedgekeurd.
-5. Leg bij **Werkt het?** eerst de kwaliteitseisen en testafspraken vast. De statistische startwaarden komen uit de bron en vragen een motivering voor jouw taak. Registreer daarna resultaten, afzonderlijk of via CSV.
-6. Vergelijk de geschikte opties bij **Is het de moeite waard?** Neem ook afhankelijkheden, menselijk ingrijpen en invoering mee.
-7. Bewaar bij **Je besluit** een keuze, meerdere opties, afzien van inzet of uitstel. Leg onderbouwing, grenzen, verantwoordelijkheid en herbeoordeling vast.
+1. Beschrijf je opdracht op de startpagina. Controleer de herkende taak; je kunt deze aanpassen.
+2. Beantwoord twee contextvragen: welke informatie gebruik je en wat doe je met de uitkomst? Onbekend is een geldig antwoord.
+3. Bekijk de voorlopige selectie, de redenen en de gerichte controles. Bewaar eventueel een model als startkeuze. Dit is geen toestemming of bewezen geschiktheid.
+4. Je advies wordt lokaal bewaard. Gebruik **Mijn adviezen** om te hervatten en **Bewaar advies als bestand** voor een reservekopie. Import maakt een kopie en bepaalt het advies opnieuw.
+5. Gebruik **Afdrukken / PDF** voor een leesbaar overzicht. Alle voorbeeldtaken zijn gemarkeerd als fictief.
 
-De begeleide route toont alleen het actuele onderdeel. Berekeningen en toelichtingen staan achter uitklappers. Via **Meer mogelijkheden → Alle dossiergegevens** is dezelfde beoordeling ook als volledig dossier te bewerken. Op mobiel staat dit onder **Dossier en versies**.
+De tool voert je opdracht niet uit. De taakherkenning werkt met lokale woorden en kan iets verkeerd begrijpen. Er zijn geen API-sleutels of externe AI-diensten nodig.
 
-Een volledig ingevuld fictief voorbeeld staat op de startpagina achter **Eerst een ingevuld voorbeeld bekijken**. Het voorbeeld is geen aanbeveling of feitelijk bewijs van modelprestaties.
+## Platformbeheer
 
-## Bewaren en hervatten
+**Platformbeheer** bevat de acht modellen, hun configuraties, gegevensafspraken en ingeschakelde functies. Vul deze in op basis van gecontroleerde informatie. De standaard bevat geen fictieve goedkeuringen, prijzen of duurzaamheidswaarden. Bewaar of importeer instellingen via de afzonderlijke platformknoppen.
 
-Invoer wordt automatisch in deze browser bewaard. Ook een nog niet ingediend testgeval wordt als concept bewaard; pas na **Testgeval bewaren** wordt het gecontroleerd en meegerekend.
+Dit beheer geldt alleen in de huidige browser, zonder gebruikersrollen. Een productieplatform moet deze informatie centraal en beschermd beheren. Automatische routing naar NebulaONE is nog niet ingeschakeld.
 
-Met **Bestand bewaren** download je een JSON-reservekopie. Op de startpagina kun je dit bestand weer openen. Een import wordt als aparte beoordeling opgeslagen; uitkomsten worden opnieuw berekend. Bestaande v0.1.0-beoordelingen blijven bruikbaar.
+## Onderbouwen volgens de methodiek
 
-**Overzicht afdrukken / PDF** maakt het besluitoverzicht afdrukbaar. Een onvolledige afweging blijft een concept of aangehouden besluit. Vastleggen is geen automatische goedkeuring.
+Via **Onderbouwde beoordelingen** zijn bestaande dossiers en de volledige PAM-AI-route bereikbaar. Nieuwe dossiers volgen: taak → opties → toelaatbaarheid → geschiktheid en bewijs → proportionaliteit → besluit.
 
-Alle pogingen, controle en herstel tellen samen per testgeval, ook als de taak niet lukt. Een eerdere kritieke fout blijft meetellen. Onbekende metingen blijven leeg; nul is alleen een gemeten nul. Voor andere taaknormen of configuraties gebruik je een nieuwe beoordelingsversie.
+De routeafhankelijke bewijslast, R1-pilot, Wilson-grenzen en formele beslisregels blijven uit v1.1 afkomstig. De selector kent geen formele PASS toe. De knop om een modeladvies uit te werken neemt alleen taak- en kandidaatbeschrijvingen over.
 
-Browsergegevens wissen of een volle opslag kan gegevensverlies veroorzaken. Bewaar regelmatig een eigen bestand. Dossiers zijn zichtbaar voor anderen die hetzelfde browserprofiel gebruiken.
+Alle pogingen, verificatie, correctie en herstel tellen mee per geaccepteerde taakuitkomst. In de selector kun je eigen beschrijvende metingen vastleggen; die leveren geen statistisch bewijs van voldoende geschiktheid. Milieubelasting blijft onbekend zonder passend bewijs.
 
 ## Lokaal starten
 
-Vanuit de hoofdmap, met Node.js:
+Vanuit de hoofdmap met Node.js:
 
 ~~~sh
 node scripts/serve-pam.cjs
 ~~~
 
-Open daarna http://127.0.0.1:8765/pam-ai/. Geen installatie van productiepakketten, API-sleutels of externe diensten nodig. Stop de server met Ctrl+C. De toepassing kan ook op een statische HTTPS-webserver staan.
+Open daarna [de lokale toepassing](http://127.0.0.1:8765/pam-ai/). Geen framework, productiepakketten of buildstap nodig. Stop de server met Ctrl+C. Statische HTTPS-hosting is ook mogelijk.
 
-## Privacy en bronnen
+## Bewaren en privacy
 
-De toepassing verstuurt invoer niet naar een server of AI-dienst. Er zijn geen externe scripts, lettertypes, analytics of AI-koppelingen. De Content Security Policy verbiedt uitgaande verbindingen vanuit de app. Bewijsstukken blijven op hun eigen locatie; PAM-AI bewaart beschrijvingen en verwijzingen.
+Invoer blijft in dit browserprofiel. Er zijn geen externe scripts, fonts, analytics of AI-verzoeken. De Content Security Policy verbiedt uitgaande appverbindingen. Een bewuste klik op een documentatielink opent wel de website van die bron.
 
-De twee aangeleverde bestanden staan ongewijzigd in [bronnen](./bronnen/). Oorspronkelijk auteurschap en rechten blijven behouden. Deze software verleent geen nieuwe licentie op de afzonderlijke methodiek.
+Adviezen, platforminstellingen en formele dossiers hebben afzonderlijke opslag en import. Browsergegevens wissen kan ze verwijderen; bewaar reservekopieën. Iedereen die hetzelfde browserprofiel gebruikt, kan ze lezen of aanpassen.
 
-PAM-AI v1.1 is een methodiek in validatie. De tool controleert samenhang en berekeningen, niet de inhoudelijke waarheid van bewijs. Hij vervangt geen juridische beoordeling, DPIA, FRIA of securityonderzoek. De toegankelijkheid voor gebruikers moet verder worden getoetst met echte praktijksituaties.
+De twee oorspronkelijke bronnen staan ongewijzigd in [bronnen](bronnen/). Het auteurschap en de rechten op de methodiek blijven behouden. Bronfoto's en sessiegegevens zijn niet gepubliceerd.
 
-## Tests en onderhoud
+## Controles en onderhoud
 
 ~~~sh
-node --test tests/pam-ai/engine.test.cjs
+node --test tests/pam-ai/engine.test.cjs tests/pam-ai/selector.test.cjs
 ~~~
 
-De 32 reken- en dossiercontroles bevatten dertien rechtstreeks in Microsoft Excel herberekende referentiegevallen. Die referenties zijn opnieuw gebruikt voor v0.2.0; de rekenregels zijn ongewijzigd.
+De 32 oorspronkelijke controles bevatten 13 rechtstreeks in Excel herberekende referentiegevallen. Daarnaast zijn er 17 controles voor de advieslaag. De bronrekenregels zijn in v0.3.0 ongewijzigd.
 
-Browsercontroles staan in tests/pam-ai/guided-ui.test.cjs, ui.test.cjs en csv-ui.test.cjs. Ze gebruiken Playwright als ontwikkelhulpmiddel. Start de lokale server en stel zo nodig PAM_PLAYWRIGHT en PAM_BROWSER_CHANNEL=msedge in. De toepassing zelf heeft geen productie-dependencies.
+Browsercontroles: `selector-ui.test.cjs`, `guided-ui.test.cjs`, `ui.test.cjs` en `csv-ui.test.cjs` in tests/pam-ai. Ze gebruiken Playwright als ontwikkelhulpmiddel; start eerst de lokale server. Zo nodig stel je PAM_PLAYWRIGHT en PAM_BROWSER_CHANNEL=msedge in.
 
-- engine.js: bronregels, berekeningen en dossiercontroles.
-- guide.js / guide.css: begeleide vragen, documentkiezer en gewone taal.
-- app.js: gedeelde formulierfuncties, dossierweergave, lokale opslag, import/export en afdruk.
-- examples.js: uitsluitend fictieve voorbeelden.
-- index.html / style.css: basisstructuur en vormgeving.
+- model-catalog.js: zichtbare modelnamen en herleidbare leveranciersclaims.
+- selector-engine.js: pure, afzonderlijke adviesregels en importcontrole.
+- selector.js / selector.css: korte route, lokale opslag, beheer en afdruk.
+- engine.js: formele bronregels en statistiek.
+- guide.js / app.js: formele beoordeling, bewijs, versies en import/export.
+- examples.js: fictieve formele voorbeelden.
 
-Geen framework of buildstap. De begeleide route gebruikt dezelfde velden en rekenmodule als de dossierweergave.
+[Bronvertaling](../docs/PAM-AI-BRONVERTALING.md) · [Adviesregels en automatische routing](../docs/PAM-AI-MODELSELECTOR.md) · [Onderzoek naar de blaadjes](../docs/PAM-AI-BLAADJES.md) · [Controles en beperkingen](../docs/PAM-AI-CONTROLES.md)
+
+PAM-AI 1.1 is een methodiek in validatie. De toepassing vervangt geen juridische beoordeling, DPIA, FRIA of securityonderzoek. De praktische bruikbaarheid en modeladviezen moeten verder worden getest met echte gebruikers en passend lokaal taakbewijs.

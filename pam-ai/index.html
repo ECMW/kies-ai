@@ -14,10 +14,14 @@
     <title>PAM-AI — Proportionele AI-modelkeuze</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="guide.css" />
+    <link rel="stylesheet" href="selector.css" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <script src="engine.js" defer></script>
     <script src="examples.js" defer></script>
     <script src="guide.js" defer></script>
+    <script src="model-catalog.js" defer></script>
+    <script src="selector-engine.js" defer></script>
+    <script src="selector.js" defer></script>
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -29,6 +33,7 @@
       >
       <div class="topright">
         <span class="localdot">Gegevens blijven in deze browser</span
+        ><button id="selector-return" data-select="start">Modelkeuze</button
         ><button id="help">Uitleg & bronnen</button>
       </div>
     </header>
@@ -39,7 +44,15 @@
         <button class="close" aria-label="Sluiten">×</button>
       </form>
       <p class="eyebrow">PAM-AI · E.C.M. Willems</p>
-      <h2>Van taak naar een verdedigbare keuze</h2>
+      <h2>Modelkeuze en onderbouwing</h2>
+      <p>
+        Begin bij je opdracht. De modelselector geeft een voorlopige selectie
+        uit het zichtbare NebulaONE-aanbod. Deze adviesregels zijn een
+        afzonderlijke aanvulling op methodiek 1.1; zij bewijzen geen
+        toelaatbaarheid of taakgeschiktheid. Platformbeheerders leggen
+        herbruikbare configuraties en afspraken vast. De oorspronkelijke
+        beoordeling blijft beschikbaar onder Onderbouwde beoordelingen.
+      </p>
       <p>
         Werk achtereenvolgens aan toelaatbaarheid, voldoende geschiktheid en
         proportionaliteit. Een goedkope of snelle oplossing kan een eerdere
@@ -74,7 +87,7 @@
       </p>
       <p>
         Methodiek <strong>1.1</strong>, 4 september 2026 · toepassing
-        <strong>0.2.0</strong>. Research-grade validatiekandidaat; nog geen
+        <strong>0.3.0</strong>. Research-grade validatiekandidaat; nog geen
         empirisch gevalideerde standaard. PAM-AI vervangt geen juridische
         beoordeling, DPIA, FRIA of securityonderzoek.
       </p>
@@ -107,6 +120,18 @@
       accept=".json,application/json"
       hidden
     /><input id="csv-file" type="file" accept=".csv,text/csv" hidden />
+    <input
+      id="selector-import"
+      type="file"
+      accept=".json,application/json"
+      hidden
+    />
+    <input
+      id="platform-import"
+      type="file"
+      accept=".json,application/json"
+      hidden
+    />
     <noscript
       >Schakel JavaScript in om deze lokale toepassing te gebruiken. De bronnen
       zijn beschikbaar in de map bronnen.</noscript

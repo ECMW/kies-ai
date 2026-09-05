@@ -4,7 +4,7 @@
 
 [Open PAM-AI](https://ecmw.github.io/kies-ai/pam-ai/) · [Lokaal starten en gebruiken](pam-ai/README.md) · [Bronvertaling](docs/PAM-AI-BRONVERTALING.md) · [Controles](docs/PAM-AI-CONTROLES.md)
 
-Methodiek 1.1; toepassing 0.1.0. Lokale gegevensopslag, geen externe AI-diensten. Beide oorspronkelijke bronbestanden, broncode en tests zijn opgenomen.
+Methodiek 1.1; toepassing 0.3.0. De startpagina bevat nu een voorlopige modelselector voor het zichtbare NebulaONE-aanbod; onderbouwde beoordelingen blijven afzonderlijk beschikbaar. Lokale gegevensopslag, geen externe AI-diensten. Beide oorspronkelijke bronbestanden, broncode en tests zijn opgenomen.
 
 ---
 # We stellen de verkeerde vraag.

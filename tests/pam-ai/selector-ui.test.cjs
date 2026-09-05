@@ -106,6 +106,16 @@ const { chromium } = require(process.env.PAM_PLAYWRIGHT || "playwright"),
     await page.reload();
     assert.equal((await stored()).archivedMeasurements.length, 1);
     await button("Platformbeheer").click();
+    assert.equal(
+      await page
+        .locator('[data-admin="platform.name"]')
+        .getAttribute("maxlength"),
+      "500",
+    );
+    assert.equal(
+      await page.locator('[data-admin="conditions"]').getAttribute("maxlength"),
+      "5000",
+    );
     await page.locator('[data-admin="deployment"]').fill("FICTIEF v1");
     await page
       .locator('[data-admin="approval.internal"]')

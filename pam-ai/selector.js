@@ -112,6 +112,7 @@ window.PAM_SELECTOR = (() => {
         ? 'data-measure="' + key + '" data-model="' + row + '"'
         : 'data-select-field="' + key + '"';
     const id = "s-" + (admin ? "admin-" : "") + (row ? row + "-" : "") + key;
+    const max = admin ? (key.startsWith("platform.") ? 500 : 5000) : 10000;
     return (
       '<label class="s-field" for="' +
       id +
@@ -124,7 +125,9 @@ window.PAM_SELECTOR = (() => {
           id +
           '" ' +
           attr +
-          ' rows="4" maxlength="10000" placeholder="' +
+          ' rows="4" maxlength="' +
+          max +
+          '" placeholder="' +
           h(placeholder) +
           '"' +
           (help ? ' aria-describedby="' + id + '-help"' : "") +
@@ -140,7 +143,9 @@ window.PAM_SELECTOR = (() => {
           '" value="' +
           h(value ?? "") +
           '" ' +
-          (type === "number" ? 'min="0" step="any"' : 'maxlength="5000"') +
+          (type === "number"
+            ? 'min="0" step="any"'
+            : 'maxlength="' + max + '"') +
           (help ? ' aria-describedby="' + id + '-help"' : "") +
           ">") +
       "</label>"
@@ -993,6 +998,12 @@ window.PAM_SELECTOR = (() => {
     }
   });
   function updateField(el) {
+    if (el.maxLength > 0 && el.value.length > el.maxLength) {
+      message(
+        "Deze tekst is te lang en is niet bewaard. Kort de tekst in of gebruik een verwijzing.",
+      );
+      return;
+    }
     if (el.dataset.selectField) {
       const k = el.dataset.selectField;
       if (!["task", "type", "data", "use", "priority", "notes"].includes(k))
